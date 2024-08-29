@@ -1,0 +1,1050 @@
+# Titelfolie {.plain}
+\center
+![](../Abbildungen/otto.png){width="20%"}
+
+\vspace{2mm}
+
+\Large
+Programmierung und Deskriptive Statistik
+\vspace{4mm}
+
+\normalsize
+BSc Psychologie WiSe 2024/25
+
+\vspace{15mm}
+\normalsize
+Belinda Fleischmann
+
+
+
+# Herzlich Willkommen!{.plain} 
+\huge
+\center
+\vfill
+Herzlich willkommen!
+\vfill
+
+
+# Aufnahme läuft {.plain}
+\huge
+\vfill
+
+\vspace{3mm}
+\center
+![](../Abbildungen/pds_1_mikro.png){width="8%"}
+
+Aufnahme läuft.
+
+\vfill
+
+
+# (1) Einführung - Titelfolie {.plain}
+\vfill
+\center
+\huge
+\textcolor{black}{(1) Einführung}
+\vfill
+
+
+# AGENDA {.plain}
+\large
+\setstretch{2.5}
+\vfill
+
+Formalia
+
+Grundbegriffe der Informatik
+
+R und Visual Studio Code
+
+Selbstkontrollfragen 
+
+
+# Formalia ===================================== {.plain}
+\AtBeginSection{}
+\section{Formalia}
+
+\large
+\vfill
+\setstretch{2.5}
+
+**Formalia**
+
+Grundbegriffe der Informatik
+
+R und Visual Studio Code
+
+Selbstkontrollfragen
+
+
+# Lehrstuhlwebsite
+\vspace{5mm}
+
+[\textcolor{linkblue}{Homepage der Abteilung für Methodenlehre I}](https://www.ipsy.ovgu.de/methodenlehre_I-path-980,1404.html)
+
+![](../Abbildungen/magl_0_homepage.png){width="80%"}
+
+
+# Modul C: Einführung in empirisch-wissenschaftliches Arbeiten
+\setstretch{1.5}
+\textcolor{darkblue}{C1. Programmierung und Deskriptive Statistik}
+
+* Einführung in die datenanalytische Programmierung mit R in Visual Studio Code
+* Einführung in die Auswertung deskriptiver Statistiken
+
+\vspace{3mm}
+
+\textcolor{darkblue}{C2. Analyse und Dokumentation}
+
+* Praktische Analyse empirischer Daten
+* Dokumentation empirischer Studien und Analysen
+
+
+
+# Inhalte | WiSe 2024/2025 | Programmierung und Deskriptive Statistik
+\setstretch{1.5}
+
+\textcolor{darkblue}{Programmierung}
+
+\begin{itemize}  \justifying
+\item Einführung in die Programmiersprache R und die Entwicklungsumgebung Visual Studio Code (VS Code).
+\item Grundlegende Konzepte der datenanalytischen Programmierung in R, einschließlich arithmetischer Operationen, logischer Operationen, Variablenmanagement, Datenstrukturen und Kontrollstrukturen.
+\item Einführung in wesentliche Werkzeuge und Pakete für die Durchführung deskriptiver statistischer Analysen.
+\end{itemize}
+\normalsize
+
+\vspace{3mm}
+
+\textcolor{darkblue}{Deskriptive Statistik}
+
+\begin{itemize}  \justifying 
+\item Grundlegender Methoden der deskriptiven Statistik zur Analyse und Beschreibung quantitativer Daten mit R.
+\item Praktische Übung anhang von Anwendungsbeispielen.
+\end{itemize}
+
+# Struktur | WiSe 2024/2025 | Programmierung und Deskriptive Statistik
+\setstretch{1.5}
+
+\textcolor{darkblue}{Seminar und Praxisstunden}
+
+\begin{itemize}  \justifying 
+\item Theoretische und praktische Einführung in die wesentlichen Konzepte der Programmierung und deskriptiven Statistik.
+\item Anwendung der erlernten Konzepte in praktischen Übungen, unterstützt durch Hilfestellung von Lehrpersonen und Tutoren während der Praxisstunden.
+\item Bitte bringt gegebenfalls einen Laptop zu den Praxisstunden mit.
+\end{itemize}
+
+\textcolor{darkblue}{Leistungsnachweis}
+
+\begin{itemize}  \justifying 
+\item Selbstständige Bearbeitung von Übungsaufgaben und deren Einreichung in Form von R-Skripten.
+\item Leistungsnachweis gilt als erbracht, wenn mind. \textcolor{red}{60 \% (?)} der abgegebenen als bestanden berwertet wurden.
+\end{itemize}
+
+
+# Organisatorisches
+\setstretch{2}
+
+* \justifying Termine: Dienstags
+  * Gruppe 1: 11-13 Uhr in URZ Pool 4 (Persönlicher Computer optional)
+  * Gruppe 2: 13-15 Uhr in G40B-331 (Persönlicher Computer notwendig)
+* Kursmaterialien (Folien, Videos) auf der \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2024/Programmierung+und+Deskriptive+Statistik.html}{Kurswebseite}}
+* Codes und tagesakutelle Folien auf \textcolor{linkblue}{\href{https://github.com/belindamef/progr-und-deskr-stat-24}{Github}}
+* Vorherige Iteration des Kurses: \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2023/Programmierung+und+Deskriptive+Statistik.html}{PDS (WS 2022/23)}}
+* Empfohlene Vorbereitung: \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2024/Mathematische+Grundlagen.html}{Vorkurs ''Mathematische Grundlagen''}}
+* Ankündigungen, Fragen-Forum im \textcolor{linkblue}{\href{https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmeriung-und-deskriptive-statistik}{Mattermost-Channel}}
+* \textcolor{red}{Abgabe} über die \textcolor{linkblue}{\href{https://elearning.ovgu.de/course/view.php?id=15163}{Moodleseite}} \textcolor{red}{TODO}
+
+
+
+# Termine \textcolor{red}{TODO}
+\setstretch{1.3}
+\vfill
+\center
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{llll}
+Datum          & Einheit               & Thema		                              & Veranstaltungsform \\\hline
+15.10.24       & R Grundlagen          & (1) Einführung          & Seminar\\
+22.10.24       & R Grundlagen          & (2) R und Visual Studio Code        & Seminar  + Übung \\
+29.10.24       & R Grundlagen          & (2) R und Visual Studio Code        & Seminar  + Übung \\
+05.11.24       & R Grundlagen          & (3) Vektoren    & Seminar \\
+12.11.24       & R Grundlagen          & (4) Matrizen         & Seminar \\
+19.11.24       & R Grundlagen          & (5) Listen und Dataframes & Seminar \\
+26.11.24       & R Grundlagen          & (6) Datenmanagement & Seminar  + Übung\\
+03.12.24       & Deskriptive Statistik & (7) Häufigkeitsverteilungen  & Seminar \\
+10.12.24       & Deskriptive Statistik & (8) Verteilungsfunktionen und Quantile  & Seminar \\
+17.12.24       & Deskriptive Statistik & (10) Maße der zentralen Tendenz und Variabilität & Seminar \\
+  & \textcolor{gray}{Weihnachtspause}    \\
+07.01.25       & R Grundlagen          & (11) Kontrollstrukturen; Datensimulationen & Seminar \\
+14.01.25       &           & \hspace{4mm} Praxisseminar  & \hspace{10mm} Übung \\
+21.01.25       & Deskriptive Statistik     & (12)  Anwendungsbeispiel & Seminar + Übung \\
+28.01.25       & Deskriptive Statistik     & (12) Anwendungsbeispiel  & Seminar + Übung \\
+\end{tabular}
+
+
+# Kurswebsite
+\vspace{5mm}
+
+\textcolor{red}{TODO}
+
+[\textcolor{linkblue}{Webseite des Kurses (Folien, Videos)}](https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2024/Programmierung+und+Deskriptive+Statistik.html)
+
+![](../Abbildungen/pds_Kurswebsite_24.png){width="80%"}
+
+
+# Github
+\vspace{5mm}
+\textcolor{red}{TODO: neuer Screenshot}
+
+[\textcolor{linkblue}{Git-repository des Kurses (Code und Folien)}](https://github.com/belindamef/progr-und-deskr-stat-24)
+
+![](../Abbildungen/pds_1_gitrepo_24.png){width="80%"}
+
+
+
+# Mattermost
+\vspace{5mm}
+
+
+![](../Abbildungen/pds_1_mattermost_24_25.png){width="90%"}
+
+* Regristierung und Beitritt zum im Team \textcolor{linkblue}{\href{https://mm.cs.ovgu.de/signup_user_complete/?id=7bayes88j7r85mo4nidiw3z3pe&md=link&sbr=su}{MethPsy I - Studis}}.
+* Zugang über [\textcolor{linkblue}{Web-App}](https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmierung-und-deskriptive-statistik-wise-20242025), [\textcolor{linkblue}{Desktop-App}](https://mattermost.com/download/?utm_source=google&utm_medium=cpc&utm_campaign=Google_Brand_EMEA&utm_term=mattermost%20install&utm_placement=&gad_source=1&gclid=Cj0KCQjw5ea1BhC6ARIsAEOG5pxQje4p0Qf9uPehjTg9tXPIces15h-YimpVOJ-Uoe1doLKw3jgUKzsaAuU-EALw_wcB#desktop) und [\textcolor{linkblue}{Mobile App}](https://mattermost.com/download/?utm_source=google&utm_medium=cpc&utm_campaign=Google_Brand_EMEA&utm_term=mattermost%20install&utm_placement=&gad_source=1&gclid=Cj0KCQjw5ea1BhC6ARIsAEOG5pxQje4p0Qf9uPehjTg9tXPIces15h-YimpVOJ-Uoe1doLKw3jgUKzsaAuU-EALw_wcB#mobile) möglich.
+
+
+# Tipps zur Nutzung des Forums
+
+**Forum als Community Tool**
+
+\begin{small}
+Wenn Ihr Fragen habt, die für alle relevant ist oder auch andere beschäftigen könnte, stellt sie bitte im Forum. Schaut vorher, ob jemand schon eine ähnliche Frage gestellt hat. Das vermeidet Dopplungen und fördert den Austausch! Beantwortet gegenseitig Eure Fragen – anderen etwas zu erklären, ist oft der beste Weg, um das eigene Verständnis zu schärfen.
+\end{small}
+
+**Seid präzise und spezfisch**
+
+\begin{small}
+Formuliert eure Frage bitte möglichst spezifisch. Statt „Ich verstehe das Thema X nicht.“ formuliert spezifische Fragen wie „Ist im dritten Punkt zum Thema X gemeint, dass...?“. Präzise Fragen führen zu klaren Antworten und helfen Euch zudem, das Thema bereits beim Formulieren besser zu durchdringen. Oft lösen sich Fragen dabei von selbst.
+\end{small}
+
+**Kontext ist Key**
+
+\begin{small}
+Verweist bitte immer auf das Thema, die Foliennummer oder die Übungsaufgabe. Am besten direkt mit der Verlinkungsfunktion in Mattermost. So können wir die Frage schneller im richtigen Zusammenhang verstehen und beantworten.
+\end{small}
+
+# Markdown
+
+Nutzt [\textcolor{linkblue}{Markdown in Mattermost}](https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmierung-und-deskriptive-statistik-wise-20242025) !
+
+Ihr könnte damit Inhalte übersichtlicher formatieren und lernt gleichzeitig schonmal nützliche Basics für die Arbeit mit Quarto.
+
+
+
+# Q&A {.plain}
+\vfill
+\center
+\huge
+Q & A
+\vfill
+
+# Grundbegriffe der Informatik ======================================= {.plain}
+\AtBeginSection{}
+\section{Grundbegriffe der Informatik}
+
+\setstretch{2.5}
+\vfill
+\large
+
+Formalia
+
+**Grundbegriffe der Informatik**
+
+R und Visual Studio Code
+
+Selbstkontrollfragen
+
+
+# Datenwissenschaft
+\vspace{5mm}
+
+\large
+\textcolor{darkblue}{Zentrale Komponenten der Datenwissenschaft}
+
+![](../Abbildungen/migl_7_datenwissenschaft.pdf){width="85%" fig-align="center"}
+
+
+# Grundbegriffe der Informatik (AGENDA) ------ {.plain}
+\setstretch{2.5}
+\vfill
+\large
+
+Formalia
+
+**Grundbegriffe der Informatik**
+
+\begin{itemize}
+\setstretch{1.4}
+\item[--] Datenanalyse
+\item[--] Informatik
+\item[--] Rechnerarchitektur
+\item[--] Algorithmen und Programme
+\end{itemize}
+
+R und Visual Studio Code
+
+Selbstkontrollfragen
+
+
+# Datenanalyse ------------------------------------------------------- {.plain}
+\AtBeginSubsection{}
+\subsection{Datenanalyse}
+
+\vfill
+\large
+\setstretch{2.5}
+
+Formalia
+
+Grundbegriffe der Informatik
+
+\begin{itemize}
+\setstretch{1.4}
+\item[--] \textbf{Datenanalyse}
+\item[--] Informatik
+\item[--] Rechnerarchitektur
+\item[--] Algorithmen und Programme
+\end{itemize}
+
+R und Visual Studio Code
+
+Selbstkontrollfragen
+
+
+# Datenanalyse -  Überblick
+\setstretch{3}
+
+* Wissenschaftliche Daten liegen heutzutage als digitale Daten vor. 
+* Digitale Daten werden mit Hilfe eines Computers analysiert.
+* Zur Analyse von digitalen Daten schreibt man Computerprogramme.
+* Diese Computerprogramme heißen Datenanalyseskripte.
+
+
+# Struktur computergestützter Datenanalyse
+\setstretch{3}
+
+1. Einlesen und Bereinigen eines digitalen Datensatzes.
+2. Berechnung und Visualisierung deskriptiver Statistiken.
+3. Probabilistische Modellierung und Inferenz.
+4. Dokumentation und Präsentation der Ergebnisse.
+
+
+# Werkzeuge der Datenanalyse
+\setstretch{2}
+
+\large
+Typische Werkzeuge zur Analyse psychologischer Daten
+
+\normalsize
+* [\textcolor{linkblue}{R}](https://www.r-project.org/) (frei, Datenwissenschaft, Statistik, Psychologie)
+* [\textcolor{linkblue}{Python}](https://www.python.org/psf/) (frei, Datenwissenschaft, Anwendung)
+* [\textcolor{linkblue}{Matlab}](https://de.mathworks.com/) (kommerziell, Engineering, Neuroimaging)
+
+\vspace{3mm}
+
+\large
+Altmodisch
+
+\normalsize
+* [\textcolor{linkblue}{SPSS}](https://www.ibm.com/de-de/analytics/spss-statistics-software) (kommerziell, Sozialwissenschaften, Psychologie)
+* [\textcolor{linkblue}{JMP}](https://www.jmp.com/de_de/home.html) (kommerziell, Biologie, Psychologie)
+* [\textcolor{linkblue}{STATA}](https://www.stata.com/) (kommerziell, Wirtschaftswissenschaften)
+
+
+# Programmiersprachen Trends
+\vspace{2mm}
+
+[\textcolor{linkblue}{PYPL Index}](https://pypl.github.io/PYPL.html) (Stand: August 2024)
+
+![](../Abbildungen/pds_1_PYPL_index_2024.png){width="60%" fig-align="left"}
+
+* PopularitY of Programming Language
+* Basierend auf Googlesuchanfragen zu Programmiersprachentutorials
+
+
+# Datenanalyseskripte
+\setstretch{3}
+
+* Dokumentation aller Schritte von Rohdaten bis zur Datenvisualisierung.
+* Reproduktion wissenschaftlicher Ergebnisse durch Dritte.
+* Essentieller Teil wissenschaftlicher Publikationen.
+* Essentieller Teil täglicher wissenschaftlicher Arbeit.
+
+
+# Datenanalyseskripte
+
+\textcolor{darkblue}{Beispiel}
+
+
+```{r, echo = F, eval = F}
+# Set the random seed for reproducibility
+set.seed(123)
+
+
+# Add some random noise to the second variable
+variable1 <- rnorm(50, mean = 50, sd = 15)
+
+# Generate noise from a normal distribution
+noise <- rnorm(50, mean = 0, sd = 15)
+
+# Define correlation between the variables
+correlation <- 0.50
+
+# Adjust the second variable to achieve the desired correlation
+variable2 <- correlation * variable1 + sqrt(1 - correlation^2) * noise
+
+cor(variable1, variable2)
+
+# Round the variables to 2 decimal positions
+variable1 <- round(variable1, 2)
+variable2 <- round(variable2, 2)
+
+# Create a data frame to store the variables
+data <- data.frame(Variable1 = variable1, Variable2 = variable2)
+
+# Save the dataset to a CSV file
+write.csv(data, file = "progr-und-deskr-stat-25/1_Einfuehrung/Beispieldaten.csv", row.names = FALSE)
+```
+
+![](../Abbildungen/pds_1_Datenanalyseskript_Beispiel.png){width="70%" fig-align="center"}
+
+
+# Datenanalyseskripte
+
+\textcolor{darkblue}{Intuition zur Struktur der Computergestützten Datenanalyse}
+
+![](../Abbildungen/pds_1_Datenanalyse_skript_Schaubild.pdf){width="100%" fig-align="center"}
+
+
+
+# Datenanalyse - Zusammenfassung
+\setstretch{3}
+
+* Die Digitalisierung betrifft insbesondere auch die Wissenschaft.
+* Forschungsdatenmanagement ist eine akute Herausforderung.
+* Programmierung als zentrales Handwerkszeug wissenschaftlicher Arbeit.
+* Informatikkenntnisse sind in der Arbeitswelt unverzichtbar.
+* Dies gilt auch für Psychotherapeut:innen (z.B. Online-Intervention).
+
+
+# Informatik --------------------------------------------------------- {.plain}
+\AtBeginSubsection{}
+\subsection{Informatik}
+
+\setstretch{2.5}
+\vfill
+\large
+
+Formalia
+
+Grundbegriffe der Informatik
+
+\begin{itemize}
+\setstretch{1.4}
+\item[--] Datenanalyse
+\item[--] \textbf{Informatik}
+\item[--] Rechnerarchitektur
+\item[--] Algorithmen und Programme
+\end{itemize}
+
+R und Visual Studio Code
+
+Selbstkontrollfragen
+
+
+# Begriff
+\vfill
+\large
+
+Informatik (engl. Computer Science)
+
+\vspace{2mm}
+
+\normalsize
+\justifying
+Bei der Informatik handelt es sich um die Wissenschaft von der systematischen 
+Darstellung, Speicherung, Verarbeitung und Übertragung von Informationen, wobei 
+besonders die automatische Verarbeitung mit Computern betrachtet wird. Sie ist 
+zugleich Grundlagen- und Formalwissenschaft als auch Ingenieurdisziplin.
+
+\flushright{\textit{Wikipedia}}
+\vfill
+
+
+# Zentrale Komponenten der Informatik
+\setstretch{1.3}
+
+\large
+Computer
+
+\normalsize
+* Maschinen zum Datenspeichern und Ausführen einfacher Datenoperationen.
+* Einfache Operationen mit extrem hoher Geschwindigkeit.
+* Universalität durch Speicherung von Daten und Programmen.
+
+\vspace{3mm}
+
+\large
+Algorithmen und Programme
+
+\normalsize
+* *Programme* sind in einer *Programmiersprache* verfasste *Algorithmen*.
+* Algorithmen sind Folgen von Anweisungen durchzuführender Operationen.
+* Bei Algorithmen unterscheidet man
+    * Beschreibung (Kochrezept, IKEA Bauanleitung, R Skript)
+    * Anweisungen ("Mehl und Wasser vermengen", o - - -,  x = c(1,2,3))
+    * Durchführung (Kochvorgang, Zusammenbau, R Skript laufen lassen)
+
+
+# Teilgebiete der Informatik
+\vfill
+
+![](../Abbildungen/migl_7_informatik.pdf){width="85%" fig-align="center"}
+
+\footnotesize
+\flushright{\textit{Hattenhauer (2020) Informatik}}
+
+
+# Teilgebiete der Informatik \textcolor{darkgreen}{mit Relevanz für die Psychologie}
+\setstretch{1.5}
+\vfill
+
+Technische Informatik
+
+* Mikroprozessortechnik, Rechnerarchitektur, Netzwerktechnik
+
+\vspace{3mm}
+
+Theoretische Informatik
+
+* Automatentheorie, Berechenbarkeitstheorie, Komplexitätstheorie
+\vfill
+
+Praktische Informatik
+
+* \textcolor{darkgreen}{Programmierung}, \textcolor{darkgreen}{Algorithmen}, Datenbanken
+
+\vspace{3mm}
+
+Angewandte Informatik
+
+* Anwendungssoftware, \textcolor{darkgreen}{Human-Computer-Interaction}, Informatik und Gesellschaft
+
+\vspace{3mm}
+
+
+# Spezialgebiete der Informatik mit Relevanz für die Psychologie
+\setstretch{1.5}
+\vfill
+
+Maschinelles Lernen und Künstliche Intelligenz
+
+* Datenanalyse aus Sicht der Informatik
+
+\vspace{3mm}
+
+Computervisualistik
+
+* Bilderkennung und Bildsynthese, Virtuelle Realität, Augmented Reality
+\vspace{3mm}
+
+Computerlinguistik
+
+* Spracherkennung und Sprachsynthese
+\vspace{3mm}
+
+Bioinformatik
+
+* Lebenswissenschaften, Genomik, Bildgebende Verfahren der Medizin
+\vspace{3mm}
+
+
+# Rechnerarchitektur --------------------------------------------------{.plain}
+\AtBeginSubsection{}
+\subsection{Rechnerarchitektur}
+
+\setstretch{2.5}
+\vfill
+\large
+
+Formalia
+
+Grundbegriffe der Informatik
+
+\begin{itemize}
+\setstretch{1.4}
+\item[--] Datenanalyse
+\item[--] Informatik
+\item[--] \textbf{Rechnerarchitektur}
+\item[--] Algorithmen und Programme
+\end{itemize}
+
+R und Visual Studio Code
+
+Selbstkontrollfragen
+
+
+# Hardwarekomponenten eines Computers
+\vfill
+\large
+
+**EVA-Prinzip**: Eingabe $\to$ Verarbeitung $\to$ Ausgabe
+
+\vfill
+
+![](../Abbildungen/migl_7_hardware.pdf){width="60%" fig-align="center"}
+
+\footnotesize
+\flushright{\textit{Hattenhauer (2020) Informatik}}
+
+
+# Zentraleinheit eines Computers 
+
+Auch Hauptplatine, Motherboard oder Mainboard genannt
+\vfill
+
+![*Hattenhauer (2020) Informatik*](../Abbildungen/migl_7_zentraleinheit.pdf){width="50%" fig-align="center"}
+
+\footnotesize
+\flushright{\textit{Hattenhauer (2020) Informatik}}
+
+
+# Zentraleinheit eines Computers
+\setstretch{1.2}
+
+CPU (Central Processing Unit/Mikroprozessor)
+
+* Rechenwerk, Steuerwerk, und Leitwerk des Systems
+* Cache (flüchtiger schneller Speicher)
+* Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz
+
+\vspace{2mm}
+RAM (Random Access Memory)
+
+* Temporärer, flüchtiger Arbeitsspeicher des Systems
+* Begrenzt, z.B. 16 GB
+
+\vspace{2mm}
+Massenspeicher
+
+* Stationärer Speicher des Systems
+* SSD (Solid State Drive), Cloudspeicher
+
+\vspace{2mm}
+GPU (Graphical Processing Unit)
+
+* Leistungsstarke, speziell für Visualisierung optimierte Prozessoren
+* Unterstützung der CPU in manchen Anwendungen, z.b. Neuronale Netze
+
+
+# Von Neumann-Architektur
+\setstretch{1.5}
+
+Abstraktion eines Rechensystems mit wohldefinierten Komponenten und Datenflüsse.
+
+Rechner := Steuerwerk, Rechenwerk, Speicher, Eingabewerk, Ausgabewerk.
+
+\normalsize
+Zentrale Eigenschaften
+
+\begin{small}
+\begin{itemize}
+\item Struktur des Rechners unabhängig von dem zu bearbeitenden Problem.
+\item Daten, Programme, Zwischen- und Endergebnisse liegen im gleichen Speicher.
+\item Speicher ist in gleichgroße nummerierte (addressierte) Zellen unterteilt.
+\item Über die Adresse einer Speicherzelle kann deren Inhalt abgerufen verändert werden.
+\item Ein Programm ist eine Reihe von Befehlen.
+\item Aufeinanderfolgende Befehle eines Programms liegen in benachbarten Speicherzellen und werden entsprechend nacheinander aufgerufen.
+\end{itemize}
+\end{small}
+
+\center
+\textcolor{darkcyan}{ $\to$ Die Architektur eines Rechners impliziert das Grundprinzip der Programmierung: \\
+Befehle werden streng sequentiell abgearbeitet.}
+
+
+# Algorithmen und Programme --------------------------------------------------{.plain}
+\AtBeginSubsection{}
+\subsection{Algorithmen und Programme}
+
+\setstretch{2.5}
+\vfill
+\large
+
+Formalia
+
+Grundbegriffe der Informatik
+
+\begin{itemize}
+\setstretch{1.4}
+\item[--] Datenanalyse
+\item[--] Informatik
+\item[--] Rechnerarchitektur
+\item[--] \textbf{Algorithmen und Programme}
+\end{itemize}
+
+R und Visual Studio Code
+
+Selbstkontrollfragen
+
+
+# Vom Realweltproblem zum Programm
+\setstretch{1.3}
+
+Realweltproblem
+
+* Das Problem, das mithilfe eines Computers gelöst werden soll.
+* z.B. Auswertung von Fragebogendaten einer psychologischen Studie.
+
+\vspace{3mm}
+Problemspezifikation
+
+* Genaue sprachliche Fassung des Realweltproblems.
+* z.B. Methodenteil einer wissenschaftlichen Publikation.
+
+\vspace{3mm}
+Algorithmus
+
+* Folge von Anweisungen zur Lösung des Problems.
+* z.B. Dateneinlesen, deskriptive Statistiken berechnen, T-Test durchführen.
+
+\vspace{3mm}
+Programm
+
+* Ein Algorithmus, der von einem Computer ausgeführt werden kann.
+* Eine in einer Programmiersprache verfasste Textdatei.
+
+
+# Algorithmus
+\small
+
+\begin{definition}[Algorithmus]
+\justifying
+Ein \textit{Algorithmus} ist eine Folge von Anweisungen, um aus gewissen Eingabedaten 
+bestimmte Ausgabedaten herzuleiten, wobei folgende Bedingungen erfüllt sein müssen
+
+\begin{itemize}
+\item \textit{Finitheit.} Die Anweisungsfolge muss in einem endlichen Text vollständig beschrieben sein.
+\item \textit{Effektivität.} Jede Anweisung muss tatsächlich ausführbar sein.
+\item \textit{Terminierung.} Der Algorithmus endet nach endlich vielen Anweisungen.
+\item \textit{Determiniertheit.} Der Ablauf des Algorithmus ist zu jedem Punkt fest vorgeschrieben.
+\end{itemize}
+
+Wenn $E$ die Menge der zulässigen Eingabedaten und $A$ die Menge der zulässigen 
+Ausgabedaten bezeichnet, dann ist ein Algorithmus eine Funktion
+\begin{equation}
+f : E \to A, e \mapsto f(e)
+\end{equation}
+Umgekehrt heißen Funktionen, die durch einen Algorithmus beschrieben werden 
+können, \textit{berechenbare Funktionen}.
+\end{definition}
+
+\footnotesize
+Bemerkung
+
+* Effektivität sollte nicht mit Effizienz verwechselt werden.
+
+
+# Programmiersprachen
+\setstretch{2}
+Eine Programmiersprache 
+
+* ... bestimmt die Regeln, denen ein Programm gehorchen muss.
+* ... definiert eine Syntax, also Vokabular und Programmaufbau.
+* ... definiert Semantik, also die Bedeutung der erlaubten Anweisungen.
+
+\vfill
+
+![](../Abbildungen/migl_7_programmiersprache.pdf){width="50%" fig-align="center"}
+
+
+# Programmiersprachen
+\setstretch{1.5}
+Maschinensprache
+
+* Elementare Operationsbefehle (z.B. Speichern, Vergleichen, Addieren)
+* Elementare Operationsbefehle werden als Binärzahlen kodiert
+
+\begin{center}
+\begin{tabular}{ll}
+Addiere Inhalt R1 zu Inhalt R2 	& $\Rightarrow$ 1001 0010 \\
+Erhöhe Inhalt R1 um 1  			& $\Rightarrow$ 1001 0110 \\
+Übertrage Inhalt R1 nach R3    	& $\Rightarrow$ 0010 0011
+\end{tabular}
+\end{center}
+
+
+* Programme in Maschinensprache heißen *Maschinenprogramme*.
+* De facto führt ein Computer nur Maschinenprogramme aus.
+* Für Menschen ist die Programmierung in Maschinensprache mühselig.
+
+\vspace{3mm}
+Höhere Programmiersprache
+
+* An die menschliche Sprache angelehnte Wörter und Sätze
+* Interpreter oder Compiler übersetzen Programme in Maschinensprache
+* R, Python, Matlab, C++, Java, FORTRAN, COBOL,...
+
+
+# Generationen von Programmiersprachen
+
+\normalsize
+1. Generation (1GL)
+
+\small
+
+* Maschinensprachen
+* 10110000 01100001 (hexadezimaler Darstellung des Ausdrucks "B0 61")
+
+\normalsize
+2. Generation (2GL)
+
+\small
+
+* Assemblersprachen ab 1950, erste Form der symbolischen Programmierung
+* Bspw. "MOV Al, 61H" \# Intel-Prozessor-spezifische Sprache
+
+\normalsize
+3. Generation (3GL)
+
+\small
+
+* Höhere Programmiersprachen ab 1970 wie FORTRAN, C, C++, Java
+* Programmierfreundlich, prozessor-unabhängig
+
+\normalsize
+4. Generation (4GL)
+
+\small
+
+* Höhere Programmiersprachen ab 1980 wie Python, Matlab, R
+* Codeoverhead Minimisierung, Automation, Flexibilität, Multiparadigmatisch
+
+
+# 4GL Programmierung
+
+![](../Abbildungen/migl_7_algorithmen_und_programme.pdf){width="80%" fig-align="center"}
+
+
+# Arten der Programmierung
+\setstretch{2}
+\normalsize
+Imperative Programmierung
+\small
+
+* Problemlösungsweg wird als Folge von *Anweisungen (Befehlen)* vorgegeben.
+* Befehle verarbeiten Daten, die mithilfe von *Variablen* adressiert werden.
+    * \small \textbf{Prozedurale imperative Programmierung}
+        * \small Daten und sie manipulierende Befehle werden separat behandelt.
+        * Prozeduren (Funktionen) bilden das zentrale Strukturkonzept.
+    * **Objektorientierte imperative Programmierung**
+        * \small Daten und manipulierende Befehle werden als *Objekte* zusammengefasst.
+        * Objekte bilden das zentrale Strukturkonzept.
+* Praktisch liegen oft Mischformen vor.
+
+
+# Compiler und Interpreter
+\setstretch{1.6}
+\normalsize
+Kompilierte Programmiersprachen
+\small
+
+* Gesamter Quellcode wird *vor der Ausführung* in Maschinensprache übersetzt.
+* Das Übersetzungsprogramm heißt *Compiler*.
+* Der übersetzte Maschinencode wird vom Prozessor ausgeführt.
+* Das ausführbare Programm wird nicht übersetzt und läuft schnell.
+* Bei Änderungen des Quellcodes muss neu kompiliert werden.
+* Beispiele für kompilierte Sprachen sind Java, C, C++.
+
+\normalsize
+Interpretierte Programmiersprachen
+\small
+
+* Quellcode wird *während der Ausführung* in maschinennahe Sprache übersetzt.
+* Das Ausführungsprogramm heißt *Interpreter*.
+* Das Programm läuft aufgrund der Interpretation langsamer.
+* Bei Änderungen des Quellcodes muss nicht neu interpretiert werden.
+* Beispiele für interpretierte Sprachen sind Python und R.
+
+
+# R und Visual Studio Code--------------------------------------------------{.plain}
+\AtBeginSection{}
+\section{R und Visual Studio Code}
+
+\setstretch{2.5}
+\vfill
+\large
+
+Formalia
+
+Grundbegriffe der Informatik
+
+\textbf{R und Visual Studio Code}
+
+Selbstkontrollfragen
+
+
+# Was ist R?
+\setstretch{2}
+\normalsize
+
+* Eine Programmiersprache und ein Softwarepaket.
+* Entwickelt von @ihaka_language_1996.
+* Freier Dialekt der propietären Software S (@becker_new_1988).
+* Weiterentwickelt und gepflegt durch [\textcolor{linkblue}{R Core Team}](https://www.r-project.org/contributors.html) und
+[\textcolor{linkblue}{R Foundation}](https://www.r-project.org/foundation/)
+* Interpretierte imperative 4GL Sprache.
+* Optimiert und populär für statistische Datenanalysen.
+* Große Community mit etwa 20.000 beigetragenen [\textcolor{linkblue}{R Paketen}](https://cran.r-project.org/web/packages/) (Erweiterungen)
+* Evolviert und konservativ im Kern, konsistent und progressiv in R Paketen.
+
+
+# Wie bekomme ich R?
+
+Über [\textcolor{linkblue}{cran.r-project.org}](https://cran.r-project.org/) die geeignete Version herunterladen und installieren.
+\vspace{2mm}
+
+![](../Abbildungen/pds_2_r_download.png){width="80%"}
+
+
+# Was können wir mit R machen?
+\setstretch{1.5}
+\large
+\textcolor{darkblue}{Was kann R?}
+\small
+
+* Datensätze laden, manipulieren, und speichern.
+* Eine Vielzahl von Berechnungen an verschiedenen Datenstrukturen durchführen.
+* Eine Vielzahl statistischer Analysemethoden auf Daten anwenden.
+* Datenanalyseskripte schreiben und Abbildungen generieren.
+* Präsentationen [\textcolor{linkblue}{RMarkdown}](https://bookdown.org/yihui/rmarkdown/) und
+Bücher [\textcolor{linkblue}{RBookdown}](https://bookdown.org/yihui/bookdown/) erstellen.
+* Wissenschaftliche Berichte mit [\textcolor{linkblue}{Quarto}](https://quarto.org/) erstellen.
+
+\vspace{2mm}
+
+\large
+\textcolor{darkblue}{Was kann R (bisher) nicht so gut?}
+\small
+
+* In einer ansprechenden Umgebung programmieren ($\Rightarrow$ Visual Studio Code).
+* Scientific Computing ($\Rightarrow$ Python, Matlab, Julia).
+* Psychologische Experimente programmieren ($\Rightarrow$ Python, Matlab)
+
+
+# Wie bekomme ich Hilfe zu R?
+\small
+
+* Während der Programmierung und bei bekanntem Funktionsnamen über die Kommandozeile:
+\footnotesize
+  ```{r}
+  #| label: R Hilfe
+  ?mean                    # Zeigt Hilfe zu der Funktion "mean()"
+  help(mean)               # Zeigt Hilfe zu der Funktion "mean()"
+  browseVignettes()        # Zeigt Vignetten aller installierten Pakete im Browser
+  browseVignettes("knitr") # Zeigt Vignetten des Paktes "knitr"
+  ```
+* \small Googlen
+* [\textcolor{linkblue}{stackoverflow.com}](https://stackoverflow.com/)
+* [\textcolor{linkblue}{r-project.org/help.html}](https://www.r-project.org/help.html)
+* [\textcolor{linkblue}{rseek.org}](https://rseek.org/)
+* \small [\textcolor{linkblue}{rstudio.com/resources/cheatsheets}](https://www.rstudio.com/resources/cheatsheets/)
+* [\textcolor{linkblue}{r-bloggers.com}](https://www.r-bloggers.com/)
+* ChatGPT
+
+
+# Was ist Visual Studio Code (VSCode)?
+\setstretch{2.2}
+\small
+
+* VSCode ist eine kostenloser Quelltext-Editor von Microsoft.
+* VSCode ist eine Softwareentwicklungsumgebung (Integrated Development Environment, IDE)
+* Seit 2015 für Windows, macOS und Linux verfügbar.
+* Seit 2018 ist VSCode der beliebteste Editor laut jährlicher stackoverflow Umfragen ([\textcolor{linkblue}{Aktuellste aus 2024}](https://survey.stackoverflow.co/2024/technology#2-integrated-development-environment)).
+* Ein Microsoftprodukt ist damit auch der beliebteste Editor der Linuxwelt.
+* Über Extensions kann VSCode als IDE für beliebige Sprachen genutzt werden.
+* Zum Beispiel funktioniert VSCode als IDE für R, Python, Julia, Shell, Quarto, etc.
+* VSCode ist Community-based und sehr konfigurierbar.
+* VSCode ist über Microsoft’s GitHub über Endgeräte synchronisierbar.
+
+
+# Wie bekomme ich VSCode?
+\small
+
+Über [\textcolor{linkblue}{https://code.visualstudio.com}](https://code.visualstudio.com/) herunterladen und installieren.
+
+\vfill
+
+![](../Abbildungen/pds_1_VSCode.png){width="80%" fig-pos="center"}
+
+
+# Wie benutze ich VSCode?
+\small
+
+Online Dokumentation: [\textcolor{linkblue}{https://code.visualstudio.com/docs}](https://code.visualstudio.com/docs) 
+
+\vfill
+
+![](../Abbildungen/pds_1_VSCode_docs.png){width="80%" fig-pos="center"}
+
+
+# Aufgaben bis nächste Woche
+\setstretch{2}
+
+1. [\textcolor{linkblue}{R}](https://cran.r-project.org/) installieren.
+2. [\textcolor{linkblue}{VSCode}](https://code.visualstudio.com/) installieren.
+3. VSCode für R startklar machen (Anleitung [\textcolor{linkblue}{hier}](https://code.visualstudio.com/docs/languages/r)).
+4. Selbstontrollfragen bearbeiten.
+5. Mit dem eigenen oder Labor-Rechner vertraut machen. \small \justifying
+   - \small Wie viel Festplatten- und Arbeitsspeicher besitzt der Rechner? \setstretch{1.6} 
+   - Welches Betriebssystem in welcher Version wird verwendet?
+   - Erstellt einen Ordner für alle Materialien und Übungen dieses Kurses (z.B. "PDS_2024") an einem Speicherort eurer Wahl. Vermeidet Umlaute und Leerzeichen.
+   - Wie lautet die vollständige Speicheradresse (Pfad) zu diesem Ordner?
+   - Ladet die Dateien "Beispiel_Datenanalyseskript.R" und "Beispieldaten.csv" herunter und speichert sie in diesem Ordner.
+   - Mit welchen Programmen könnt ihr diese Dateien jeweils öffnen und mit welchen nicht?
+
+
+# Selbstkontrollfragen ------------------------------------{.plain}
+\AtBeginSection{}
+\section{Selbstkontrollfragen}
+
+\setstretch{2.5}
+\vfill
+\large
+
+Formalia
+
+Grundbegriffe der Informatik
+
+R und Visual Studio Code
+
+**Selbstkontrollfragen**
+
+
+# Selbstkontrollfragen
+\setstretch{1.5}
+\small
+1. Geben Sie die typische Struktur einer computergestützten Datenanalyse wieder.
+2. Erläutern Sie den Begriff "Datenanalyseskript".
+3. Definieren Sie den Begriff "Informatik".
+4. Erläutern Sie die Akronyme CPU, RAM, SSD, und GPU.
+5. Nennen Sie wesentliche Aspekte der Von-Neumann Rechnerarchitektur.
+6. Definieren Sie den Begriff Algorithmus.
+7. Erläutern Sie den Zusammenhang von Algorithmen und Programmen.
+8. Was bezeichnen die Syntax und Semantik einer Programmiersprache?
+9.  Differenzieren Sie die Begriffe "Maschinensprache" und "höhere Programmiersprache".
+10. Skizzieren Sie Prinzipien der prozeduralen und objektorientierten imperativen Programmierung.
+11. Skizzieren Sie die Entwicklung der Programmiersprachen der ersten bis vierten Generation.
+12. Differenzieren Sie die Begriffe der kompilierten und der interpretierten Programmiersprachen.
+
+
+# Referenzen
