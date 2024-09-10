@@ -1150,7 +1150,7 @@ x <-
   \item Welche zwei Möglichkeiten gibt es, alle Befehle des Skripts auszuführen? Worin unterscheiden sie sich?
   \end{enumerate}
 \item Welche zwei Möglichkeiten gibt es, einen oder mehrere R-Befehl in der Console auszuführen?
-\item Eläutere den Begriff der Operatorpräzedenz. Wie diese aus der R-Console heraus nachgeschlagen werden?
+\item Eläutere den Begriff der Operatorpräzedenz. Wie kann sdiese aus der R-Console heraus nachgeschlagen werden?
 \end{enumerate}
 
 \vfill
