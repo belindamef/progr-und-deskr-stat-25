@@ -46,7 +46,7 @@ Variablen
 
 Datenstrukturen
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # R und VSCode ====================================== {.plain}
@@ -65,7 +65,7 @@ Variablen
 
 Datenstrukturen
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # Getting started
@@ -228,7 +228,7 @@ Variablen
 
 Datenstrukturen
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # R Konsole als Taschenrechner
@@ -438,7 +438,7 @@ Arithmetik, Logik und Präzedenz
 
 Datenstrukturen
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # Definition
@@ -843,7 +843,7 @@ Variablen
 
 **Datenstrukturen**
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # Klassische Datenstrukturen einer 3GL Programmiersprache
@@ -1088,9 +1088,9 @@ $\Rightarrow$ (5) Listen und Dataframes
 \vfill
 
 
-# Übungen und Selbstkontrollfragen ============= {.plain}
+# Programmierübungen und Selbstkontrollfragen ============= {.plain}
 \AtBeginSection{}
-\section{Übungen und Selbstkontrollfragen}
+\section{Programmierübungen und Selbstkontrollfragen}
 
 \large
 \vfill

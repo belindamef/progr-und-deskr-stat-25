@@ -70,7 +70,7 @@ Arithmetik
 
 Attribute
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # Erzeugung ====================================== {.plain}
@@ -91,7 +91,7 @@ Arithmetik
 
 Attribute
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # Übersicht
@@ -285,7 +285,7 @@ Arithmetik
 
 Attribute
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # Vektoreigenschaften ausgeben
@@ -421,7 +421,7 @@ Arithmetik
 
 Attribute
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 
@@ -560,7 +560,7 @@ Indizierung
 
 Attribute
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # Elementweise Auswertung
@@ -706,7 +706,7 @@ Arithmetik
 
 **Attribute**
 
-Übungen und Selbstkontrollfragen
+Programmierübungen und Selbstkontrollfragen
 
 
 # Attribute
@@ -800,9 +800,9 @@ p                            # Vektorausgabe
 ```
 
 
-# Übungen und Selbstkontrollfragen ====================================== {.plain}
+# Programmierübungen und Selbstkontrollfragen ====================================== {.plain}
 \AtBeginSection{}
-\section{Übungen und Selbstkontrollfragen}
+\section{Programmierübungen und Selbstkontrollfragen}
 
 \large
 \setstretch{2.5}
