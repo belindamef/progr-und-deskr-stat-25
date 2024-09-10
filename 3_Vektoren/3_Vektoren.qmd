@@ -818,10 +818,10 @@ Arithmetik
 
 Attribute
 
-**Übungen und Selbstkontrollfragen**
+**Programmierübungen und Selbstkontrollfragen**
 
 
-# Übungen und Selbstkontrollfragen
+# Programmierübungen und Selbstkontrollfragen
 \vfill
 \setstretch{1.6}
 \small
@@ -841,7 +841,7 @@ Attribute
 
 \vfill
 
-# Übungen und Selbstkontrollfragen
+# Programmierübungen und Selbstkontrollfragen
 \vfill
 \setstretch{1.6}
 \small
