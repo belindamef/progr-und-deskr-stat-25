@@ -142,6 +142,29 @@ Anmerkung:
 \color{darkcyan} 
 **Code-Snippets dieser Form immer aktiv in der Konsole nachvollziehen!**
 
+# R workspace: Help Viewer
+
+
+![](../Abbildungen/pds_2_R_helpviewer.png){width="75%" fig-align="center"}
+
+
+\setstretch{1.2}
+\footnotesize
+
+Mit dem Befehl `?funktionsname` oder über \fbox{HELP PAGES} links in der R Extension öffnen.
+
+Beispiele
+
+\footnotesize
+
+```{r}
+?print
+?sqrt
+```
+\tiny
+\begin{flushright}
+\textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Interactive-viewers}{VS Code Wiki - Interactive viewers}}
+\end{flushright}
 
 
 # R Skripte $\vert$ Executing and Editing Code
