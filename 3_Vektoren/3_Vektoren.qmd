@@ -823,20 +823,21 @@ Attribute
 
 # Programmierübungen und Selbstkontrollfragen
 \vfill
-\setstretch{1.6}
+\setstretch{1.4}
 \small
 
-\begin{enumerate}
+\begin{enumerate} \justifying
   \item Dokumentiere alle in dieser Einheit eingeführten R Befehle in einem R Skript.
-  \item Überlege euch zu den gelernten Konzepten eigene Beispiele und dokumentiert diese im R Skript aus SKF 1.
-  \item Beschreibe in einer Übersicht die R Datenstruktur "Atomarer Vektor".
+  \item Öffne die R Help Seite der Funktion \texttt{c()}. Wie viele Argumente können der Funktion übergeben werden?
+  \item Beschreibe in einer Übersicht die R Datenstruktur ''Atomarer Vektor''.
   \item Erläutere die Funktion des Colonoperators in R.
+  \item Erstelle einen Vektor mit den Zahlen 1, 2, 3 mit dem Colonoperator.
   \item Nenne vier Prinzipien der Indizierung in R. Überelege dir zum jedem Prinzip ein Beispiel und dokumentiere es im R Skript aus SKF 1.
   \item Erzeuge einen Vektor der Dezimalzahlen 0.0, 0.05, 0.10 , 0.15, ..., 0.90, 0.95, 1.0.
   \item Wähle mithilfe positiver Indices die Elemente 0.0, 0.1,..., 0.9, 1.0 dieses Vektors aus.
   \item Wähle mithilfe negativer Indizes die Elemente 0.0, 0.1,..., 0.9, 1.0 dieses Vektors aus.
   \item Wähle die letzten 10 Elemente dieses Vektors aus.
-  \item Erläutere Sie, was im Zusammenhang mit der Indizierung in R mit "zu hoher Flexibilität" gemeint ist.
+  \item Erläutere, was im Zusammenhang mit der Indizierung in R mit "zu hoher Flexibilität" gemeint ist.
 \end{enumerate}
 
 \vfill
