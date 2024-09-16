@@ -891,8 +891,8 @@ Datenimport und Datenexport
 \item Schreibe den gleichen Code nun für einen geänderte Pfadvariabel um.
   \begin{itemize} \small
   \item Ändere dazu zunächst dein ''Working Directory'' zu einem anderen Ordner, z.B. zum ''parent directory'' (das übergeordnete Verzeichnis).
-  \item Nehme die jetzt notwendige Anpassung ind er Pfadvariable vor, die du zum Einlesen der Daten verwendest.
-  \item Beachte, dass sich dabei in deiner Ordner-Struktur auf der Festplatte \textit{nichts} ändert, sondern \textit{nur} das ''Workinf Directory'' und die Pfadvariable.
+  \item Nehme die jetzt notwendige Anpassung in der Pfadvariable vor, die du zum Einlesen der Daten verwendest.
+  \item Beachte, dass sich dabei in deiner Ordner-Struktur auf der Festplatte \textit{nichts} ändert, sondern \textit{nur} das ''Working Directory'' und die Pfadvariable.
   \end{itemize}
 \end{enumerate}
 

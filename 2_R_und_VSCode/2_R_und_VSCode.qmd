@@ -142,10 +142,13 @@ Anmerkung:
 \color{darkcyan} 
 **Code-Snippets dieser Form immer aktiv in der Konsole nachvollziehen!**
 
-# VSCode Interactive Viewers: Help Viewer
+# VSCode Interactive Viewers
+
+\vfill
+\textcolor{darkblue}{Help Viewer}
 
 
-![](../Abbildungen/pds_2_R_helpviewer.png){width="75%" fig-align="center"}
+![](../Abbildungen/pds_2_R_helpviewer.png){width="70%" fig-align="center"}
 
 
 \setstretch{1.2}
@@ -1135,9 +1138,9 @@ Datenstrukturen
 \setstretch{1.3}
 
 \begin{enumerate}
-\item Klickt euch durch die VSCode User Interface.
+\item Klickt euch durch die VSCode User Interface. (Tipp: Schau in die \textcolor{linkblue}{\href{https://code.visualstudio.com/docs/getstarted/userinterface}{VSCode Online-Doku}})
 \begin{enumerate} \footnotesize
-\item Welche verschwiedenen Views können in der \textit{Activity Bar} ausgewählt.
+\item Welche verschiedenen Views können in der \textit{Activity Bar} ausgewählt.
 \item Wähle in der \textit{Activity Bar} den \textit{Explorer} aus. Wie kannst du einstellen, dass der Kursordner, den ihr letzte Woche erstellt habt, in der \textit{Primary Sidebar} sichtbar ist?
 \item Wähle in der \textit{Activity Bar} die \textit{R Extension} aus. Was ist alles in der \textit{Primary Sidebar} zu sehen?
 \item Wie kannst du es konfigurieren, dass die R-Console links und nicht unten im \textit{Panel} lokalisiert ist?
@@ -1146,23 +1149,7 @@ Datenstrukturen
 \item Gib ein paar einfache Befehle in die Console ein.
 \item Öffne die Help-Page für die Funktion \texttt{print()}. Was ist der Unterschied zwischen \texttt{print(x="Hallo Welt")} und \texttt{print("Hallo Welt")}?
 \item Was kann über das Argument \texttt{digits} spezifiziert werden? Suche unter \texttt{\textbf{Examples}} ein Beispiel für die Verwendung dieses Arguments. Was ist der Unterschied zwischen \texttt{print(pi)} und \texttt{print(pi, digits=2)}?
-\item Gib unvollständige Befehl in die Console ein und drücke die \fbox{Enter}-Taste.
-\end{enumerate}
-
-\vspace{-3mm}
-
-  * \tiny Beispiele:
-    ```{r}
-    print("Hello"
-    sqrt(4
-    x <-
-    1 + 
-    ```
-
-\footnotesize
-\begin{enumerate}
-\setcounter{enumi}{3}
-\item Wie kannst du den prompt '>' wiederherstellen?
+\item Gib unvollständige Befehl in die Console ein und drücke die \fbox{Enter}-Taste. \\ (Beispiele: \texttt{print("Hello"}, \texttt{sqrt(4}, \texttt{x <-}, \texttt{sqrt(1 +}). Wie kannst du den prompt '>' wiederherstellen?
 \end{enumerate}
 
 \vfill
@@ -1196,9 +1183,11 @@ Datenstrukturen
 \item Erläutere die Begriffe Initialisierungsanweisung und Zuweisungsanweisung für Variablen. Wie sieht das in R aus?
 \item Gib jeweils ein Beispiel für einen zulässigen und einen unzulässigen Variablennamen in R.
 \item Erläutere den Begriff Workspace.
-\item Erläutere die Prozesse, die R im Rahmen einer Zuweisungsanweisung der Form `x <- 1` durchführt.
-\item Zeige, dass zwei Variablen `x` und `y`, die unabhängig voneinander mit dem Wert 7 definiert werden, unterschiedliche Speicheradressen referenzieren.
-\item Zeige, dass zwei Variablen `x` und `y`, die abhängig voneinander mit dem Wert 7 definiert werden, dieselbe Speicheradresse referenzieren.
+\item Öffne den R Workspace im VSCode User Interface. Führe Zeile für Zeile die Befehle aus dem Greta-Beispiel aus und beobachte, wie definierte Variablen im Workspace erscheinen.
+\item Was passiert in der Console, wenn du auf das Kreux neben der Variable klickst?
+\item Erläutere die Prozesse, die R im Rahmen einer Zuweisungsanweisung der Form \texttt{x <- 1} durchführt.
+\item Zeige, dass zwei Variablen \texttt{x} und \texttt{y}, die unabhängig voneinander mit dem Wert 7 definiert werden, unterschiedliche Speicheradressen referenzieren.
+\item Zeige, dass zwei Variablen \texttt{x} und \texttt{y}, die abhängig voneinander mit dem Wert 7 definiert werden, dieselbe Speicheradresse referenzieren.
 \item Demonstriere, dass R case-sensitive ist.
 \item Erläutere die Begriffe \textit{Copy-on-modify} und \textit{Modify-in-place}.
 \end{enumerate}

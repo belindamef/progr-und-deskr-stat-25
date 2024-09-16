@@ -715,23 +715,27 @@ Dataframes
 
 
 # Programmierübungen und Selbstkontrollfragen
-\small
+\footnotesize
 \vfill
 \begin{enumerate}
 \item Dokumentiere die in dieser Einheit eingeführten R Befehle in einem R Skript.
 \item Beschreibe in einer Übersicht die R Datenstruktur ``List''.
-\item Erzeuge eine Liste mit vier Elementen.
-\item L sei eine Liste. Benenne und demonstriere den Unterschied zwischen L[1] und L[[1]].
-\item Erzeuge zwei Listen und füge diese zusammen.
-\item L sei eine Liste. Was gibt length(L) an?
-\item L sei eine Liste. Was bedeutet dann L\$Student?
+\item Erzeuge eine Liste \texttt{L} mit vier Elementen und öffne sie mit \texttt{View()} im VSCode Interactive Viewer.
+    \begin{enumerate} \footnotesize
+    \item Benenne und demonstriere den Unterschied zwischen \texttt{L[1]} und \texttt{L[[1]]}.
+    \item Erzeuge zwei Listen und füge diese zusammen.
+    \item Was gibt \texttt{length(L)} an?
+    \item Was bedeutet \texttt{L\$Student}?
+    \end{enumerate}
 \item Erläutere den Begriff ``Shallow Copy'' einer Liste.
 \item Beschreibe in einer Übersicht die R Datenstruktur "Dataframe".
-\item Erzeuge einen Dataframe mit vier Spalten.
-\item D sei ein Dataframe. Was geben rownames(D) und colnames(D) an?
-\item D sei ein Dataframe. Was ist der Unterschied zwischen D[1] und D[[1]]?
-\item D sei ein Dataframe. Was ist der Unterschied zwischen D[1] und D[1,1]?
-\item D sei ein Dataframe. Was bedeutet dann D\$Student?
+\item Erzeuge einen Dataframe mit vier Spalten und öffne es mit \texttt{View()} im VSCode Interactive Viewer.
+    \begin{enumerate} \footnotesize
+    \item Was geben rownames(D) und colnames(D) an?
+    \item Was ist der Unterschied zwischen D[1] und D[[1]]?
+    \item Was ist der Unterschied zwischen D[1] und D[1,1]?
+    \item Was bedeutet dann D\$Student?
+    \end{enumerate}
 \item Erläutere das Copy-on-modify Prinzip für Dataframes.
 \end{enumerate}
 \vfill
