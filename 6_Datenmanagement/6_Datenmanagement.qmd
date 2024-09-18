@@ -556,6 +556,8 @@ toString(1:10, width = 10)   # mit  Möglichkeit der Beschränkung auf width Zei
 * Die Addressen von Dateien in der Verzeichnisstruktur heißen \textit{Dateipfade}.
 * Ein Pfad besteht aus einer durch Schrägstriche getrennten Liste von Verzeichnisnamen. \footnotesize
 
+\vfill
+
 \small
 \textcolor{darkcyan}{Beispiele} \footnotesize \setstretch{1}
 \vspace{3mm}
@@ -724,7 +726,7 @@ Programmierübungen und Selbstkontrollfragen
 \tiny
 \setstretch{1.2}
 ```{r, eval = T}
-work_dir_path <- getwd()                                     # Working directory
+work_dir_path <- getwd()                                     # Pfad zum Working directory
 data_dir_path <- file.path(dirname(work_dir_path), "Daten")  # Datenverzeichnispfad
 file_name     <- "cushny.csv"                                # (base) filename
 file_path     <- file.path(data_dir_path, file_name)         # filepath 
@@ -842,16 +844,16 @@ Spezifikationen bei der Anwendung
 \tiny
 \setstretch{1.1}
 ```{r}
-input_file_name  <- "cushny.csv"                   # Dateiname (input)
-output_file_name <- "student.csv"                  # Dateiname (output)
+input_file_path  <- file.path(data_dir_path, "cushny.csv")  # Pfad zur Datei, die eingelesen werden soll
+output_file_path <- file.path(data_dir_path, "student.csv") # Pfad der Datei, die geschrieben werden soll
 
-D <- read.table(file.path(data_dir, fname))        # Dateneinlesen
-D <- D[,5:6]                                       # Reduktion des Dataframes
-write.table(                                       # .csv Schreibfunktion
-    D,                                             # Zu speichernder Dataframe
-    file = file.path(data_dir, rname),             # Dateinname
-    sep = ",",                                     # Werteseparator fuer .csv
-    row.names = F)                                 # keine Zeilennamen
+D <- read.table(input_file_path)                            # Dateneinlesen
+D <- D[,5:6]                                                # Reduktion des Dataframes
+write.table(                                                # .csv Schreibfunktion
+    D,                                                      # Zu speichernder Dataframe
+    file = output_file_path,                                # Dateinname
+    sep = ",",                                              # Werteseparator fuer .csv
+    row.names = F)                                          # keine Zeilennamen
 ```
 
 \normalsize
@@ -887,10 +889,10 @@ Datenimport und Datenexport
 \justifying
 \item Dokumentiere die in dieser Einheit eingeführten R Befehle in einem R Skript.
 \item Lass dein aktuelles Working Directory ausgeben. ändere es zu einem Ordner (z.B. dem Kursordner), überprüfe mit erneuter Ausgabe, ob die Änderung funktioniert hat und ändere es wieder zurück.
-\item Schreibe ein einfaches Skript, in welchem Daten in ein Dataframe eingelesen werden, neue Daten hinzugefügt und das neue Dataframe in einer neuen Datei gespeichert wird.
-\item Schreibe den gleichen Code nun für einen geänderte Pfadvariabel um.
+\item Schreibe ein einfaches Skript, in welchem Daten in ein Dataframe eingelesen werden, neue Daten hinzugefügt und das neue Dataframe in einer neuen Datei gespeichert wird. Arbeite dabei mit Pfadvariablen (ein-elementiger character vector).
+\item Schreibe den gleichen Code nun für eine geänderte Pfadvariable um.
   \begin{itemize} \small
-  \item Ändere dazu zunächst dein ''Working Directory'' zu einem anderen Ordner, z.B. zum ''parent directory'' (das übergeordnete Verzeichnis).
+  \item Ändere dazu zunächst dein Working Directory zu einem anderen Ordner, z.B. zum parent directory (das übergeordnete Verzeichnis).
   \item Nehme die jetzt notwendige Anpassung in der Pfadvariable vor, die du zum Einlesen der Daten verwendest.
   \item Beachte, dass sich dabei in deiner Ordner-Struktur auf der Festplatte \textit{nichts} ändert, sondern \textit{nur} das ''Working Directory'' und die Pfadvariable.
   \end{itemize}
