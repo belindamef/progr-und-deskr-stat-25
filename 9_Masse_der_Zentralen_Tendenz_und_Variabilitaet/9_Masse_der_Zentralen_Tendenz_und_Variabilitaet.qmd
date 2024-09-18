@@ -1,0 +1,1119 @@
+```{r eval = T, echo = F}
+# | label: define directories
+abb_path <- file.path(dirname(getwd()), "Abbildungen")
+data_path <- file.path(dirname(getwd()), "Daten")
+```
+
+
+# Titelfolie {.plain}
+\center
+![](../Abbildungen/otto.png){width="20%"}
+
+\vspace{2mm}
+
+\Large
+Programmierung und Deskriptive Statistik
+\vspace{4mm}
+
+\normalsize
+BSc Psychologie WiSe 2024/25
+
+\vspace{15mm}
+\normalsize
+Belinda Fleischmann
+
+
+
+
+# Termine {.plain}
+
+
+# Maße der zentralen Tendenz - Titelfolie {.plain}
+
+\vfill
+\huge
+\begin{center}
+(9) Maße der zentralen Tendenz und Datenvariabilität
+\end{center}
+\vfill
+
+
+
+# AGENDA {.plain}
+\large
+\setstretch{2.5}
+\vfill
+
+Maße der zentralen Tendenz
+
+Maße der Datenvariabilität
+
+Programmierübungen und Selbstkontrollfragen
+
+\vfill
+
+
+
+\AtBeginSection{}
+\section{Maße der zentralen Tendenz}
+# Maße der zentralen Tendenz ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+**Maße der zentralen Tendenz**
+
+Maße der Datenvariabilität
+
+Programmierübungen und Selbstkontrollfragen
+
+\vfill
+
+
+# Mittelwert
+\small
+\begin{definition}[Mittelwert]
+$x = (x_1,...,x_n)$ sei ein Datensatz. Dann heißt
+\begin{equation}
+\bar{x} := \frac{1}{n}\sum_{i=1}^n x_i
+\end{equation}
+der \textit{Mittelwert} von $x$.
+\end{definition}
+Bemerkung
+
+* Im Kontext der Inferenzstatistik heißt der Mittelwert *Stichprobenmittel*.
+* Die Inferenzstatistik gibt der Mittelwertsbildung ihren Sinn.
+
+
+# Berechnung des Mittelwerts in R
+
+\vspace{2mm}
+"Manuelle" Berechnung des Mittelwerts
+
+\vspace{2mm}
+\footnotesize
+\setstretch{1.2}
+```{r, eval = T}
+#| label: manuell Mittelwert
+# Einlesen des Beispieldatensatzes und Abbildungsverzeichnisdefinition
+fpath <- file.path(data_path, "psychotherapie_datensatz.csv")
+D     <- read.table(fpath, sep = ",", header = T)
+
+# Mittelwertberechnung
+x     <- D$Pre.BDI                  # double Vektor der Pre-BDI Werte
+n     <- length(x)                  # Anzahl der Werte
+x_bar <- (1 / n) * sum(x)               # Mittelwertsberechnung
+print(x_bar)                       # Ausgabe
+```
+
+\normalsize
+\vspace{2mm}
+`mean()` zur Berechnung des Mittelwerts
+
+\vspace{2mm}
+\footnotesize
+\setstretch{1.2}
+```{r, eval = T}
+#| label: mean() Mittelwert
+x_bar <- mean(x)                   # Mittelwertsberechnung
+print(x_bar)                       # Ausgabe
+```
+
+\vfill
+
+
+# Eigenschaften des Mittelwerts
+\footnotesize
+\vspace{2mm}
+\setstretch{1.3}
+\begin{theorem}[Eigenschaften des Mittelwerts]
+\justifying
+\normalfont
+$x = (x_1,...,x_n)$ und sei ein Datensatz und $\bar{x}$ sei der Mittelwert von $x$.
+Dann gelten
+\begin{enumerate}
+\item[(1)] Die Summe der Abweichungen vom Mittelwert ist Null,
+\begin{equation}
+\sum_{i=1}^n (x_i - \bar{x}) = 0.
+\end{equation}
+\item[(2)] Die absoluten Summen negativer und positiver Abweichungen vom Mittelwert sind gleich, d.h. wenn $j = 1,...,n_j$ die
+Datenpunktindizes mit $(x_j - \bar{x}) < 0$ und $k = 1,...,n_k$ die Datenpunktindizes mit $(x_k - \bar{x}) \ge 0$ bezeichnen, dann gilt
+mit $n_j + n_k$
+\begin{equation}
+\vert\sum_{j = 1}^{n_j} (x_j - \bar{x})\vert = \vert\sum_{k = 1}^{n_k} (x_k - \bar{x})\vert.
+\end{equation}
+\item[(3)] Der Mittelwert der Summe zweier gleich großer Datensätze entspricht der Summe ihrer Mittelwerte, d.h.
+für einen weiteren Datensatz $y = (y_1,...,y_n)$ mit Mittelwert $\bar{y}$ gilt
+\begin{equation}
+\overline{x + y} = \bar{x} + \bar{y}
+\end{equation}
+\item[(4)] Eine linear-affine Transformation eines Datensatz transformiert den Mittelwert des Datensatzes linear-affin,
+d.h für $a,b \in \mathbb{R}$ gilt
+\begin{equation*}
+\overline{ax + b} = a\bar{x} + b
+\end{equation*}
+\end{enumerate}
+\end{theorem}
+
+# Eigenschaften des Mittelwerts
+\footnotesize
+\underline{Beweis}
+
+\noindent (1) Es gilt
+\begin{equation*}
+\sum_{i=1}^n (x_i - \bar{x})
+= \sum_{i=1}^n x_i - \sum_{i=1}^n \bar{x}
+= \sum_{i=1}^n x_i - n\bar{x}
+= \sum_{i=1}^n x_i - \frac{n}{n}\sum_{i=1}^n x_i
+= \sum_{i=1}^n x_i - \sum_{i=1}^n x_i
+= 0.
+\end{equation*}
+
+\noindent (2) Seien $j = 1,...,n_j$ die Indizes mit $(x_j - \bar{x}) < 0$ und
+$k = 1,...,n_k$ die Indizes mit $(x_k - \bar{x}) \ge 0$, so dass $n = n_j + n_k$.
+Dann gilt
+\begin{align*}
+\begin{split}
+\sum_{i=1}^n (x_i - \bar{x}) = 0
+\Leftrightarrow
+\sum_{j=1}^{n_j} (x_j - \bar{x})  + \sum_{k=1}^{n_k} (x_k - \bar{x}) = 0
+\Leftrightarrow
+\sum_{k=1}^{n_k} (x_k - \bar{x})  & =  - \sum_{j=1}^{n_j} (x_j - \bar{x})  \\
+\Leftrightarrow
+\vert\sum_{j = 1}^{n_j} (x_j - \bar{x})\vert & = \vert\sum_{k = 1}^{n_k} (x_k - \bar{x})\vert.
+\end{split}
+\end{align*}
+
+
+# Eigenschaften des Mittelwerts
+\footnotesize
+\underline{Beweis}
+
+\noindent (3) Es gilt
+\begin{equation*}
+\overline{x + y}
+:= \frac{1}{n}\sum_{i=1}^n (x_i + y_i)
+ = \frac{1}{n}\sum_{i = 1}^n x_i + \frac{1}{n}\sum_{i = 1}^n y_i
+ =: \bar{x} + \bar{y}
+\end{equation*}
+
+\noindent(4) Es gilt
+\begin{align*}
+\begin{split}
+\overline{ax + b}
+& := \frac{1}{n}\sum_{i=1}^n (ax_i + b) \\
+& = \sum_{i=1}^n \left(\frac{1}{n}ax_i + \frac{1}{n}b\right) \\
+& = \sum_{i=1}^n \left(\frac{1}{n}ax_i\right) + \sum_{i=1}^n \left(\frac{1}{n}b\right) \\
+& = a\frac{1}{n}\sum_{i=1}^n x_i + \frac{1}{n} \sum_{i=1}^n b \\
+& = a\bar{x} + b
+\end{split}
+\end{align*}
+
+# Eigenschaften des Mittelwerts
+
+\vspace{2mm}
+\small
+Summe der Abweichungen
+\vspace{2mm}
+
+\footnotesize
+\setstretch{1}
+```{r, eval = T}
+#| label: Summe abweichungen
+x <- D$Pre.BDI                         # double Vektor der Werte
+s <- sum(x - mean(x))                  # Summe der Abweichungen vom Mittelwert
+print(s)                               # Ausgabe (Ergebnis hat Rundungsfehler)
+```
+\vspace{4mm}
+
+\small
+Beträge der positiven und negativen Abweichungen
+\vspace{2mm}
+
+
+\footnotesize
+\setstretch{1}
+```{r, eval = T}
+#| label: pos. neg. Abweichungen
+x   <- D$Pre.BDI                       # double Vektor der  Werte
+s_1 <- sum(x[x <= mean(x)] - mean(x))  # Summe aller negativer Abweichungen
+s_2 <- sum(x[x > mean(x)]  - mean(x))  # Summe aller positiver Abweichungen
+print(abs(s_1))                        # Ausgabe des Betrags
+print(abs(s_2))                        # Ausgabe des Betrags
+```
+
+\vfill
+
+
+# Eigenschaften des Mittelwerts
+\vspace{2mm}
+\small
+\setstretch{0.9}
+
+Summation von Datensätzen
+\vspace{2mm}
+
+\footnotesize
+\setstretch{1}
+```{r, eval = T}
+#| label: Summation Datensätze
+x       <- D$Pre.BDI                  # double Vektor der Pre.BDI-Werte
+x_bar   <- mean(x)                    # Mittelwert der Pre.BDI-Werte
+y       <- D$Post.BDI                 # double Vektor der Post.BDI Werte
+y_bar   <- mean(y)                    # Mittelwert der Post.BDI Werte
+z       <- x + y                      # double Vektor der Summe der Pre und Post Werte
+z_bar   <- mean(z)                    # Mittelwert der Summe der Werte
+print(z_bar)                          # Ausgabe
+xy_bar  <- x_bar + y_bar              # Summe der Mittelwerte der Pre- und Post.BDI Werte
+print(xy_bar)                         # Ausgabe
+```
+
+\small
+Linear-affine Transformation
+\vspace{2mm}
+
+
+\footnotesize
+\setstretch{1}
+```{r, eval = T}
+#| label: lin.-affine Trans.
+x        <- D$Pre.BDI                 # double Vektor der Pre.BDI Werte
+x_bar    <- mean(x)                   # Mittelwert der Pre.BDI Werte
+a        <- 2                         # Multiplikationskonstante
+b        <- 5                         # Additionskonstante
+y        <- a*x + b                   # linear-affine Transformation der Pre.BDI Werte
+y_bar    <- mean(y)                   # Mittelwert der transfomierten Pre.BDI Werte
+print(y_bar)                          # Ausgabe
+ax_bar_b <-a*x_bar + b                # Transformation des Mittelwerts
+print(ax_bar_b)                       # Ausgabe
+```
+
+
+
+
+# Median
+\small
+\begin{definition}[Median]
+$x = (x_1,...,x_n)$ sei ein Datensatz und $x_{s} = (x_{(1)}, ...,x_{(n)})$ der
+zugehörige aufsteigend sortierte Datensatz. Dann ist der Median von $x$ definiert als
+\renewcommand{\arraystretch}{1.5}
+\begin{equation}
+\tilde{x} :=
+\begin{cases}
+x_{((n+1)/2)}
+& \mbox{ falls } n \mbox{ ungerade}
+\\[5pt]
+\frac{1}{2}\left(x_{(n/2)} + x_{(n/2 + 1)}\right)
+& \mbox{ falls } n \mbox{ gerade}
+\end{cases}
+\end{equation}
+\end{definition}
+
+\small
+Bemerkungen
+
+* Der Median ist identisch mit dem 0.5-Quantil.
+* Mindestens 50% aller $x_i$ sind kleiner oder gleich $\tilde{x}$ 
+* Mindestens 50% aller $x_i$ sind größer oder gleich $\tilde{x}$.
+* Anstelle eines Beweises verweisen wir auf untenstehende Abbildungen.
+
+
+# Median -  Beispiele
+\vspace{1mm}
+Beispiele
+
+![](../Abbildungen/pds_9_median.pdf){width="85%"}
+
+
+# Berechnung des Medians in R
+
+\vspace{2mm}
+Manuelle Bestimmung des Medians
+\vspace{2mm}
+
+\footnotesize
+\setstretch{1}
+```{r, eval = T}
+#| label: manuell median
+x   <- D$Pre.BDI                             # double Vektor der Pre.BDI Werte
+n   <- length(x)                             # Anzahl der Werte
+x_s <- sort(x)                               # aufsteigend sortierter Vektor
+if(n %% 2 == 1){                             # n ungerade, n mod 2 == 1
+   x_tilde <- x_s[(n+1)/2]
+} else {                                     # n gerade, n mod 2 == 0
+   x_tilde <- (x_s[n/2] + x_s[n/2 + 1])/2
+}
+print(x_tilde)
+```
+
+\normalsize
+\vspace{2mm}
+Berechnung des Medians mit `median()`
+\vspace{2mm}
+
+\footnotesize
+```{r, eval = T}
+#| label: median()
+x_tilde <- median(x)                         # Berechnung des Medians
+print(x_tilde)                               # Ausgabe
+```
+
+\vfill
+
+
+# Median vs. Mittelwert 
+
+Der Median ist weniger anfällig für Ausreißer als der Mittelwert
+\vspace{2mm}
+
+\footnotesize
+\setstretch{1.1}
+```{r, eval = T}
+#| label: median vs. mean
+x       <- D$Pre.BDI                        # double Vektor der Pre.BDI Werte
+x_bar   <- mean(x)                          # Mittelwert der Pre.BDI Werte
+x_tilde <- median(x)                        # Median der Pre.BDI Werte
+print(x_bar)                                # Ausgabe 
+print(x_tilde)                              # Ausgabe
+y       <- x                                # neuer Datensatz mit ...
+y[1]    <- 10000                            # ... einem Extremwert
+y_bar   <- mean(y)                          # Mittelwert des neuen Datensatzes
+print(y_bar)                                # Ausgabe
+y_tilde <- median(y)                        # Mittelwert des neuen Datensatzes
+print(y_tilde)                              # Ausgabe
+```
+
+
+# Modalwert
+\footnotesize
+\begin{definition}[Modalwert]
+$x := (x_1,...,x_n)$ mit $x_i \in \mathbb{R}$ sei ein Datensatz, $A := \{a_1,...,a_k\}$ mit $k \le n$ seien die im Datensatz vorkommenden verschiedenen Zahlenwerte und
+$h : A \to \mathbb{N}$ sei die absolute Häufigkeitsverteilung der Zahlwerte von $x$.
+Dann ist der \textit{Modalwert (oder Modus)} von $x$ definiert als
+\begin{equation}
+\mbox{argmax}_{a \in A} h(a),
+\end{equation}
+also der am häufigsten im Datensatz vorkommende Wert.
+\end{definition}
+\footnotesize
+Bemerkungen
+
+* Modalwerte sind nur bei Datensätzen mit Datenpunktwiederholungen sinnvoll.
+
+\normalsize
+Bestimmung des Modalwertes in R
+\vspace{2mm}
+
+\setstretch{1}
+\footnotesize
+```{r, eval = T}
+#| label: modalwert
+x        <- D$Pre.BDI                   # double Vektor der Pre.BDI Werte
+n        <- length(x)                   # Anzahl der Datenwerte (100)
+H        <- as.data.frame(table(x))     # absolute Haeufigkeitsverteilung (dataframe)
+names(H) <- c("a", "h")                 # Konsistente Benennung
+mod      <- H$a[which.max(H$h)]         # Modalwert
+print(as.numeric(as.vector(mod)))       # Ausgabe als numeric vector, nicht factor
+
+```
+
+
+
+
+# Visuelle Intuition zu Maßen zentraler Tendenz bei **Normalverteilung**
+
+
+```{r, echo = F, eval = F}
+#| label: Vis. Intuition Normalverteilung
+set.seed(1)
+dev.new()
+fig     = par(
+family     = "sans",
+mfcol      = c(1,1),
+pty        = "m",
+bty        = "l",
+lwd        = 1,
+las        = 1,
+mgp        = c(2,1,0),
+xaxs       = "i",
+yaxs       = "i",
+cex        = 1.1,
+font.main  = 1,
+cex.main   = 1)
+n           = 1e3
+x           = round(rnorm(n, 50, 10))
+H           = as.data.frame(table(x))
+x_mean      = mean(x)
+x_median    = median(x)
+x_mode      = as.numeric(as.vector(H$x[which.max(H$Freq)]))
+hist(
+x,
+breaks = 40,
+col   = "gray90",
+lwd   = 0.5,
+prob  = TRUE,
+ylim  = c(0,.06),
+xlim  = c(0, 100),
+xlab  = "x",
+ylab  = "",
+main  = sprintf("Mittelwert = %.1f, Median = %.1f, Modalwert = %.1f", x_mean, x_median, x_mode))
+points(
+c(x_mean, x_median, x_mode),
+rep(0,3),
+pch = 21,
+col = "White",
+bg = c("Blue", "Red", "Green"),
+cex = 2,
+xpd = TRUE)
+# legend(
+# "topleft",
+# c("Histogramm", "Mittelwert", "Median", "Modalwert"),
+# pch  = 16,
+# col  = c("gray90", "Blue", "Red", "Green"),
+# bty  = "n",
+# )
+
+legend("topleft", legend = "Histogramm", pch = 16, col = "gray90", bty = "n", inset = c(0, 0))
+
+legend("topleft", legend = "Mittelwert", pch = 16, col = "Blue", bty = "n", inset = c(0, 0.1))
+
+legend("topleft", legend = "Median", pch = 16, col = "Red", bty = "n", inset = c(0, 0.2))
+
+legend("topleft", legend = "Modalwert", pch = 16, col = "Green", bty = "n", inset = c(0, 0.3))
+dev.copy2pdf(
+file   = file.path(abb_path, "pds_9_normalverteilung.pdf"),
+width  = 7,
+height = 5)
+```
+
+\vspace{2mm}
+
+![](../Abbildungen/pds_9_normalverteilung.pdf){width="80%" fig-align="center"}
+
+
+# Visuelle Intuition zu Maßen zentraler Tendenz bei **Gleichverteilung**
+
+```{r, echo = F, eval = F}
+#| label: Vis. Intuition Gleichverteilung
+set.seed(1)
+dev.new()
+fig     = par(
+family     = "sans",
+mfcol      = c(1,1),
+pty        = "m",
+bty        = "l",
+lwd        = 1,
+las        = 1,
+mgp        = c(2,1,0),
+xaxs       = "i",
+yaxs       = "i",
+cex        = 1.1,
+font.main  = 1,
+cex.main   = 1)
+n           = 1e3
+x           = round(runif(n, 0, 100))
+H           = as.data.frame(table(x))
+x_mean      = mean(x)
+x_median    = median(x)
+x_mode      = as.numeric(as.vector(H$x[which.max(H$Freq)]))
+hist(
+x,
+breaks = 40,
+col   = "gray90",
+lwd   = 0.5,
+prob  = TRUE,
+ylim  = c(0,.06),
+xlim  = c(0, 100),
+xlab  = "x",
+ylab  = "",
+main  = sprintf("Mittelwert = %.1f, Median = %.1f, Modalwert = %.1f", x_mean, x_median, x_mode))
+points(
+c(x_mean, x_median, x_mode),
+rep(0,3),
+pch = 21,
+col = "White",
+bg = c("Blue", "Red", "Green"),
+cex = 2,
+xpd = TRUE)
+legend(
+"topleft",
+c("Histogramm", "Mittelwert", "Median", "Modalwert"),
+pch  = 16,
+col  = c("gray90", "Blue", "Red", "Green"),
+bty  = "n")
+dev.copy2pdf(
+file   = file.path(abb_path, "pds_9_gleichverteilung.pdf"),
+width  = 7,
+height = 5)
+```
+
+
+![](../Abbildungen/pds_9_gleichverteilung.pdf){width="80%" fig-align="center"}
+
+
+# Visuelle Intuition zu Maßen zentraler Tendenz bei **bimodalen Verteilungen**
+
+
+```{r, echo = F, eval = F}
+#| label: Vis. Intuition bimodale Verteilung
+set.seed(1)
+dev.new()
+fig     = par(
+family     = "sans",
+mfcol      = c(1,1),
+pty        = "m",
+bty        = "l",
+lwd        = 1,
+las        = 1,
+mgp        = c(2,1,0),
+xaxs       = "i",
+yaxs       = "i",
+cex        = 1.1,
+font.main  = 1,
+cex.main   = 1)
+n           = 1e3
+x           = round(c(rnorm(n/2, 25, 10), rnorm(n/2,75, 10)))
+H           = as.data.frame(table(x))
+x_mean      = mean(x)
+x_median    = median(x)
+x_mode      = as.numeric(as.vector(H$x[which.max(H$Freq)]))
+hist(
+x,
+breaks = 40,
+col   = "gray90",
+lwd   = 0.5,
+prob  = TRUE,
+ylim  = c(0,.06),
+xlim  = c(0, 100),
+xlab  = "x",
+ylab  = "",
+main  = sprintf("Mittelwert = %.1f, Median = %.1f, Modalwert = %.1f", x_mean, x_median, x_mode))
+points(
+c(x_mean, x_median, x_mode),
+rep(0,3),
+pch = 21,
+col = "White",
+bg = c("Blue", "Red", "Green"),
+cex = 2,
+xpd = TRUE)
+legend(
+"topleft",
+c("Histogramm", "Mittelwert", "Median", "Modalwert"),
+pch  = 16,
+col  = c("gray90", "Blue", "Red", "Green"),
+bty  = "n")
+dev.copy2pdf(
+file   = file.path(abb_dir, "pds_9_bimodalverteilung.pdf"),
+width  = 7,
+height = 5)
+```
+
+\vspace{2mm}
+
+![](../Abbildungen/pds_9_bimodalverteilung.pdf){width="80%" fig-align="center"}
+
+
+# Vis. Intuition zu Maßen zentr. T. bei **nicht-symmetrischen Verteilungen**
+
+
+```{r, echo = F, eval = F}
+#| label: Vis. Intuition nicht-symmetrische Verteilnug
+set.seed(1)
+dev.new()
+fig     = par(
+family     = "sans",
+mfcol      = c(1,1),
+pty        = "m",
+bty        = "l",
+lwd        = 1,
+las        = 1,
+mgp        = c(2,1,0),
+xaxs       = "i",
+yaxs       = "i",
+cex        = 1.1,
+font.main  = 1,
+cex.main   = 1)
+n           = 1e3
+x           = round(rgamma(n,2,2), digits = 2)
+H           = as.data.frame(table(x))
+x_mean      = mean(x)
+x_median    = median(x)
+x_mode      = as.numeric(as.vector(H$x[which.max(H$Freq)]))
+hist(
+x,
+breaks = 50,
+col   = "gray90",
+lwd   = 0.5,
+prob  = TRUE,
+ylim  = c(0,0.9),
+xlim  = c(0, 5),
+xlab  = "x",
+ylab  = "",
+main  = sprintf("Mittelwert = %.1f, Median = %.1f, Modalwert = %.1f", x_mean, x_median, x_mode))
+points(
+c(x_mean, x_median, x_mode),
+rep(0,3),
+pch = 21,
+col = "White",
+bg = c("Blue", "Red", "Green"),
+cex = 2,
+xpd = TRUE)
+legend(
+"topright",
+c("Histogramm", "Mittelwert", "Median", "Modalwert"),
+pch  = 16,
+col  = c("gray90", "Blue", "Red", "Green"),
+bty  = "n")
+dev.copy2pdf(
+file   = file.path(abb_dir, "pds_9_gammaverteilung.pdf"),
+width  = 7,
+height = 5)
+```
+
+![](../Abbildungen/pds_9_gammaverteilung.pdf){width="80%" fig-align="center"}
+
+
+
+\AtBeginSection{}
+\section{Maße der Datenvariabilität}
+# Maße der Datenvariabilität ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Maße der zentralen Tendenz
+
+**Maße der Datenvariabilität**
+
+Programmierübungen und Selbstkontrollfragen
+
+\vfill
+
+
+
+
+# Spannbreite
+\small
+\begin{definition}[Spannbreite]
+$x = (x_1,...,x_n)$ sei ein Datensatz. Dann ist die \textit{Spannbreite} von $x_1,...,x_n$ definiert als
+\begin{equation}
+sb := \max(x_1,...,x_n) - \min(x_1,...,x_n).
+\end{equation}
+\end{definition}
+
+# Bestimmen der Spannbreite in R
+Die Spannbreite kann mit `range()` berechnet werden
+\vspace{2mm}
+
+\footnotesize
+```{r, eval = T}
+#| label: range()
+# Einlesen des Beispieldatensatzes
+fpath   <- file.path(data_path, "psychotherapie_datensatz.csv")
+D       <- read.table(fpath, sep = ",", header = T)
+
+# Manuelle Spannbreitenberechnung
+x       <- D$Pre.BDI                        # double Vektor der Pre-BDI Werte Werte 	
+x_max   <- max(x)                           # Maximum der Pre-BDI Werte
+x_min   <- min(x)                           # Mininum der Pre-BDI Werte
+sb      <- x_max - x_min                    # Spannbreite
+print(sb)
+
+# Automatische Spannbreitenberechnung
+MinMax  <- range(x)                         # "Automatische" Berechnung von min(x), max(x)
+sb      <- MinMax[2] - MinMax[1]            # Spannbreite
+print(sb)
+```
+
+
+
+# Stichprobenvarianz
+\footnotesize
+\begin{definition}[Stichprobenvarianz, empirische Stichprobenvarianz]
+\justifying
+$x = (x_1,...,x_n)$ sei ein Datensatz und $\bar{x}$ das Stichprobenmittel. Die \textit{Stichprobenvarianz} von $x$ 
+ist definiert als 
+\begin{equation}
+s^2 := \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2
+\end{equation}
+und die \textit{empirische Stichprobenvarianz} von $x$ ist definiert als
+\begin{equation}
+\tilde{s}^2 := \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2.
+\end{equation}
+\end{definition}
+
+Bemerkungen
+
+* $s^2$ ist ein unverzerrter Schätzer von $\mathbb{V}(\xi)$, $\tilde{s}^2$ ist ein verzerrter Schätzer $\mathbb{V}(\xi)$.
+* Für $n \to \infty$ gilt $\frac{1}{n}\approx \frac{1}{n-1}$, $\tilde{s}^2$ ist ein asymptotisch unverzerrter Schätzer von  $\mathbb{V}(\xi)$.
+* $\tilde{s}^2$ ist der ML Schätzer, $s^2$ ist der ReML Schätzer von $\sigma^2$ bei $\xi_1,...,\xi_n \sim N(\mu,\sigma^2)$.
+* Es gelten
+\begin{equation}
+\tilde{s}^2 = \frac{n-1}{n}s^2, s^2 = \frac{n}{n-1}\tilde{s}^2 \mbox{ und } 0 \le \tilde{s}^2 < s^2.
+\end{equation}
+
+
+# Berechnen der Stichprobenvarianz in R
+
+Die Sitchprobenvarianz kann mit `var()` berechnet werden
+\vspace{2mm}
+\footnotesize
+
+```{r, eval = T}
+#| label: var()
+
+x        <- D$Pre.BDI                             # double Vektor der Pre-BDI Werte Werte
+n        <- length(x)                             # Anzahl der Werte
+s2       <- (1 / (n - 1)) * sum((x - mean(x))^2)  # Stichprobenvarianz
+print(s2)
+s2       <- var(x)                                # "automatische" Stichprobenvarianz
+print(s2)
+s2_tilde <- (1 / n) * sum((x - mean(x))^2)        # Empirische Stichprobenvarianz
+print(s2_tilde)
+s2_tilde <- ((n - 1) / n) * var(x)                # "automatische" empirische Stichprobenvarianz
+print(s2_tilde)
+```
+
+
+# Stichprobenvarianz bei linear-affinen Transformationen
+\footnotesize
+\begin{theorem}[Stichprobenvarianz bei linear-affinen Transformationen]
+\justifying
+\normalfont
+$x = (x_1,...,x_n)$ sei ein Datensatz mit Stichprobenvarianz $s_x^2$ und
+$y = (ax_1+b, ..., ax_n+b)$ sei der mit $a,b \in \mathbb{R}$ linear-affin
+transformierte Datensatz mit Stichprobenvarianz $s_y^2$. Dann gilt
+\begin{equation}
+s^2_y = a^2 s^2_x.
+\end{equation}
+\end{theorem}
+\tiny
+\underline{Beweis}
+\begin{align}
+\begin{split}
+s^2_y
+:= \frac{1}{n-1}\sum_{i=1}^n (y_i - \bar{y})^2 
+&  = \frac{1}{n-1}\sum_{i=1}^n (ax_i + b - (a\bar{x} + b))^2 \\
+&  = \frac{1}{n-1}\sum_{i=1}^n (ax_i + b - a\bar{x} - b)^2 \\
+&  = \frac{1}{n-1}\sum_{i=1}^n (a(x_i - \bar{x}))^2 \\
+&  = \frac{1}{n-1}\sum_{i=1}^n a^2(x_i - \bar{x})^2 \\
+&  = a^2\frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2 \\
+&  = a^2s_x^2 \\
+\end{split}
+\end{align}
+
+
+# Stichprobenvarianz bei linear-affinen Transformationen
+\textcolor{darkcyan}{Beispiel: Stichprobenvarianz bei linear-affinen Transformationen}
+
+\footnotesize
+\vspace{2mm}
+```{r, eval = T}
+#| label: lin-affine Transformation
+# Stichprobenvarianz nach Transformation
+x   <- D$Pre.BDI                        # double Vektor der Pre-BDI Werte
+s2x <- var(x)                           # Stichprobenvarianz von x_1,...,x_n
+a   <- 2                                # Multiplikationskonstante
+b   <- 5                                # Additionskonstante
+y   <- a * x + b                        # y_i <-  ax_i + b
+s2y <- var(y)                           # Stichprobenvarianz y_1,...,y_n
+print(s2y)
+
+# Stichprobenvarianz nach Theorem
+s2y <- a^2 * s2x                        # Stichprobenvarianz y_1,...,y_n
+print(s2y)
+```
+
+
+# Verschiebungssatz zur empirischen Stichprobenvarianz
+\setstretch{1.2}
+\footnotesize
+\begin{theorem}[Verschiebungssatz zur empirischen Stichprobenvarianz]
+\justifying
+\normalfont
+$x = (x_1,...,x_n)$ sei ein Datensatz, $x^2 := (x_1^2, ..., x_n^2)$ sei sein
+elementweises Quadrat und $\bar{x}$ und $\overline{x^2}$ seien die respektiven
+Mittelwerte. Dann gilt
+\begin{equation}
+\tilde{s}^2 = \overline{x^2} - \bar{x}^2
+\end{equation}
+\end{theorem}
+\underline{Beweis}
+\begin{align}
+\begin{split}
+\tilde{s}^2
+& := \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2 \\
+&  = \frac{1}{n}\sum_{i=1}^n \left(x_i^2 - 2x_i \bar{x} +  \bar{x}^2\right) \\
+&  =  \frac{1}{n}\sum_{i=1}^n x_i^2
+	- 2  \bar{x}  \frac{1}{n}\sum_{i=1}^n x_i
+	+ \frac{1}{n}\sum_{i=1}^n \bar{x}^2 \\
+&  = \overline{x^2}
+	- 2  \bar{x} \bar{x}
+	+ \frac{1}{n}n\bar{x}^2 \\
+&  = \overline{x^2}
+	- 2  \bar{x}^2
+	+ \bar{x}^2 \\
+&  = \overline{x^2} - \bar{x}^2
+\end{split}
+\end{align}
+
+
+
+# Verschiebungssatz zur empirischen Stichprobenvarianz
+
+\textcolor{darkcyan}{Beispiel: Verschiebungssatz zur empirischen Stichprobenvarianz}
+
+\footnotesize
+\vspace{3mm}
+```{r, eval = T}
+#| label: Verschiebungssatz
+#| 
+# Direkte Berechnung der empirischen Stichprobenvarianz
+x        <- D$Pre.BDI                             # double Vektor der Pre-BDI Werte Werte
+n        <- length(x)                             # Anzahl Datenpunkte
+x_bar    <- mean(x)                               # Stichprobenmittel
+s2_tilde <- ((n - 1) / n) * var(x)                # empirische Stichprobenvarianz
+print(s2_tilde)
+
+# Berechnung der empirischen Stichprobenvarianz mit Theorem
+s2_tilde <- mean(x^2) - (mean(x))^2               # \bar{x^2} - \bar{x}^2
+print(s2_tilde)
+
+# Das Theorem gilt nicht für die Stichprobenvarianz
+s2       <- var(x)                                # s^2 \neq \bar{x^2} - \bar{x}^2
+print(s2)
+```
+
+
+
+# Stichprobenstandardabweichung
+
+\small
+\begin{definition}[Stichprobenstandardabweichung, empirische]
+$x = (x_1,...,x_n)$ sei ein Datensatz. Die \textit{Stichprobenstandardabweichung} 
+von $x$ ist definiert als  
+\begin{equation}
+s := \sqrt{s^2}
+\end{equation}
+und die \textit{empirische Stichprobenstandardabweichung} von $x$ ist definiert als
+\begin{equation}
+\tilde{s} := \sqrt{\tilde{s}^2}.
+\end{equation}
+\end{definition}
+
+Bemerkungen
+
+* $s$ ist ein verzerrter Schätzer von $\mathbb{S}(\xi)$.
+* $s^2$ misst Variabilität in quadrierten Einheiten, zum Beispiel Quadratmeter ($m^2)$.
+* $s$ misst Variabilität in unquadrierten Einheiten, zum Beispiel Meter ($m$).
+* Es gilt 
+\begin{equation}
+\tilde{s} = \sqrt{(n-1)/n}s.
+\end{equation}
+
+
+
+# Berechnung der Stichprobenstandardabweichung in R
+
+Die Stichprobenstandardabweichung kann mit `sd()` berechnet werden.
+
+\vspace{2mm}
+\footnotesize
+```{r, eval = T}
+#| label: Stichprobenstandardabweichung
+#| 
+# Manuelle Berechnung der Stichprobenstandardabweichung
+x <- D$Pre.BDI                                   # double Vektor der Pre-BDI Werte Werte	
+n <- length(x)                                   # Anzahl der Werte
+s <- sqrt((1 / (n - 1)) * sum((x - mean(x))^2))  # Standardabweichung
+print(s)
+
+# Automatische Berechnung der Stichprobenstandardabweichung
+s <- sd(x)                                        # "automatische" Berechnung
+print(s)
+
+# Empirische Standardabweichung
+s_tilde <- sqrt((1 / (n)) * sum((x - mean(x))^2)) # empirische Standardabweichung
+print(s_tilde)
+s_tilde <- sqrt((n - 1) / n) * sd(x)              # empirische Standardabweichung
+print(s_tilde)
+```
+
+
+# Stichprobenstandardabweichung bei linear-affinen Transformationen
+\setstretch{1}
+\footnotesize
+\begin{theorem}[Stichprobenstandardabweichung bei linear-affinen Transformationen]
+\justifying
+\normalfont
+$x = (x_1,...,x_n)$ sei ein Datensatz mit Stichprobenstandardabweichung $s_x$ und
+$y = (ax_1+b, ..., ax_n+b)$ sei der mit $a,b \in \mathbb{R}$ linear-affin
+transformierte Datensatz mit Stichprobenstandardabweichung $s_y$. Dann gilt
+\begin{equation}
+s_y = |a| s_x.
+\end{equation}
+\end{theorem}
+\tiny
+\underline{Beweis}
+\begin{align*}
+\begin{split}
+s_y
+:= \left(\frac{1}{n-1}\sum_{i=1}^n (y_i - \bar{y})^2\right)^{1/2} 
+&  = \left(\frac{1}{n-1}\sum_{i=1}^n \left(ax_i + b - (a\bar{x} + b)\right)^2\right)^{1/2} \\
+&  = \left(\frac{1}{n-1}\sum_{i=1}^n \left(a(x_i - \bar{x})\right)^2\right)^{1/2}			\\
+&  = \left(\frac{1}{n-1}\sum_{i=1}^n a^2(x_i - \bar{x})^2\right)^{1/2} \\
+&  = \left(a^2\right)^{1/2}\left(\frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2\right)^{1/2}
+\end{split}
+\end{align*}
+Also gilt $s_y = as_x$, wenn $a \ge 0$ und $s_y = -as_x$, wenn $a < 0$. Dies aber entspricht $s_y = |a|s_x$.
+
+
+# Stichprobenstandardabweichung bei linear-affinen Transformationen
+
+\textcolor{darkcyan}{Beispiel: Stichprobenstandardabweichung bei linear-affinen Transformationen}
+\vspace{1mm}
+
+\tiny
+\setstretch{1.1}
+```{r, eval = T}
+#| label: lin.-affine Transformation Stichprobenstandardabweichung
+# a >= 0
+x   <- D$Pre.BDI                        # double Vektor der Pre-BDI Werte Werte
+s_x <- sd(x)                            # Stichprobenstandardabweichung von x
+a   <- 2                                # Multiplikationskonstante
+b   <- 5                                # Additionskonstante
+y   <- a*x + b                          # y_i =  ax_i + b
+s_y <- sd(y)                            # Stichprobenstandardabweichung von y
+print(s_y)
+s_y <- a*s_x                            # Stichprobenstandardabweichung von y
+print(s_y)
+
+# a < 0
+x   <- D$Pre.BDI                        # double Vektor der Pre-BDI Werte Werte
+s_x <- sd(x)                            # Stichprobenstandardabweichung von x
+a   <- -3                               # Multiplikationskonstante
+b   <- 10                               # Additionskonstante
+y   <- a*x + b                          # y_i =  ax_i + b
+s_y <- sd(y)                            # Stichprobenstandardabweichung von y
+print(s_y)
+s_y <- (-a)*s_x                         # Stichprobenstandardabweichung von y
+print(s_y)
+```
+
+
+
+
+\AtBeginSection{}
+\section{Programmierübungen und Selbstkontrollfragen}
+# Programmierübungen und Selbstkontrollfragen ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Maße der zentralen Tendenz
+
+Maße der Datenvariabilität
+
+**Programmierübungen und Selbstkontrollfragen**
+
+\vfill
+
+
+# Programmierübungen und Selbskontrollfragen
+\small
+\setstretch{1.5}
+
+\begin{enumerate}
+\justifying
+\item Berechne den Mittelwert der Post.BDI Daten.
+\item Berechne den Median der Post.BDI Daten.
+\item Berechne den Modalwert des Post.BDI Datensatzes.
+\item Visualisiere die Häufigkeitsverteilung des Post.BDI Datensatzes und diskutiere die berechneten Werte von Mittelwert, Median und Modalwert vor dem Hintergrund dieser Häufigkeitsverteilung.
+\item Berechne die Spannbreite der Post.BDI Daten.
+\item Berechne die Stichprobenvarianz und die empirische Stichprobenvarianz der Post.BDI Daten.
+\item Berechne die Stichprobenstandardabweichung und die empirische Stichprobenstandardabweichung der Post.BDI Daten.
+\end{enumerate}
+
+\vfill
+
+
+# Programmierübungen und Selbskontrollfragen
+\setstretch{1.5}
+\small
+\begin{enumerate}
+\justifying
+\item Gebe die Definition des Mittelwertes eines Datensatzes wieder.
+\item Gebe das Theorem zu den Eigenschaften des Mittelwerts wieder.
+\item Gebe die Definition des Median eines Datensatzes wieder.
+\item Wie verhalten sich Mittelwert und Median in Bezug auf Datenausreißer?
+\item Gebe die Definition des Modalwertes eines Datensatzes wieder.
+\item Gebe die Definition der Spannbreite eines Datensatzes wieder.
+\item Gebe die Definition der Stichprobenvarianz und der empirischen Stichprobenvarianz wieder.
+\item Gebe das Theorem zur Stichprobenvarianz bei linear-affinen Transformationen wieder.
+\item Gebe den Verschiebungssatz zur empirischen Stichprobenvarianz wieder.
+\item Gebe die Definition der Stichprobenstandardabweichung und der empirischen Stichprobenstandardabweichung wieder.
+\item Gebe das Theorem zur Stichprobenstandardabweichung  bei linear-affinen Transformationen wieder.
+\end{enumerate}
+
+```{r, echo = F, eval = F}
+
+# Einlesen des Beispieldatensatzes und Abbildungsverzeichnisdefinition
+fname    = file.path(data_dir, "psychotherapie_datensatz.csv")
+D        = read.table(fname, sep = ",")
+dev.new()
+fig        = par(
+family     = "sans",
+mfcol      = c(1,1),
+pty        = "m",
+bty        = "l",
+lwd        = 1,
+las        = 1,
+mgp        = c(2,1,0),
+xaxs       = "i",
+yaxs       = "i",
+cex        = 1.1,
+font.main  = 1,
+cex.main   = 1)
+
+# Maße zentraler Tendenz
+x           = D$Post.BDI
+H           = as.data.frame(table(x))
+x_mean      = mean(x)
+x_median    = median(x)
+x_mode      = as.numeric(as.vector(H$x[which.max(H$Freq)]))
+n 		    	= length(x)
+
+# Häufigkeitsverteilung
+H 		    	= as.data.frame(table(x))
+names(H)    = c("a", "h")
+h 		      = H$h
+names(h)    = H$a
+
+# Abbildung
+dev.new()
+hist(
+D$Post.BDI,
+main  = sprintf("Mittelwert = %.1f, Median = %.1f, Modalwert = %.1f", x_mean, x_median, x_mode))
+points(
+c(x_mean, x_median, x_mode),
+rep(0,3),
+pch = 21,
+col = "White",
+bg = c("Blue", "Red", "Green"),
+cex = 2,
+xpd = TRUE)
+legend(
+"topleft",
+c("Absolute Häufigkeitsverteilung", "Mittelwert", "Median", "Modalwert"),
+pch  = 16,
+col  = c("gray90", "Blue", "Red", "Green"),
+bty  = "n")
+dev.copy2pdf(
+file   = file.path(abb_dir, "pds_9_postbdi.pdf"),
+width  = 7,
+height = 5)
+```
+
