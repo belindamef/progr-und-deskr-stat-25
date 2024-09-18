@@ -1,0 +1,771 @@
+
+```{r eval = T, echo = F}
+# | label: define directories
+abb_dir = file.path(dirname(getwd()), "Abbildungen")
+data_dir = file.path(dirname(getwd()), "Data")
+```
+
+
+# Titelfolie {.plain}
+\center
+![](../Abbildungen/otto.png){width="20%"}
+
+\vspace{2mm}
+
+\Large
+Programmierung und Deskriptive Statistik
+\vspace{4mm}
+
+\normalsize
+BSc Psychologie WiSe 2024/25
+
+\vspace{15mm}
+\normalsize
+Belinda Fleischmann
+
+
+
+# Termine {.plain}
+\setstretch{1.3}
+\vfill
+\center
+\footnotesize
+
+
+# Häufigkeitsverteilungen - Titelfolie {.plain}
+
+\vfill
+\huge
+\begin{center}
+(7) Häufigkeitsverteilungen
+\end{center}
+\vfill
+
+
+
+# AGENDA {.plain}
+\large
+\setstretch{2.5}
+\vfill
+
+Motivation
+
+Beispieldatensatz
+
+Häufigkeitsverteilungen
+
+Histogramme
+
+Programmierübungen und Selbstkontrollfragen
+
+\vfill
+
+
+
+\AtBeginSection{}
+\section{Motivation}
+# Motivation ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+**Motivation**
+
+Beispieldatensatz
+
+Häufigkeitsverteilungen
+
+Histogramme
+
+Programmierübungen und Selbstkontrollfragen
+
+\vfill
+
+
+
+# Motivation
+\setstretch{1.6}
+\justifying
+\large
+\textcolor{darkblue}{Definition und Ziele der Deskriptive Statistik}
+
+\normalsize
+* Die Deskriptive Statistik ist die *beschreibende* Statistik.
+* Ziel der Deskriptiven Statistik ist es, Daten übersichtlich darzustellen.
+* Deskriptive Statistik ist inbesondere bei großen Datensätzen sinnvoll.
+* Die Deskriptive Statistik berechnet zusammenfassende Maße aus Daten.
+
+\large
+\textcolor{darkblue}{Typische Methoden der Deskriptiven Statistik}
+
+\normalsize
+* Häufigkeitsverteilungen und Histogramme
+* Verteilungsfunktionen und Quantile
+* Maße der zentralen Tendenz und der Datenvariabilität
+* Zusammenhangsmaße
+
+Die Deskriptive Statistik benutzt keine probabilistischen Modelle, 
+aber die Methoden der Deskriptiven Statistik ergeben nur vor dem Hintergrund 
+probabilistischer Modelle Sinn.
+
+
+
+
+
+\AtBeginSection{}
+\section{Beispieldatensatz}
+# Beispieldatensatz ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Motivation
+
+**Beispieldatensatz**
+
+Häufigkeitsverteilungen
+
+Histogramme
+
+Programmierübungen und Selbstkontrollfragen
+
+\vfill
+
+
+# Beispieldatensatz
+\textcolor{darkblue}{Evidenzbasierte Evaluation von Psychotherapieformen bei Depression}
+
+\normalsize
+Welche Therapieform ist bei Depression wirksamer?
+
+![](../Abbildungen/pds_11_klinische_forschung.pdf){width="110%"}
+
+
+# Beispieldatensatz
+\textcolor{darkblue}{Evidenzbasierte Evaluation von Psychotherapieformen bei Depression}
+
+\normalsize
+Becks Depressions-Inventar (BDI) zur Depressionsdiagnostik
+
+![](../Abbildungen/pds_7_bdi.pdf)
+
+
+# Beispieldatensatz
+\textcolor{darkblue}{Beispiel: Evaluation von Psychotherapieformen bei Depression}
+\vspace{2mm}
+
+![](../Abbildungen/pds_7_messplan.pdf){width="90%"}
+
+
+# Beispieldatensatz
+```{r, echo = F, eval = F}
+# | label: data simulation
+# seed
+set.seed(5)
+
+
+# Simulationsparameter
+n      <- 50                         # Anzahl Proband:innnen pro Gruppe
+mu     <- c(18, 12, 19, 14)          # \mu (prä-klassisch, post-klassisch, prä-online, post-online)
+sigsqr <- 3                          # \sigma^2
+
+# Datensimulation 
+D            <- data.frame(
+               c(rep("Klassisch",n), rep("Online", n)),
+               c(round(rnorm(n, mu[1], sqrt(sigsqr))), round(rnorm(n, mu[3], sqrt(sigsqr)))),
+               c(round(rnorm(n, mu[2], sqrt(sigsqr))), round(rnorm(n, mu[4], sqrt(sigsqr)))))
+colnames(D)  <- c("Bedingung", "Pre BDI", "Post BDI")
+
+# Datenspeicherung
+data_dir_path <- file.path(dirname(getwd()), "Daten")
+fname        <- file.path(data_dir_path, "psychotherapie_datensatz.csv") 
+write.csv(D, file = fname, row.names = F)
+```
+
+
+Einlesen des Datensatzes mit `read.table()`
+\vspace{1mm}
+
+```{r echo=FALSE, eval = T}
+data_dir_path <- file.path(dirname(getwd()), "Daten")
+```
+\footnotesize
+```{r, eval = T}
+file_path <- file.path(data_dir_path, "psychotherapie_datensatz.csv")
+
+# z.B. könnte file_path so aussehen:
+# "/home/belindame_f/ovgu/progr-und-deskr-stat-23/Daten/psychotherapie_datensatz.csv"
+
+D <- read.table(file_path, sep = ",", header = T)
+```
+
+\small
+Daten der ersten acht Proband:innen jeder Gruppe
+
+\tiny
+\setstretch{1}
+```{r, echo = F, eval = T}
+# table visualization
+knitr::kable(D[c(1:8, 51:58),],
+             align  = "ccc",
+             format = "pipe")
+```
+
+# VSCode Interactive Viewers
+
+\textcolor{darkblue}{Table Viewer}
+
+\vfill
+
+![](../Abbildungen/pds_7_table_viewer_beispiel.png){width="80%" fig-align="center"}
+
+
+\setstretch{1.2}
+\footnotesize
+
+Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt
+
+\tiny
+\begin{flushright}
+\textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Interactive-viewers}{VS Code Wiki - Interactive viewers}}
+\end{flushright}
+
+
+# Beispieldatensatz
+Datensatzübersicht mit `View()`
+\vspace{2mm}
+
+![](../Abbildungen/pds_7_view.png){width="50%" fig-align="center"}
+
+
+\AtBeginSection{}
+\section{Häufigkeitsverteilungen}
+# Häufigkeitsverteilungen ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Motivation
+
+Beispieldatensatz
+
+**Häufigkeitsverteilungen**
+
+Histogramme
+
+Programmierübungen und Selbstkontrollfragen
+
+\vfill
+
+
+# Absolute und relative Häufigkeitsverteilungen
+\small
+\begin{definition}[Absolute und relative Häufigkeitsverteilungen]
+\justifying
+$x := (x_1,...,x_n)$ mit $x_i \in \mathbb{R}$ sei ein \textit{Datensatz} 
+(manchmal auch ``Urliste'' genannt) und $A := \{a_1,...,a_k\}$ mit $k \le n$ 
+seien die im Datensatz vorkommenden verschiedenen Zahlenwerte (manchmal auch
+``Merkmalsausprägunge'' genannt). Dann heißt die Funktion
+\begin{equation}
+h : A \to \mathbb{N}, a \mapsto h(a) := \mbox{Anzahl der } x_i \mbox{ aus } x \mbox{ mit } x_i = a
+\end{equation}
+die \textit{absolute Häufigkeitsverteilung} der Zahlenwerte von $x$ und die Funktion
+\begin{equation}
+r : A \to [0,1], a \mapsto r(a) := \frac{h(a)}{n}
+\end{equation}
+die \textit{relative Häufigkeitsverteilung} der Zahlenwerte von $x$.
+\end{definition}
+
+\footnotesize
+Bemerkungen
+
+* Absolute und relative Häufigkeitsverteilungen fassen Datensätze zusammen
+* Absolute und relative Häufigkeitsverteilungen können einen ersten Datenüberblick geben
+
+
+# Berechnung der Häufigkeitsverteilungen
+
+\small
+Erzeugen der absoluten Häufigkeitsverteilung mit `table()`
+
+Erzeugen der relativen Häufigkeitsverteilung durch Division mit $n$
+
+\vspace{1mm}
+
+\setstretch{1.2}
+\footnotesize
+```{r, eval = T}
+x <- D$Pre.BDI                  # Double vector der Pre BDI Werte
+n <- length(x)                  # Anzahl der Datenwerte (100)
+H <- as.data.frame(table(x))    # absolute Haeufigkeitsverteilung (dataframe)
+names(H) <- c("a", "h")         # Spaltenbenennung
+H$r <- H$h/n                    # relative Haeufigkeitsverteilung
+```
+\footnotesize
+\setstretch{1}
+```{r, echo = F, eval = T}
+# table visualization
+knitr::kable(H,
+             align      = "ccc",
+             "pipe")
+```
+
+
+
+# Visualisierung Häufigkeitsverteilungen
+Visualisierung der absoluten Häufigkeitsverteilung mit `barplot()`
+
+\footnotesize
+\vspace{1mm}
+```{r, eval = F}
+h          <- H$h             # h(a) Werte
+names(h)   <- H$a             # barplot braucht a Werte als names
+dev.new()                     # Abbildungsinitialisierung
+barplot(                      # Balkendiagramm
+  h,                          # absolute Haeufigkeiten
+  col      = "gray90",        # Balkenfarbe
+  xlab     = "a",             # x Achsenbeschriftung
+  ylab     = "h(a)",          # y Achsenbeschriftung
+  ylim     = c(0,25),         # y Achsengrenzen
+  las      = 2,               # x Tick Orientierung
+  main     = "Pre BDI"        # Titel
+  ) 					         
+```
+
+\vspace{2mm}
+\normalsize
+Speichern von Abbildungen mit `dev.copy2pdf()`
+
+\footnotesize
+\vspace{1mm}
+```{r, eval = F}
+dev.copy2pdf(                                                           # PDF Kopirefunktion
+  file   = file.path(pfad_zu_abbildungs_ordner, "pds_7_ha_prebdi.pdf"), # Dateiname
+  width  = 7,                                                           # Breite (inch)
+  height = 4                                                            # Höhe (inch)
+  )
+```
+
+
+# Beispieldatensatz
+Absolute Häufigkeitsverteilung aller Pre-BDI Werte
+\vspace{4mm}
+
+```{r, echo = F, eval = F}
+graphics.off()
+h           <- H$h                  # h(a) Werte
+names(h)    <- H$a                  # barplot braucht a Werte als names
+dev.new()                           # Abbildungsinitialisierung
+barplot(                            # Balkendiagramm
+  h,                                # absolute Haeufigkeiten
+  col       = "gray90",             # Balkenfarbe
+  xlab      = "a",                  # x Achsenbeschriftung
+  ylab      = "h(a)",               # y Achsenbeschriftung
+  ylim      = c(0,25),              # y Achsengrenzen
+  las       = 2,                    # Anzeigen aller x Werte TODO: Orientierung der x ticks?
+  main  		= "Pre BDI"             # Titel
+  )              
+dev.copy2pdf(                                            # PDF Kopiefunktion
+  file  		= file.path(abb_dir, "pds_7_ha_prebdi.pdf"), # Dateiname
+  width 		= 7, 							                           # Breite (inch)
+  height 		= 4)  
+```
+
+
+![](../Abbildungen/pds_7_ha_prebdi.pdf){width="90%"}
+
+
+
+# Beispieldatensatz
+Relative Häufigkeitsverteilung aller Pre-BDI Werte
+\vspace{4mm}
+
+```{r, echo = F, eval = F}
+graphics.off()
+r          <- H$r          # h(r) Werte
+names(r)   <- H$a          # barplot braucht a Werte als names
+dev.new()                  # Abbildungsinitialisierung
+barplot(                   # Balkendiagramm
+  r,                       # relative Haeufigkeiten
+  col   	  = "gray90",    # Balkenfarbe
+  xlab  		= "a",         # x Achsenbeschriftung
+  ylab  		= "r(a)",      # y Achsenbeschriftung
+  ylim      = c(0,0.25),   # y Achsengrenzen
+  las   		= 2,           # Anzeigen aller x Werte
+  main  		= "Pre BDI")   # Titel
+
+dev.copy2pdf(              # PDF Kopiefunktion
+  file  		= file.path(abb_dir, "pds_7_ra_prebdi.pdf"),  # Dateiname
+  width 		= 7, 							                            # Breite (inch)
+  height 		= 4
+  )
+```
+
+![](../Abbildungen/pds_7_ra_prebdi.pdf){width="90%"}
+
+
+
+\AtBeginSection{}
+\section{Histogramme}
+# Histogramme ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Motivation
+
+Beispieldatensatz
+
+Häufigkeitsverteilungen
+
+**Histogramme**
+
+Programmierübungen und Selbstkontrollfragen
+
+\vfill
+
+
+
+# Definition
+\small
+
+\begin{definition}[Histogramm]
+\justifying
+Ein \textit{Histogramm} ist ein Diagramm, in dem zu einem Datensatz $x = (x_1,...,x_n)$ 
+mit verschiedenen Zahlenwerten $A := \{a_1,...,a_m\}, m \le n$ über benachbarten Intervallen 
+$[b_{j-1},b_j[$, welche  \textit{Klassen} oder \textit{Bins} genannt werden, 
+für $j = 1,...,k$ Rechtecke mit
+
+\vspace{1mm}
+\begin{center}
+\begin{tabular}{ll}
+Breite &  $d_j = b_j - b_{j-1}$\\
+Höhe   &  $h(a)$ oder $r(a)$ mit $a \in [b_{j-1}, b_{j}[$
+\end{tabular}
+\end{center}
+\vspace{1mm}
+
+abgebildet sind, wobei $b_0 := \min A$ und $b_k := \max A$ angenommen werden soll.
+\end{definition}
+
+Bemerkungen
+
+* Das Aussehen eines Histogramms ist stark von der Anzahl $k$ der Klassen abhängig.
+* Mit der Aufrundungsfunktion $\lceil \cdot \rceil$ sind konventionelle Werte für $k$
+
+\center
+\begin{tabular}{ll}
+$k := \lceil (b_k - b_0)h \rceil$  	& $h$ ist die gewünschte Klassenbreite                        \\
+$k := \lceil \sqrt{n} \rceil$  		& Excelstandard                                               \\
+$k := \lceil \log_2 n + 1\rceil$  	& Implizite Normalverteilungsannahme (Sturges, 1926)          \\
+$h := 3.49 S_n/\sqrt[3]{n}$ 		& Min. MSE Dichteschätzung bei Normalverteilung (Scott, 1979)
+\end{tabular}
+
+
+# Berechnung und Visualisierung von Histogrammen
+Berechnung und Visualisierung von Histogrammen mit `hist()`
+
+\small
+* Die Klassen $[b_{j-1}, b_{j}[, j = 1,...,k$ werden als Argument `breaks` festgelegt
+* `breaks` ist der atomic vector c$(b_0,b_1,...,b_k)$ mit Länge $k + 1$
+* Per default benutzt `hist()` eine Modifikation der Sturges Empfehlung $k = \lceil \log_2 n + 1\rceil$
+* `hist()` bietet eine Vielzahl weiterer Spezifikationsmöglichkeiten
+
+\vspace{2mm}
+\footnotesize
+```{r, eval = F}
+# Default Histogramm
+x      <- D$Pre.BDI            # Datensatz
+x_min  <- 12                   # x Achsengrenze (links)
+x_max  <- 25                   # x Achsengrenze (rechts)
+y_min  <- 0                    # y Achsengrenze (unten)
+y_max  <- 45                   # y Achsengrenze (oben)
+hist(                          # Histogramm
+  x,                           # Datensatz
+  xlim  = c(x_min, x_max),     # x Achsengrenzen
+  ylim  = c(y_min, y_max),     # y Achsengrenzen
+  ylab  = "Häufigkeit",        # y-Achsenbezeichnung
+  xlab  = "",                  # x-Achsenbezeichnung
+  main  = "Pre-BDI, R Default" # Titel
+  )                 
+```
+
+```{r, echo = F, eval = F}
+
+# Default Histogramm
+graphics.off()
+x       <- D$Pre.BDI                                                             # Datensatz
+x_min   <- 12                                                                    # x-Achsenlimit
+x_max   <- 25                                                                    # x-Achsenlimit
+y_min   <- 0                                                                     # y-Achsenlimit
+y_max   <- 45                                                                    # y-Achsenlimit
+dev.new()                                                                        # Abbildungsinitialisierung
+hist(                                                                            # Histogramm
+x,                                                                               # Datensatz
+xlim    = c(x_min, x_max),                                                      # x Achsen Limits
+ylim    = c(y_min, y_max),                                                      # y Achsen Limits
+ylab    = "Häufigkeit",                                                         # y-Achsenbezeichnung
+xlab    = "",                                                                   # x-Achsenbezeichnung
+main    = "Pre-BDI, R Default")                                                 # Titel
+dev.copy2pdf(file = file.path(abb_dir, "pds_7_hg_0.pdf"), width = 8, height = 5) # PDF Speicherung                                                                          
+
+# Histogramm mit gewünschter Klassenbreite h = 1
+h       <- 1                                                                      # gewünschte Klassenbreite
+b_0     <- min(x)                                                                 # b_0
+b_k     <- max(x)                                                                 # b_k
+k       <- ceiling((b_k - b_0)/h)                                                 # Anzahl der Klassen
+b       <- seq(b_0, b_k, by = h)                                                  # Klassen [b_{j-1}, b_j[
+hist(                                                                             # Histogramm
+x,                                                                                # Datensatz
+breaks  = b,                                                                     # breaks
+xlim    = c(x_min, x_max),                                                       # x Achsen Limits
+ylim    = c(y_min, y_max),                                                       # y Achsen Limits
+ylab    = "Häufigkeit",                                                          # y-Achsenbezeichnung
+xlab    = "",                                                                    # x-Achsenbezeichnung
+main    = sprintf("Pre-BDI, k = %.0f, h = %.2f", k, h))                          # Titel
+dev.copy2pdf(file  = file.path(abb_dir, "pds_7_hg_1.pdf"), width = 8, height = 5) # PDF Speicherung
+
+# Histogramm mit gewünschter Klassenbreite h =1.5
+h       <- 1.5                                                                    # gewünschte Klassenbreite
+b_0     <- min(x)                                                                 # b_0
+b_k     <- max(x)                                                                 # b_k
+k       <- ceiling((b_k - b_0)/h)                                                 # Anzahl der Klassen
+b       <- seq(b_0, b_k, by = h)                                                  # Klassen [b_{j-1}, b_j[
+hist(                                                                             # Histogramm
+x,                                                                                # Datensatz
+breaks  <- b,                                                                     # breaks
+xlim    <- c(x_min, x_max),                                                       # x Achsen Limits
+ylim    <- c(y_min, y_max),                                                       # y Achsen Limits
+ylab    <- "Häufigkeit",                                                          # y-Achsenbezeichnung
+xlab    <- "",                                                                    # x-Achsenbezeichnung
+main    <- sprintf("Pre-BDI, k = %.0f, h = %.2f", k, h))                          # Titel
+dev.copy2pdf(file  = file.path(abb_dir, "pds_7_hg_2.pdf"), width = 8, height = 5) # PDF Speicherung
+
+# Histogramm mit Excel Standard
+n       <- length(x)                                                              # Anzahl Datenwerte
+k       <- ceiling(sqrt(n))                                                       # Anzahl der Klassen
+b       <- seq(b_0, b_k, len = k + 1)                                                 # Klassen [b_{j-1}, b_j[
+h       <- b[2] - b[1]                                                            # Klassenbreite
+hist(
+x,                                                                                # Datensatz
+breaks  = b,                                                                     # breaks
+xlim    = c(x_min, x_max),                                                       # x Achsen Limits
+ylim    = c(y_min, y_max),                                                       # y Achsen Limits
+ylab    = "Häufigkeit",                                                          # y-Achsenbezeichnung
+xlab    = "",                                                                    # x-Achsenbezeichnung
+main    = sprintf("Pre-BDI, k = %.0f, h = %.2f", k, h))                          # Titel
+dev.copy2pdf(file  = file.path(abb_dir, "pds_7_hg_3.pdf"), width = 8, height = 5) # PDF Speicherung
+
+# Sturges
+n       <- length(x)                                                              # Anzahl Datenwerte
+k       <- ceiling(log2(n)+1)                                                     # Anzahl der Klassen
+b       <- seq(b_0, b_k, len = k + 1)                                                 # Klassen [b_{j-1}, b_j[
+h       <- b[2] - b[1]                                                            # Klassenbreite
+hist(                                                                             # Histogramm
+x,                                                                                # Datensatz
+breaks  = b,                                                                     # breaks
+xlim    = c(x_min, x_max),                                                       # x Achsen Limits
+ylim    = c(y_min, y_max),                                                       # y Achsen Limits
+ylab    = "Häufigkeit",                                                          # y-Achsenbezeichnung
+xlab    = "",                                                                    # x-Achsenbezeichnung
+main    = sprintf("Pre-BDI, k = %.0f, h = %.2f", k, h))                          # Titel
+dev.copy2pdf(file  = file.path(abb_dir, "pds_7_hg_4.pdf"), width = 8, height = 5) # PDF Speicherung
+
+# Scott
+n       <- length(x)                                                              # Anzahl Datenwerte
+S       <- sd(x)                                                                  # Stichprobenstandardabweichung
+h       <- ceiling(3.49*S/(n^(1/3)))                                              # Klassenbreite
+k       <- ceiling((b_k - b_0)/h)                                                 # Anzahl der Klassen
+b       <- seq(b_0, b_k, len = k + 1)                                                 # Klassen [b_{j-1}, b_j[
+h       <- b[2] - b[1]                                                            # Klassenbreite
+hist(                                                                             # Histogramm
+x,                                                                                # Datensatz
+breaks  = b,                                                                     # breaks
+xlim    = c(x_min, x_max),                                                       # x Achsen Limits
+ylim    = c(y_min, y_max),                                                       # y Achsen Limits
+ylab    = "Häufigkeit",                                                          # y-Achsenbezeichnung
+xlab    = "",                                                                    # x-Achsenbezeichnung
+main    = sprintf("Pre-BDI, k = %.0f, h = %.2f", k, h))                          # Titel
+dev.copy2pdf(file  = file.path(abb_dir, "pds_7_hg_5.pdf"), width = 8, height = 5) # PDF Speicherung
+```
+
+# Histogramm mit `hist()`  und default `breaks` - \textcolor{darkcyan}{Beispiel}
+
+\textcolor{darkblue}{Visualisierung}
+\vspace{2mm}
+
+![](../Abbildungen/pds_7_hg_0){width="100%"}
+
+
+# Histogramm mit `hist()`  und default `breaks` - \textcolor{darkcyan}{Beispiel}
+
+\textcolor{darkblue}{Ausgabe der Ergebnisse}
+\vspace{2mm}
+
+\setstretch{1}
+\footnotesize
+
+```{r, eval = T, echo = T}
+# Default Histogramm
+Ergebnisse <- hist(            # hist() output in Vairable speichern
+  x,                           # Datensatz
+  plot = FALSE
+  )
+
+print(Ergebnisse)              # Ausgabe der Ergebnisse
+```
+
+
+# Histogramme mit alternativen Klassengrößen
+Berechnung von Klassenanzahlen und `breaks` Argument
+\vspace{3mm}
+
+\footnotesize
+\setstretch{1.1}
+```{r, eval = F}
+# Histogramm mit gewuenschter Klassenbreite
+h 	<- 1                            # gewuenschte Klassenbreite
+b_0 <- min(x)                       # b_0
+b_k <- max(x)                       # b_k
+k   <- ceiling((b_k - b_0)/h)       # Anzahl der Klassen
+b   <- seq(b_0, b_k, by = h)        # Klassen [b_{j-1}, b_j[
+
+# Excelstandard
+n   <- length(x)                    # Anzahl Datenwerte
+k   <- ceiling(sqrt(n))             # Anzahl der Klassen
+b   <- seq(b_0, b_k, len = k + 1)   # Klassen [b_{j-1}, b_j[
+h   <- b[2] - b[1]                  # Klassenbreite
+
+# Sturges
+n   <- length(x)                    # Anzahl Datenwerte
+k   <- ceiling(log2(n)+1)           # Anzahl der Klassen
+b   <- seq(b_0, b_k, len = k + 1)   # Klassen [b_{j-1}, b_j[
+h   <- b[2] - b[1]                  # Klassenbreite
+
+# Scott
+n   <- length(x)                    # Anzahl Datenwerte
+S   <- sd(x)                        # Stichprobenstandardabweichung
+h   <- ceiling(3.49*S/(n^(1/3)))    # Klassenbreite
+k   <- ceiling((b_k - b_0)/h)       # Anzahl der Klassen
+b   <- seq(b_0, b_k, len = k + 1)   # Klassen [b_{j-1}, b_j[
+```
+
+
+# Berechnung und Visualisierung  -  alternative Klassengrößen
+Berechnung und Visualisierung von Histogrammen mit `hist()`
+
+\small
+* Die Klassen $[b_{j-1}, b_{j}[, j = 1,...,k$, die in der Variable `b` gespeichert sind, werden als Argument mit `breaks` festgelegt
+* `breaks` ist der atomic vector c$(b_0,b_1,...,b_k)$ mit Länge $k + 1$
+
+\vspace{2mm}
+\footnotesize
+```{r, eval = F}
+# Default Histogramm
+x      <- D$Pre.BDI                                      # Datensatz
+x_min  <- 12                                             # x Achsengrenze (unten)
+x_max  <- 25                                             # x Achsengrenze (oben)
+y_min  <- 0                                              # y Achsengrenze (oben)
+y_max  <- 30                                             # y Achsengrenze (unten)
+hist(                                                    # Histogramm
+  x,                                                     # Datensatz
+  breaks= b,                                             # breaks
+  xlim  = c(x_min, x_max),                               # x Achsengrenzen
+  ylim  = c(y_min, y_max),                               # y Achsengrenzen
+  ylab  = "Häufigkeit",                                  # y-Achsenbezeichnung
+  xlab  = "",                                            # x-Achsenbezeichnung
+  main  = sprintf("Pre-BDI, k = %.0f, h = %.2f", k, h))  # Titel
+  )
+```
+
+
+# Histogramme - \textcolor{darkcyan}{Beispiel}
+Gewünschte Klassenbreite $h := 1$
+\vspace{2mm} 
+
+![](../Abbildungen/pds_7_hg_1.pdf){width="100%"}
+
+
+# Histogramme - \textcolor{darkcyan}{Beispiel}
+Gewünschte Klassenbreite $h := 1.5$
+\vspace{2mm}
+
+![](../Abbildungen/pds_7_hg_2.pdf){width="100%"}
+
+
+# Histogramme - \textcolor{darkcyan}{Beispiel}
+Excelstandard $k := \lceil \sqrt{n} \rceil$
+\vspace{1mm}
+
+![](../Abbildungen/pds_7_hg_3.pdf){width="100%"}
+
+
+# Histogramme - \textcolor{darkcyan}{Beispiel}
+nach @sturges_1926 $, k := \lceil \log_2 n + 1\rceil$
+\vspace{1mm}
+
+![](../Abbildungen/pds_7_hg_4.pdf){width="100%"}
+
+
+# Histogramme - \textcolor{darkcyan}{Beispiel}
+nach @scott_1979 $, h := 3.49S_n/\sqrt[3]{n}$
+\vspace{1mm}
+
+![](../Abbildungen/pds_7_hg_5.pdf){width="100%"}
+
+
+
+\AtBeginSection{}
+\section{Programmierübungen und Selbstkontrollfragen}
+# Programmierübungen und Selbstkontrollfragen ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Motivation
+
+Beispieldatensatz
+
+Häufigkeitsverteilungen
+
+Histogramme
+
+**Programmierübungen und Selbstkontrollfragen**
+
+\vfill
+
+
+# Programmierübungen
+\setstretch{2}
+
+\small
+\begin{enumerate}
+\justifying
+\item Visualisiere die Häufigkeitsverteilungen der Post-BDI Daten.
+\item Visualisiere die Häufigkeitsverteilungen der Differenzen von Post- und Pre-BDI Daten.
+\item Visualisiere die Häufigkeitsverteilungen der Differenzen von Post- und Pre-BDI Daten getrennt nach den experimentellen Bedingungen ``Klassisch'' und ``Online''.
+      Nutze dazu dein Wissen zu den Prinzipien der Indizierung in R.
+\item Beschreibe die in der vorherigen Aufgabe erstellten Häufigkeitsverteilungen.
+\item Erstelle Histogramme der Differenzen von Post- und Pre-BDI Daten mithilfe verschiedener Methoden zur Bestimmung der Klassengrößen: mit einer Klassenbreite von 3, nach dem Excelstandard, mit der Sturges Klassenanzahl und mit der Scott Klassenanzahl.
+\item Beschreibe die in der vorherigen Aufgabe erstellten Histogramme.
+\end{enumerate}
+
+
+# Selbstkontrollfragen
+\setstretch{2}
+
+\small
+\begin{enumerate}
+\justifying
+\item Definiere die Begriffe der absoluten und relativen Häufigkeitsverteilungen.
+\item Definiere den Begriff des Histogramms.
+\item Erläutere die Bedeutung der Klassenanzahl für das Erscheinungsbild eines Histogramms.
+\end{enumerate}
+
+# References
+\footnotesize
