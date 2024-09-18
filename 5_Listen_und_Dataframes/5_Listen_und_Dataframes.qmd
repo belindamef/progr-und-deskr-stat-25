@@ -122,6 +122,25 @@ L <- c(list(pi), list("a"))                            # Konkatenation zweier Li
 print(L)
 ```
 
+# VSCode Interactive Viewers
+
+\textcolor{darkblue}{List Viewer}
+
+\vfill
+
+![](../Abbildungen/pds_5_list_viewer_demo.png){width="85%" fig-align="center"}
+
+
+\setstretch{1.2}
+\footnotesize
+
+Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt
+
+\tiny
+\begin{flushright}
+\textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Interactive-viewers}{VS Code Wiki - Interactive viewers}}
+\end{flushright}
+
 
 \AtBeginSubsection{}
 \subsection{Charakterisierung}
@@ -547,6 +566,25 @@ Die Spalten eines Dataframes können offenbar unterschiedlichen Typs sein
 
 $\Rightarrow$ rekursive Datenstruktur.
 
+
+# VSCode Interactive Viewers
+
+\textcolor{darkblue}{Table Viewer}
+
+\vfill
+
+![](../Abbildungen/pds_5_table_viewer_demo.png){width="75%" fig-align="center"}
+
+
+\setstretch{1.2}
+\footnotesize
+
+Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt
+
+\tiny
+\begin{flushright}
+\textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Interactive-viewers}{VS Code Wiki - Interactive viewers}}
+\end{flushright}
 
 
 \AtBeginSubsection{}
