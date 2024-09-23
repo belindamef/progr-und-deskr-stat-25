@@ -1,4 +1,4 @@
-# Programmierung und Deskriptive Statistik (WiSe 2023/2024) <!-- omit in toc -->
+# Programmierung und Deskriptive Statistik (WiSe 2024/2025) <!-- omit in toc -->
 
 ## Allgemeine Informationen
 
