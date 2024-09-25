@@ -365,7 +365,7 @@ barplot(                            # Balkendiagramm
   xlab      = "a",                  # x Achsenbeschriftung
   ylab      = "h(a)",               # y Achsenbeschriftung
   ylim      = c(0,25),              # y Achsengrenzen
-  las       = 2,                    # Anzeigen aller x Werte TODO: Orientierung der x ticks?
+  las       = 2,                    # Orientierung der x ticks senkrecht (90°)
   main  		= "Pre BDI"             # Titel
   )              
 dev.copy2pdf(                                            # PDF Kopiefunktion
