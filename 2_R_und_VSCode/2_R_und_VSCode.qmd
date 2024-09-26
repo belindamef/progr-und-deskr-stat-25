@@ -908,6 +908,28 @@ x <- "a"    #  x referenziert Objekt (0x2a08), Objekt (0x74b) jetzt ohne Referen
 
 \vfill
 
+# Zusammenfassung - Variablen, Environments und Funktionen
+
+\textbf{environments}
+
+All the variables that we create need to be stored somewhere, and that somewhere is an
+environment. Environments themselves are just another type of variable—we can assign
+them, manipulate them, and pass them into functions as arguments, just like we would
+any other variable. They are closely related to lists in that they are used for storing
+different types of variables together. In fact, most of the syntax for lists also works for
+environments, and we can coerce a list to be an environment (and vice versa).
+Usually, you won’t need to explicitly deal with environments. For example, when you
+assign a variable at the command prompt, it will automatically go into an environment
+called the global environment (also known as the user workspace). When you call a
+function, an environment is automatically created to store the function-related variables. Understanding the basics of environments can be useful, however, in under‐
+standing the scope of variables, and for examining the call stack when debugging your
+code.
+
+\textbf{functions}
+
+While most variable types are for storing data, functions let us do things with data—
+they are “verbs” rather than “nouns.” Like environments, they are just another data type
+that we can assign and manipulate and even pass into other functions.
 
 # Datenstrukturen ======================================= {.plain}
 \AtBeginSection{}
@@ -1205,7 +1227,10 @@ Datenstrukturen
 \item Gib ein paar einfache Befehle in die Console ein.
 \item Öffne die Help-Page für die Funktion \texttt{print()}. Was ist der Unterschied zwischen \texttt{print(x="Hallo Welt")} und \texttt{print("Hallo Welt")}?
 \item Was kann über das Argument \texttt{digits} spezifiziert werden? Suche unter \texttt{\textbf{Examples}} ein Beispiel für die Verwendung dieses Arguments. Was ist der Unterschied zwischen \texttt{print(pi)} und \texttt{print(pi, digits=2)}?
-\item Gib unvollständige Befehl in die Console ein und drücke die \fbox{Enter}-Taste. \\ (Beispiele: \texttt{print("Hello"}, \texttt{sqrt(4}, \texttt{x <-}, \texttt{sqrt(1 +}). Wie kannst du den prompt '>' wiederherstellen?
+\item Gib unvollständige Befehl in die Console ein und drücke die \fbox{Enter}-Taste. \\ (Beispiele: \texttt{print("Hello"} oder \texttt{sqrt(4}, \texttt{x <-} oder \texttt{sqrt(1 +}). Was passiert dann? Wie kannst du den prompt '>' wiederherstellen?
+\item Gib den Befehl \texttt{tralala(5)} ein und erläutere die resultierende Fehlermeldung.
+\item Gib den Befehl \texttt{mean + 3} ein und erläutere die resultierende Fehlermeldung.
+\item Gib den Befehl \texttt{sum("Hello World!")} ein und erkläutere die resultierende Fehlermeldung.
 \end{enumerate}
 
 \vfill
@@ -1216,14 +1241,16 @@ Datenstrukturen
 \setstretch{1.6}
 
 \begin{enumerate}
-\setcounter{enumi}{4}
+\setcounter{enumi}{8}
 \item Dokumentiert alle bisher eingeführten R Befehle in einem kommentierten R Skript und speichert es in euerem lokalen Kursordner.
   \begin{enumerate} \footnotesize
   \item Wie lautet der vollständige Pfad für das R Skript?
   \item Welche zwei Möglichkeiten gibt es, alle Befehle des Skripts auszuführen? Worin unterscheiden sie sich?
+  \item Welche zwei Möglichkeiten gibt es, einen oder mehrere R-Befehle in der Console auszuführen?
   \end{enumerate}
-\item Welche zwei Möglichkeiten gibt es, einen oder mehrere R-Befehl in der Console auszuführen?
-\item Eläutere den Begriff der Operatorpräzedenz. Wie kann sdiese aus der R-Console heraus nachgeschlagen werden?
+\item Schreibe ein R Skript, das nur den Befehl \texttt{'2 + 2'} enthält. Führe das Skript mit \texttt{source()} aus. Wird der Befehl ausgeführt? Warum erscheint keine Ergebnisausgabe in der R Console?
+\item Gebe nun den  Befehl \texttt{'2 + 2'} direkt in die R Console ein. 
+\item Erläutere den Begriff der Operatorpräzedenz. Wie kann sdiese aus der R-Console heraus nachgeschlagen werden?
 \end{enumerate}
 
 \vfill
