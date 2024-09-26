@@ -786,7 +786,7 @@ Anmerkungen:
 
 
 # Exkurs: R Pakete
-\setstretch{1.5}
+\setstretch{1.4}
 \vfill
 
 \textcolor{darkblue}{Das Prinzip}
@@ -807,14 +807,14 @@ Anmerkungen:
 \footnotesize
 
 * Anzeige und Auswahl aller installierter Pakete in der R Extention: \textit{HELP PAGES} $\to$ \textit{Home} $\to$ \textit{Packages}
-* Paket-Management mit Befehlen:
+* Paket-Management mit Befehlen: \tiny
   ```{r}
   #| label: Pakete Managen
   installed.packages()        # Alle installierten Pakte anzeigen
   install.packages("lobstr")  # Paket "lobstr" installieren
   library(lobstr)             # Paket "lobstr" laden
   ```
-* Tipp: Wenn in einem Datenanalyseskript Pakete außerhalb der `standard library` verwendet werden, sollte das Laden des Pakets auch ein Befehl im Analyseskript sein!
+* \footnotesize \justifying Tipp: Wenn in einem Datenanalyseskript Pakete außerhalb der `standard library` verwendet werden, sollte das Laden (\texttt{library()}) des Pakets auch ein Befehl im Analyseskript sein! Das gilt \textbf{nicht} für das Installationsbefehle (\texttt{install.packages()})! Die Installation von Paketen ist \textbf{nur einmal} notwendig. Falls Installationsbefehle im Skript stehen, sollten sie auskommentiert werden, da sie unnötig Zeit- und Rechenleistung kosten.
 
 
 # Variablenrepräsentation $\vert$ Copy-on-modify
