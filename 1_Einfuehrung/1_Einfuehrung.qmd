@@ -102,7 +102,7 @@ Aufgaben und Selbstkontrollfragen
 
 
 # Inhalte | WiSe 2024/2025 | Programmierung und Deskriptive Statistik
-\setstretch{1.5}
+\setstretch{1.3}
 
 \textcolor{darkblue}{Programmierung}
 
@@ -123,37 +123,44 @@ Aufgaben und Selbstkontrollfragen
 \end{itemize}
 
 # Struktur | WiSe 2024/2025 | Programmierung und Deskriptive Statistik
-\setstretch{1.5}
+\setstretch{1.2}
 
 \textcolor{darkblue}{Seminar und Praxisstunden}
 
 \begin{itemize}  \justifying 
 \item Theoretische und praktische Einführung in die wesentlichen Konzepte der Programmierung und deskriptiven Statistik.
-\item Anwendung der erlernten Konzepte in praktischen Übungen, unterstützt durch Hilfestellung von Lehrpersonen und Tutoren während der Praxisstunden.
-\item Bitte bringt gegebenfalls einen Laptop zu den Praxisstunden mit.
+\item Anwendung der erlernten Konzepte in praktischen Übungen, unterstützt durch Hilfestellung von Lehrpersonen und Tutor:innen während der Praxisstunden.
+\end{itemize}
+
+\textcolor{darkblue}{Programmierübungen}
+
+\begin{itemize}  \justifying 
+\item Neben den Präsenzzeiten werden wöchentliche Vor- und Nachbereitung der Programmierübungen und Selbstkontrollfragen dringend empfohlen!
+\item Die Computerplätze am URZ sind außerhalb der Belegzeiten (z.B. \textcolor{linkblue}{\href{https://lsf.ovgu.de/qislsf/rds?state=wplan&act=Raum&pool=Raum&show=plan&P.vx=mittel&raum.rgid=176}{G26.1-006}} oder \textcolor{linkblue}{\href{https://lsf.ovgu.de/qislsf/rds?state=wplan&act=Raum&pool=Raum&show=plan&P.vx=mittel&raum.rgid=177}{G26.1 007}}) öffentlich zugänglich. 
 \end{itemize}
 
 \textcolor{darkblue}{Leistungsnachweis}
 
 \begin{itemize}  \justifying 
 \item Selbstständige Bearbeitung von Übungsaufgaben und deren Einreichung in Form von R-Skripten.
-\item Leistungsnachweis gilt als erbracht, wenn mind. \textcolor{red}{60 \% (?)} der abgegebenen als bestanden berwertet wurden.
+\item Leistungsnachweis gilt als erbracht, wenn mind. 50 \% der abgegebenen Leistungen als bestanden berwertet wurden.
 \end{itemize}
+
+
 
 
 # Organisatorisches
 \setstretch{2}
 
 * \justifying Termine: Dienstags
-  * Gruppe 1: 11-13 Uhr in URZ Pool 4 (Persönlicher Computer optional)
-  * Gruppe 2: 13-15 Uhr in G40B-331 (Persönlicher Computer notwendig)
-* Kursmaterialien (Folien, Videos) auf der \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2024/Programmierung+und+Deskriptive+Statistik.html}{Kurswebseite}}
-* Codes und tagesakutelle Folien auf \textcolor{linkblue}{\href{https://github.com/belindamef/progr-und-deskr-stat-24}{Github}}
-* Vorherige Iteration des Kurses: \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2023/Programmierung+und+Deskriptive+Statistik.html}{PDS (WS 2022/23)}}
-* Empfohlene Vorbereitung: \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2024/Mathematische+Grundlagen.html}{Vorkurs ''Mathematische Grundlagen''}}
-* Ankündigungen, Fragen-Forum im Mattermost-Channel \textcolor{linkblue}{\href{https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmierung-und-deskriptive-statistik-wise-20242025}{''C1 - Programmierung und Deskriptive Statistik (WiSe 2024/2025)
-''}}
-* \textcolor{red}{Abgabe} über die \textcolor{linkblue}{\href{https://elearning.ovgu.de/course/view.php?id=15163}{Moodleseite}} \textcolor{red}{TODO}
+  * Gruppe 1: 11-13 Uhr in \textcolor{linkblue}{\href{https://lsf.ovgu.de/qislsf/rds?state=wplan&act=Raum&pool=Raum&show=plan&P.vx=mittel&raum.rgid=177}{G26.1 007}} (Persönlicher Laptop optional)
+  * Gruppe 2: 13-15 Uhr in G40B-331 (Persönlicher Laptop notwendig)
+* Kursmaterialien (Folien, Videos) auf der \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2025/Programmierung+und+Deskriptive+Statistik.html}{Kurswebseite}}
+* Codes und tagesakutelle Folien auf \textcolor{linkblue}{\href{https://github.com/belindamef/progr-und-deskr-stat-25}{Github}}
+* Vorherige Iteration des Kurses: \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2024/Programmierung+und+Deskriptive+Statistik.html}{PDS (WS 2023/24)}}
+* Empfohlene Vorbereitung: \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2025/Mathematische+Grundlagen.html}{Vorkurs ''Mathematische Grundlagen''}}
+* Ankündigungen, Fragen-Forum im \textcolor{linkblue}{\href{https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmierung-und-deskriptive-statistik-wise-20242025}{Mattermost-Channel}}
+* Abgabe und Evaluation des Leistungsnachweises über den \textcolor{linkblue}{\href{https://elearning.ovgu.de/course/view.php?id=17237}{Moodlekurs}}
 
 
 
@@ -174,32 +181,33 @@ Datum          & Einheit               & Thema		                              & 
 26.11.24       & R Grundlagen          & (6) Datenmanagement & Seminar  + Übung\\
 03.12.24       & Deskriptive Statistik & (7) Häufigkeitsverteilungen  & Seminar \\
 10.12.24       & Deskriptive Statistik & (8) Verteilungsfunktionen und Quantile  & Seminar \\
-17.12.24       & Deskriptive Statistik & (10) Maße der zentralen Tendenz und Variabilität & Seminar \\
+17.12.24       & Deskriptive Statistik & (9) Maße der zentralen Tendenz und Variabilität & Seminar \\
   & \textcolor{gray}{Weihnachtspause}    \\
-07.01.25       & R Grundlagen          & (11) Kontrollstrukturen; Datensimulationen & Seminar \\
+07.01.25       & R Grundlagen          & (10) Kontrollstrukturen; Datensimulationen & Seminar \\
 14.01.25       &           & \hspace{4mm} Praxisseminar  & \hspace{10mm} Übung \\
-21.01.25       & Deskriptive Statistik     & (12)  Anwendungsbeispiel & Seminar + Übung \\
-28.01.25       & Deskriptive Statistik     & (12) Anwendungsbeispiel  & Seminar + Übung \\
+21.01.25       & Deskriptive Statistik     & (11)  Anwendungsbeispiel & Seminar + Übung \\
+28.01.25       & Deskriptive Statistik     & (11) Anwendungsbeispiel  & Seminar + Übung \\
 \end{tabular}
 
 
 # Kurswebsite
 \vspace{5mm}
 
-\textcolor{red}{TODO}
 
-[\textcolor{linkblue}{Webseite des Kurses (Folien, Videos)}](https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2024/Programmierung+und+Deskriptive+Statistik.html)
+[\textcolor{linkblue}{Webseite des Kurses (Folien, Videos)}](https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2025/Programmierung+und+Deskriptive+Statistik.html)
 
-![](../Abbildungen/pds_Kurswebsite_24.png){width="80%"}
+![](../Abbildungen/pds_1_kurswebsite_2024.png){width="80%"}
 
 
 # Github
 \vspace{5mm}
-\textcolor{red}{TODO: neuer Screenshot}
 
-[\textcolor{linkblue}{Git-repository des Kurses (Code und Folien)}](https://github.com/belindamef/progr-und-deskr-stat-24)
 
-![](../Abbildungen/pds_1_gitrepo_24.png){width="80%"}
+[\textcolor{linkblue}{Git-repository des Kurses (Code und Folien)}](https://github.com/belindamef/progr-und-deskr-stat-25)
+
+\vfill 
+
+![](../Abbildungen/pds_1_gitrepo_25.png){width="80%"}
 
 
 
@@ -225,7 +233,7 @@ Datum          & Einheit               & Thema		                              & 
 Wenn Ihr Fragen habt, die für alle relevant ist oder auch andere beschäftigen könnte, stellt sie bitte im Forum. Schaut vorher, ob jemand schon eine ähnliche Frage gestellt hat. Das vermeidet Dopplungen und fördert den Austausch! Beantwortet gegenseitig Eure Fragen – anderen etwas zu erklären, ist oft der beste Weg, um das eigene Verständnis zu schärfen.
 \end{small}
 
-**Seid präzise und spezfisch**
+**Seid präzise und spezifisch**
 
 \begin{small}
 Formuliert eure Frage bitte möglichst spezifisch. Statt „Ich verstehe das Thema X nicht.“ formuliert spezifische Fragen wie „Ist im dritten Punkt zum Thema X gemeint, dass...?“. Präzise Fragen führen zu klaren Antworten und helfen Euch zudem, das Thema bereits beim Formulieren besser zu durchdringen. Oft lösen sich Fragen dabei von selbst.
@@ -237,13 +245,13 @@ Formuliert eure Frage bitte möglichst spezifisch. Statt „Ich verstehe das The
 Verweist bitte immer auf das Thema, die Foliennummer oder die Übungsaufgabe. Am besten direkt mit der Verlinkungsfunktion in Mattermost. So können wir die Frage schneller im richtigen Zusammenhang verstehen und beantworten.
 \end{small}
 
-# Markdown
+# Mattermost Pro-Tipp: Markdown
 
-Nutzt [\textcolor{linkblue}{Markdown in Mattermost}](https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmierung-und-deskriptive-statistik-wise-20242025) !
+Nutzt [\textcolor{linkblue}{Markdown in Mattermost}](https://docs.mattermost.com/collaborate/format-messages.html), um Inhalte übersichtlicher zu formatieren!
 
-Ihr könnte damit Inhalte übersichtlicher formatieren und lernt gleichzeitig schonmal nützliche Basics für die Arbeit mit Quarto.
+\vfill
 
-
+![](../Abbildungen/pds_1_markdown.png){width="85%" fig-align="center"}
 
 # Q&A {.plain}
 \vfill
