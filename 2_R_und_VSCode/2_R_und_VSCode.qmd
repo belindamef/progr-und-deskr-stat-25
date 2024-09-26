@@ -127,13 +127,16 @@ Programmierübungen und Selbstkontrollfragen
 
 \vspace{2mm}
 \normalsize
-\textcolor{darkcyan}{Beispiel für einen Befehl}
+\textcolor{darkcyan}{Beispiele für eine Befehle}
 
 \small
+
+\setstretch{1.2}
 
 ```{r, eval=T}
 #| label: Hello world console
 print("Hallo Welt!")
+sum(1:3)
 ```
 
 \vfill
@@ -142,11 +145,64 @@ Anmerkung:
 \color{darkcyan} 
 **Code-Snippets dieser Form immer aktiv in der Konsole nachvollziehen!**
 
-# VSCode Interactive Viewers
+# R Funktionen
 
+\setstretch{1.1}
+\small
+\vspace{2mm}
+
+Was sind R Funktionen?
+
+\footnotesize 
+
+\begin{itemize} \footnotesize \justifying
+  \item Funktionen lassen uns etwas ''tun''.
+  \item \texttt{print} und \texttt{sum} sind Beispiele für Funktionen, die etwas ausgeben bzw. aufsummieren.
+  \item Funktionen in R werden mit runden Klammern '()' aufgerufen. In diese Klammern eingeschlossen können einer Funktion eine oder mehrere \textit{Argumente} übergeben werden.
+\end{itemize}
+
+\small
+Hilfe zu Funktionen
+
+\footnotesize 
+
+\begin{itemize} \footnotesize \justifying
+  \item Der einfachste und meist beste Weg, Hilfe zu Funktionen zu bekommen ist über die in der lokalen Installation integrierten Dokumentation (Help pages).
+  \item Aufruf über Console mit Fragezeichen '\texttt{?}' gefolgt von dem Namen der Funktion oder mit \texttt{help(funktionsname)}.
+  \item  Das Verwenden von zwei Fragezeichen ('\texttt{??}') sucht nach allen Topics, die den Begriff enthalten.
+\end{itemize}
+
+\setstretch{1.0}
+\tiny
+
+```{r}
+?mean              # Öffne die Help page der Funktion "mean"
+help(mean)         # Öffne die Help page der Funktion "mean"
+??mean             # Suche topics, die den Begriff "mean" enthalten
+```
+
+\setstretch{1.1}
+\begin{itemize} \footnotesize \justifying
+  \item Die Help page jeder Funktion enthält \textbf{Description}, \textbf{Usage}, mögliche \textbf{Arguments}, \textbf{Examples} und viele weitere nützliche Informationen.
+  \item  Wie wir später noch sehen werden, gibt es weitere Ausdrücke in R, die keine Funktionen sind. In vielen Fällen finden wir die entsprechenden Help pages, indem der Ausdruck in Anführungszeichen gesetzt wird.
+\end{itemize}
+
+\vspace{1mm}
+\setstretch{1.0}
+\tiny
+```{r}
+?"+"
+?"|"
+?"if"
+```
+
+
+# VSCode Interactive Viewers
 \vfill
+
 \textcolor{darkblue}{Help Viewer}
 
+\vfill
 
 ![](../Abbildungen/pds_2_R_helpviewer.png){width="70%" fig-align="center"}
 
@@ -198,7 +254,7 @@ Beispiele
 ```{r}
 #| label: Hello World script
 print("Hallo Welt!")  # Hinter Hashtags stehen dokumentierende Kommentare
-print("Hallo R!")     # Kommentare werden nicht ausgefuehrt
+sum(1:3)              # Kommentare werden nicht ausgefuehrt
 ```
 
 \footnotesize
