@@ -821,7 +821,7 @@ Attribute
 **Programmierübungen und Selbstkontrollfragen**
 
 
-# Programmierübungen und Selbstkontrollfragen
+# Programmierübungen
 \vfill
 \setstretch{1.4}
 \small
@@ -842,7 +842,7 @@ Attribute
 
 \vfill
 
-# Programmierübungen und Selbstkontrollfragen
+# Selbstkontrollfragen
 \vfill
 \setstretch{1.6}
 \small

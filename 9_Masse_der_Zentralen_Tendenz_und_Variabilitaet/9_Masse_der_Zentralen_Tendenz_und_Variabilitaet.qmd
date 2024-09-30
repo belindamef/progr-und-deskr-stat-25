@@ -1022,7 +1022,7 @@ Maße der Datenvariabilität
 \vfill
 
 
-# Programmierübungen und Selbskontrollfragen
+# Programmierübungen
 \small
 \setstretch{1.5}
 
@@ -1040,7 +1040,7 @@ Maße der Datenvariabilität
 \vfill
 
 
-# Programmierübungen und Selbskontrollfragen
+# Selbskontrollfragen
 \setstretch{1.5}
 \small
 \begin{enumerate}

@@ -440,7 +440,7 @@ Attribute
 **Programmierübungen und Selbstkontrollfragen**
 
 
-# Programmierübungen und Selbstkontrollfragen
+# Programmierübungen
 
 \footnotesize
 
@@ -474,3 +474,7 @@ Attribute
     \item Konkatenieren die Matrizen $A$ und $B$ spaltenweise.
     \item Öffne beide Matrizen im VSCode table Viewer.
 \end{enumerate}
+
+# Selbstkontrollfragen
+
+TODO

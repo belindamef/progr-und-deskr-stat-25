@@ -17,12 +17,6 @@ Belinda Fleischmann
 
 
 # Termine {.plain}
-\setstretch{1.3}
-\vfill
-\center
-\footnotesize
-
-\textcolor{red}{TODO}
 
 
 # (2) R und VSCode - Titelfolie {.plain}

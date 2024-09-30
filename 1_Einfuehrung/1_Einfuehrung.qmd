@@ -108,8 +108,8 @@ Aufgaben und Selbstkontrollfragen
 
 \begin{itemize}  \justifying
 \item Einführung in die Programmiersprache R und die Entwicklungsumgebung Visual Studio Code (VS Code).
-\item Grundlegende Konzepte der datenanalytischen Programmierung in R, einschließlich arithmetischer Operationen, logischer Operationen, Variablenmanagement, Datenstrukturen und Kontrollstrukturen.
-\item Einführung in wesentliche Werkzeuge und Pakete für die Durchführung deskriptiver statistischer Analysen.
+\item Grundlegende Konzepte der datenanalytischen Programmierung in R, einschließlich arithmetischer Operationen, logischer Operationen, Variablen, Datenstrukturen und Kontrollstrukturen.
+\item Einführung in wesentliche Werkzeuge und Pakete für die Durchführung deskriptiver statistischer Analysen mit R.
 \end{itemize}
 \normalsize
 
@@ -118,25 +118,25 @@ Aufgaben und Selbstkontrollfragen
 \textcolor{darkblue}{Deskriptive Statistik}
 
 \begin{itemize}  \justifying 
-\item Grundlegender Methoden der deskriptiven Statistik zur Analyse und Beschreibung quantitativer Daten mit R.
-\item Praktische Übung anhang von Anwendungsbeispielen.
+\item Grundlegender Methoden der deskriptiven Statistik zur Analyse und Beschreibung quantitativer Daten.
+\item Praktische Übung anhand von Anwendungsbeispielen.
 \end{itemize}
 
 # Struktur | WiSe 2024/2025 | Programmierung und Deskriptive Statistik
 \setstretch{1.2}
 
-\textcolor{darkblue}{Seminar und Praxisstunden}
+\textcolor{darkblue}{Seminar und Präsenzübung}
 
 \begin{itemize}  \justifying 
 \item Theoretische und praktische Einführung in die wesentlichen Konzepte der Programmierung und deskriptiven Statistik.
-\item Anwendung der erlernten Konzepte in praktischen Übungen, unterstützt durch Hilfestellung von Lehrpersonen und Tutor:innen während der Praxisstunden.
+\item Anwendung der erlernten Konzepte in praktischen Übungen, unterstützt durch Hilfestellung von Lehrpersonen und Tutor:innen während der Präsenzübungen.
 \end{itemize}
 
 \textcolor{darkblue}{Programmierübungen}
 
 \begin{itemize}  \justifying 
 \item Neben den Präsenzzeiten werden wöchentliche Vor- und Nachbereitung der Programmierübungen und Selbstkontrollfragen dringend empfohlen!
-\item Die Computerplätze am URZ sind außerhalb der Belegzeiten (z.B. \textcolor{linkblue}{\href{https://lsf.ovgu.de/qislsf/rds?state=wplan&act=Raum&pool=Raum&show=plan&P.vx=mittel&raum.rgid=176}{G26.1-006}} oder \textcolor{linkblue}{\href{https://lsf.ovgu.de/qislsf/rds?state=wplan&act=Raum&pool=Raum&show=plan&P.vx=mittel&raum.rgid=177}{G26.1 007}}) öffentlich zugänglich. 
+\item Die Computerplätze am URZ sind außerhalb der Belegzeiten (siehe \textcolor{linkblue}{\href{https://lsf.ovgu.de/qislsf/rds?state=wplan&act=Raum&pool=Raum&show=plan&P.vx=mittel&raum.rgid=176}{G26.1-006}} oder \textcolor{linkblue}{\href{https://lsf.ovgu.de/qislsf/rds?state=wplan&act=Raum&pool=Raum&show=plan&P.vx=mittel&raum.rgid=177}{G26.1 007}}) öffentlich zugänglich. 
 \end{itemize}
 
 \textcolor{darkblue}{Leistungsnachweis}
@@ -153,40 +153,43 @@ Aufgaben und Selbstkontrollfragen
 \setstretch{2}
 
 * \justifying Termine: Dienstags
-  * Gruppe 1: 11-13 Uhr in \textcolor{linkblue}{\href{https://lsf.ovgu.de/qislsf/rds?state=wplan&act=Raum&pool=Raum&show=plan&P.vx=mittel&raum.rgid=177}{G26.1 007}} (Persönlicher Laptop optional)
+  * Gruppe 1: 11-13 Uhr in G26.1 007 (Persönlicher Laptop optional)
   * Gruppe 2: 13-15 Uhr in G40B-331 (Persönlicher Laptop notwendig)
 * Kursmaterialien (Folien, Videos) auf der \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2025/Programmierung+und+Deskriptive+Statistik.html}{Kurswebseite}}
 * Codes und tagesakutelle Folien auf \textcolor{linkblue}{\href{https://github.com/belindamef/progr-und-deskr-stat-25}{Github}}
 * Vorherige Iteration des Kurses: \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2024/Programmierung+und+Deskriptive+Statistik.html}{PDS (WS 2023/24)}}
 * Empfohlene Vorbereitung: \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2025/Mathematische+Grundlagen.html}{Vorkurs ''Mathematische Grundlagen''}}
-* Ankündigungen, Fragen-Forum im \textcolor{linkblue}{\href{https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmierung-und-deskriptive-statistik-wise-20242025}{Mattermost-Channel}}
+* Ankündigungen und Fragen-Forum im \textcolor{linkblue}{\href{https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmierung-und-deskriptive-statistik-wise-20242025}{Mattermost-Channel}}
 * Abgabe und Evaluation des Leistungsnachweises über den \textcolor{linkblue}{\href{https://elearning.ovgu.de/course/view.php?id=17237}{Moodlekurs}}
 
 
 
-# Termine \textcolor{red}{TODO}
+# Termine
 \setstretch{1.3}
 \vfill
 \center
 \footnotesize
 \renewcommand{\arraystretch}{1.1}
 \begin{tabular}{llll}
-Datum          & Einheit               & Thema		                              & Veranstaltungsform \\\hline
-15.10.24       & R Grundlagen          & (1) Einführung          & Seminar\\
-22.10.24       & R Grundlagen          & (2) R und Visual Studio Code        & Seminar  + Übung \\
-29.10.24       & R Grundlagen          & (2) R und Visual Studio Code        & Seminar  + Übung \\
-05.11.24       & R Grundlagen          & (3) Vektoren    & Seminar \\
-12.11.24       & R Grundlagen          & (4) Matrizen         & Seminar \\
-19.11.24       & R Grundlagen          & (5) Listen und Dataframes & Seminar \\
-26.11.24       & R Grundlagen          & (6) Datenmanagement & Seminar  + Übung\\
-03.12.24       & Deskriptive Statistik & (7) Häufigkeitsverteilungen  & Seminar \\
-10.12.24       & Deskriptive Statistik & (8) Verteilungsfunktionen und Quantile  & Seminar \\
-17.12.24       & Deskriptive Statistik & (9) Maße der zentralen Tendenz und Variabilität & Seminar \\
-  & \textcolor{gray}{Weihnachtspause}    \\
-07.01.25       & R Grundlagen          & (10) Kontrollstrukturen; Datensimulationen & Seminar \\
-14.01.25       &           & \hspace{4mm} Praxisseminar  & \hspace{10mm} Übung \\
-21.01.25       & Deskriptive Statistik     & (11)  Anwendungsbeispiel & Seminar + Übung \\
-28.01.25       & Deskriptive Statistik     & (11) Anwendungsbeispiel  & Seminar + Übung \\
+Datum          & Einheit                  & Thema                                 & Veranstaltungsform\\\hline
+15.10.24       & R Grundlagen             & (1) Einführung                         & Seminar           \\
+22.10.24       & R Grundlagen             & (2) R und Visual Studio Code           & Seminar           \\
+29.10.24       & R Grundlagen             & (2) R und Visual Studio Code           & Übung             \\
+05.11.24       & R Grundlagen             & (3) Vektoren, (4) Matrizen             & Seminar           \\
+12.11.24       & R Grundlagen             & (5) Listen und Dataframes              & Seminar           \\
+               & \textit{Leistungsnachweis 1}                                                          \\
+19.11.24       & R Grundlagen             & (6) Datenmanagement                    & Seminar           \\
+26.11.24       & R Grundlagen             & (2-6) R Grundlagen                     & Übung             \\
+03.12.24       & Deskriptive Statistik    & (7) Häufigkeitsverteilungen            & Seminar           \\
+10.12.24       & Deskriptive Statistik    & (8) Verteilungsfunktionen und Quantile & Seminar           \\
+               & \textit{Leistungsnachweis 2}                                                          \\
+17.12.24       & Deskriptive Statistik    & (9) Maße der zentralen Tendenz und Variabilität & Seminar  \\
+               & \textcolor{gray}{Weihnachtspause}                                                     \\
+07.01.25       & R; Deskriptive Statisitk & (10) Kontrollstrukturen; Anwendungsbeispiel & Seminar      \\
+14.01.25       & Deskriptive Statistik    & (11) Anwendungsbeispiel                     & Übung             \\
+               & \textit{Leistungsnachweis 3}                                                          \\
+21.01.25       & Deskriptive Statistik    & (11) Anwendungsbeispiel                & Seminar           \\
+28.01.25       & Deskriptive Statistik    & (11) Anwendungsbeispiel, Q\&A           & Seminar          \\
 \end{tabular}
 
 
@@ -219,7 +222,7 @@ Datum          & Einheit               & Thema		                              & 
 
 \small
 
-* Regristierung und Beitritt zum **Team** \textcolor{linkblue}{\href{https://mm.cs.ovgu.de/signup_user_complete/?id=7bayes88j7r85mo4nidiw3z3pe&md=link&sbr=su}{MethPsy I - Studis}}.
+* Regristierung und Beitritt zum **Team** \textcolor{linkblue}{\href{https://mm.cs.ovgu.de/signup_user_complete/?id=jycatiwir3bw3mtximamm5i1qy&md=link&sbr=su}{MethPsy I - Studis}}.
 * Beitritt zum **Channel** [\textcolor{linkblue}{C1 - Programmierung und Deskriptive Statistik (WiSe 2024/2025)
 }](https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmierung-und-deskriptive-statistik-wise-20242025)
 * Zugang über [\textcolor{linkblue}{Web-App} (gleicher Link wie oben)](https://mm.cs.ovgu.de/bsc-psychologie-2023/channels/c1---programmierung-und-deskriptive-statistik-wise-20242025), [\textcolor{linkblue}{Desktop-App}](https://mattermost.com/download/?utm_source=google&utm_medium=cpc&utm_campaign=Google_Brand_EMEA&utm_term=mattermost%20install&utm_placement=&gad_source=1&gclid=Cj0KCQjw5ea1BhC6ARIsAEOG5pxQje4p0Qf9uPehjTg9tXPIces15h-YimpVOJ-Uoe1doLKw3jgUKzsaAuU-EALw_wcB#desktop) oder [\textcolor{linkblue}{Mobile App}](https://mattermost.com/download/?utm_source=google&utm_medium=cpc&utm_campaign=Google_Brand_EMEA&utm_term=mattermost%20install&utm_placement=&gad_source=1&gclid=Cj0KCQjw5ea1BhC6ARIsAEOG5pxQje4p0Qf9uPehjTg9tXPIces15h-YimpVOJ-Uoe1doLKw3jgUKzsaAuU-EALw_wcB#mobile) möglich.
@@ -230,13 +233,13 @@ Datum          & Einheit               & Thema		                              & 
 **Forum als Community Tool**
 
 \begin{small}
-Wenn Ihr Fragen habt, die für alle relevant ist oder auch andere beschäftigen könnte, stellt sie bitte im Forum. Schaut vorher, ob jemand schon eine ähnliche Frage gestellt hat. Das vermeidet Dopplungen und fördert den Austausch! Beantwortet gegenseitig Eure Fragen – anderen etwas zu erklären, ist oft der beste Weg, um das eigene Verständnis zu schärfen.
+Wenn ihr Fragen habt, die für alle relevant sind oder auch andere beschäftigen könnten, stellt sie bitte im Forum. Schaut vorher, ob jemand schon eine ähnliche Frage gestellt hat. Das vermeidet Dopplungen und fördert den Austausch! Beantwortet gegenseitig eure Fragen – anderen etwas zu erklären, ist oft der beste Weg, um das eigene Verständnis zu schärfen.
 \end{small}
 
 **Seid präzise und spezifisch**
 
 \begin{small}
-Formuliert eure Frage bitte möglichst spezifisch. Statt „Ich verstehe das Thema X nicht.“ formuliert spezifische Fragen wie „Ist im dritten Punkt zum Thema X gemeint, dass...?“. Präzise Fragen führen zu klaren Antworten und helfen Euch zudem, das Thema bereits beim Formulieren besser zu durchdringen. Oft lösen sich Fragen dabei von selbst.
+Formuliert eure Frage bitte möglichst spezifisch. Statt „Ich verstehe das Thema X nicht.“ formuliert spezifische Fragen wie „Ist im dritten Punkt zum Thema X gemeint, dass...?“. Präzise Fragen führen zu klaren Antworten und helfen euch zudem, das Thema bereits beim Formulieren besser zu durchdringen. Oft lösen sich Fragen dabei auch von selbst.
 \end{small}
 
 **Kontext ist Key**
@@ -435,7 +438,9 @@ write.csv(data, file = "progr-und-deskr-stat-25/1_Einfuehrung/Beispieldaten.csv"
 
 \textcolor{darkblue}{Intuition zur Struktur der Computergestützten Datenanalyse}
 
-![](../Abbildungen/pds_1_Datenanalyse_skript_Schaubild.pdf){width="100%" fig-align="center"}
+\vspace{-2mm}
+
+![](../Abbildungen/pds_1_Datenanalyse_skript_Schaubild.pdf){width="105%" fig-align="left"}
 
 
 
@@ -681,7 +686,7 @@ Zentrale Eigenschaften
 \end{small}
 
 \center
-\textcolor{darkcyan}{ $\to$ Die Architektur eines Rechners impliziert das Grundprinzip der Programmierung: \\
+\textbf{ $\to$ Die Architektur eines Rechners impliziert das Grundprinzip der Programmierung: \\
 Befehle werden streng sequentiell abgearbeitet.}
 
 
@@ -972,7 +977,7 @@ Bücher [\textcolor{linkblue}{RBookdown}](https://bookdown.org/yihui/bookdown/) 
 * [\textcolor{linkblue}{rseek.org}](https://rseek.org/)
 * \small [\textcolor{linkblue}{rstudio.com/resources/cheatsheets}](https://www.rstudio.com/resources/cheatsheets/)
 * [\textcolor{linkblue}{r-bloggers.com}](https://www.r-bloggers.com/)
-* ChatGPT
+
 
 
 # Was ist Visual Studio Code (VSCode)?
@@ -1046,18 +1051,18 @@ R und Visual Studio Code
 # Selbstkontrollfragen
 \setstretch{1.5}
 \small
-1. Geben Sie die typische Struktur einer computergestützten Datenanalyse wieder.
-2. Erläutern Sie den Begriff "Datenanalyseskript".
-3. Definieren Sie den Begriff "Informatik".
-4. Erläutern Sie die Akronyme CPU, RAM, SSD, und GPU.
-5. Nennen Sie wesentliche Aspekte der Von-Neumann Rechnerarchitektur.
-6. Definieren Sie den Begriff Algorithmus.
-7. Erläutern Sie den Zusammenhang von Algorithmen und Programmen.
-8. Was bezeichnen die Syntax und Semantik einer Programmiersprache?
-9.  Differenzieren Sie die Begriffe "Maschinensprache" und "höhere Programmiersprache".
-10. Skizzieren Sie Prinzipien der prozeduralen und objektorientierten imperativen Programmierung.
-11. Skizzieren Sie die Entwicklung der Programmiersprachen der ersten bis vierten Generation.
-12. Differenzieren Sie die Begriffe der kompilierten und der interpretierten Programmiersprachen.
+1.  Gebe die typische Struktur einer computergestützten Datenanalyse wieder.
+2.  Erläutere den Begriff "Datenanalyseskript".
+3.  Definiere den Begriff "Informatik".
+4.  Erläutere Sie die Akronyme CPU, RAM, SSD, und GPU.
+5.  Nenne die wesentlichen Aspekte der Von-Neumann Rechnerarchitektur.
+6.  Definiere den Begriff Algorithmus.
+7.  Erläutere den Zusammenhang von Algorithmen und Programmen.
+8.  Was bezeichnen Syntax und Semantik einer Programmiersprache?
+9.  Differenziere die Begriffe "Maschinensprache" und "höhere Programmiersprache".
+10. Skizziere Prinzipien der prozeduralen und objektorientierten imperativen Programmierung.
+11. Skizziere die Entwicklung der Programmiersprachen der ersten bis vierten Generation.
+12. Differenziere die Begriffe der kompilierten und der interpretierten Programmiersprachen.
 
 
 # Referenzen
