@@ -154,7 +154,7 @@ Aufgaben und Selbstkontrollfragen
 
 * \justifying Termine: Dienstags
   * Gruppe 1: 11-13 Uhr in G26.1 007 (Persönlicher Laptop optional)
-  * Gruppe 2: 13-15 Uhr in G40B-331 (Persönlicher Laptop notwendig)
+  * Gruppe 2: 13-15 Uhr in G22A-120 (Persönlicher Laptop notwendig)
 * Kursmaterialien (Folien, Videos) auf der \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2025/Programmierung+und+Deskriptive+Statistik.html}{Kurswebseite}}
 * Codes und tagesakutelle Folien auf \textcolor{linkblue}{\href{https://github.com/belindamef/progr-und-deskr-stat-25}{Github}}
 * Vorherige Iteration des Kurses: \textcolor{linkblue}{\href{https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2024/Programmierung+und+Deskriptive+Statistik.html}{PDS (WS 2023/24)}}
