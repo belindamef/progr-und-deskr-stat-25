@@ -143,7 +143,6 @@ Programmierübungen und Selbstkontrollfragen
 * Autocomplete mit \fbox{Tab}
 * Code ausführen mit \fbox{Enter}
 * Vorherige Befehle mit Cursor \fbox{$\uparrow$}
-* Bereinigen des Konsolenoutputs mit \fbox{Ctrl} + \fbox{L}
 * Code Ausführungsstopp mit \fbox{Esc} oder \fbox{Ctrl} + \fbox{C}
 
 \vspace{2mm}
