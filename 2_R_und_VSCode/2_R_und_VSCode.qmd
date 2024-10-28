@@ -1305,7 +1305,7 @@ Datenstrukturen
 \item Gib unvollständige Befehl in die Console ein und drücke die \fbox{Enter}-Taste. \\ (Beispiele: \texttt{'print("Hello"'} oder \texttt{'sqrt(4'}, \texttt{'x <-'} oder \texttt{'sqrt(1 +'}). Was passiert in der Konsole? Wie kannst du den prompt '>' wiederherstellen?
 \item Gib den Befehl \texttt{'tralala(5)'} ein und erläutere die resultierende Fehlermeldung.
 \item Gib den Befehl \texttt{'mean + 3'} ein und erläutere die resultierende Fehlermeldung.
-\item Gib den Befehl \texttt{sum("Hello World!")} ein und erkläutere die resultierende Fehlermeldung.
+\item Gib den Befehl \texttt{sum("Hello World!")} ein und erläutere die resultierende Fehlermeldung.
 \end{enumerate}
 
 \vfill
