@@ -25,8 +25,8 @@ Belinda Fleischmann
 \begin{tabular}{llll}
 Datum          & Einheit                  & Thema                                  & Form\\\hline
 15.10.24       & R Grundlagen             & (1) Einführung                         & Seminar           \\
-\textbf{22.10.24}       & \textbf{R Grundlagen}             & \textbf{(2) R und Visual Studio Code}           & \textbf{Seminar}           \\
-29.10.24       & R Grundlagen             & (2) R und Visual Studio Code           & Übung             \\
+22.10.24       & R Grundlagen             & (2) R und Visual Studio Code           & Seminar           \\
+\textbf{29.10.24}       & \textbf{R Grundlagen}             & \textbf{(2) R und Visual Studio Code}           & \textbf{Übung}             \\
 05.11.24       & R Grundlagen             & (3) Vektoren, (4) Matrizen             & Seminar           \\
 12.11.24       & R Grundlagen             & (5) Listen und Dataframes              & Seminar           \\
                & \textit{Leistungsnachweis 1}                                                          \\
@@ -935,7 +935,8 @@ obj_addr(y) == obj_addr(x)  # ...referenzieren y und x nicht die selbe Adresse
 ![](../Abbildungen/pds_2_copy_on_modify.pdf){width="70%"}
 
 
-R Objekte sind \textit{immutable}, können also nicht verändert werden.
+* R Objekte sind \textit{immutable}, können also nicht verändert werden.
+* Bei Modifizierung der Variable \texttt{y} wird das \textquote{Original}-Objekt (0x74b) nicht verändert, sondern eine Kopie (0xcd2) erstellt, welche dann verändert wird.
 
 
 # Variablenrepräsentation $\vert$ Modifications-in-place
@@ -1304,7 +1305,7 @@ Datenstrukturen
 \item Gib unvollständige Befehl in die Console ein und drücke die \fbox{Enter}-Taste. \\ (Beispiele: \texttt{'print("Hello"'} oder \texttt{'sqrt(4'}, \texttt{'x <-'} oder \texttt{'sqrt(1 +'}). Was passiert in der Konsole? Wie kannst du den prompt '>' wiederherstellen?
 \item Gib den Befehl \texttt{'tralala(5)'} ein und erläutere die resultierende Fehlermeldung.
 \item Gib den Befehl \texttt{'mean + 3'} ein und erläutere die resultierende Fehlermeldung.
-\item Gib den Befehl \texttt{sum('"Hello World!")'} ein und erkläutere die resultierende Fehlermeldung.
+\item Gib den Befehl \texttt{sum("Hello World!")} ein und erkläutere die resultierende Fehlermeldung.
 \end{enumerate}
 
 \vfill
@@ -1335,7 +1336,7 @@ Datenstrukturen
 \setstretch{1.6}
 
 \begin{enumerate}
-\setcounter{enumi}{7}
+\setcounter{enumi}{12}
 \item Definiere den Begriff der Variable im Kontext der Programmierung.
 \item Erläutere die Begriffe Initialisierungsanweisung und Zuweisungsanweisung für Variablen. Wie sieht das in R aus?
 \item Gib jeweils ein Beispiel für einen zulässigen und einen unzulässigen Variablennamen in R.
@@ -1352,13 +1353,12 @@ Datenstrukturen
 \vfill
 
 
-
 # Datenstrukturen
 \footnotesize
 \setstretch{1.6}
 
 \begin{enumerate}
-\setcounter{enumi}{16}
+\setcounter{enumi}{23}
 \item Diskutiere die klassischen Datenstrukturen einer 3GL Programmiersprache.
 \item Diskutiere die Organisation von Datenstrukturen in R.
 \item Wodurch unterscheiden sich eine atomare und eine rekursive Datenstruktur in R?
@@ -1369,4 +1369,3 @@ Datenstrukturen
 
 \vfill
 \vfill
-
