@@ -1033,7 +1033,7 @@ Programmierübungen und Selbstkontrollfragen
 * Vordefiniert innerhalb der Programmiersprache
 * Logische Werte (`logical`): TRUE, FALSE
 * Ganze Zahlen (`integer`): int8 (-128,...,127), int16 (–32768,..., 32767)
-* Gleitkommazahlen (single, double): 1.23456, 12.3456, 123.456, ...
+* Gleitkommazahlen (`single`, `double`): 1.23456, 12.3456, 123.456, ...
 * Zeichen (character): "a", "b", "c", "!"
 * Datentyp-spezifische assoziierte Operationen
     * \small AND, OR (logical) +, - (integer) +,-,*, / (single), Zeichenkonkatenation (character)
@@ -1206,7 +1206,18 @@ is.logical(x)
 #| label: test type double
 is.double(x)
 ```
-
+```{r, eval = T}
+#| label: test type numeric
+is.numeric(x)
+```
+```{r, eval = T}
+#| label: test type double on int
+is.double(y)
+```
+```{r, eval = T}
+#| label: test type numeric on int
+is.numeric(y)
+```
 
 # Übersicht atomare Datenstrukturen in R
 \vspace{3mm}
@@ -1305,7 +1316,7 @@ Datenstrukturen
 \item Gib unvollständige Befehl in die Console ein und drücke die \fbox{Enter}-Taste. \\ (Beispiele: \texttt{'print("Hello"'} oder \texttt{'sqrt(4'}, \texttt{'x <-'} oder \texttt{'sqrt(1 +'}). Was passiert in der Konsole? Wie kannst du den prompt '>' wiederherstellen?
 \item Gib den Befehl \texttt{'tralala(5)'} ein und erläutere die resultierende Fehlermeldung.
 \item Gib den Befehl \texttt{'mean + 3'} ein und erläutere die resultierende Fehlermeldung.
-\item Gib den Befehl \texttt{sum("Hello World!")} ein und erläutere die resultierende Fehlermeldung.
+\item Gib den Befehl \texttt{'sum("Hello World!")'} ein und erläutere die resultierende Fehlermeldung.
 \end{enumerate}
 
 \vfill
