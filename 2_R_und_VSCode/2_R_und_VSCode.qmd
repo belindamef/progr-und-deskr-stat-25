@@ -1170,7 +1170,7 @@ c = 'a' 					# character
 \small
 Ausgabe von Datentypen durch `typeof()`
 \setstretch{0.5}
-\small
+\footnotesize
 ```{r, eval = T}
 #| label: bool
 typeof(b)
