@@ -3,6 +3,8 @@
 # Datum 18-09-2024
 # Belinda Fleischmann
 
+# nolint start: object_name_linter
+
 # Erzeugen einer Liste mit 3 Elementen
 L <- list(
   c(1, 4, 5),                                   # Vektor mit 3 Elementen
@@ -12,3 +14,5 @@ L <- list(
 
 # Liste in Console ausgeben
 print(L)
+
+# nolint end

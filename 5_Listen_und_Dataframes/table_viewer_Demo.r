@@ -3,6 +3,8 @@
 # Datum 18-09-2024
 # Belinda Fleischmann
 
+# nolint start: object_name_linter
+
 # Erzeugen eines Dataframes
 D <- data.frame(
   x = letters[1:4],                  # 1. Spalte mit Name x
@@ -12,3 +14,5 @@ D <- data.frame(
 
 # Ausgabe des Dataframes in der Console
 print(D)
+
+# nolint end

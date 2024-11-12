@@ -402,7 +402,7 @@ L[["carla"]]                # Listenelementinhaltsinindizierung
 \setstretch{1.1}
 \small
 \vspace{1.5mm}
-Mit dem `$`-Operator könnne **Listenelementinhalte** indiziert werden.
+Mit dem `$`-Operator können **Listenelementinhalte** indiziert werden.
 
 \vspace{1mm}
 \tiny
@@ -573,20 +573,22 @@ print(D)
 ```
 
 \small
-Die Spalten des Dataframes müssen gleiche Länge haben
+Die Spalten eines Dataframes können offenbar unterschiedlichen Typs sein.
+
+$\Rightarrow$ rekursive Datenstruktur.
+\small
+
+Allerdings müssen alle Spalten die gleiche Länge haben.
 
 \footnotesize
 ```{r, error = TRUE, eval = T, results="asis"}
-D <- data.frame(x = letters[1:4],    # 1. Spalte mit Name x
-                y = 1:4,             # 2. Spalte mit Name y
-                z = c(T, T, F))      # 3. Spalte mit Name z
+D <- data.frame(x = letters[1:4],    # 1. Spalte mit Länge 4
+                y = 1:4,             # 2. Spalte mit Länge 4
+                z = c(T, T, F))      # 3. Spalte mit Länge 3
 
 ```
 
-\small
-Die Spalten eines Dataframes können offenbar unterschiedlichen Typs sein
 
-$\Rightarrow$ rekursive Datenstruktur.
 
 
 # VSCode Interactive Viewers
