@@ -1,6 +1,6 @@
 # Beispiel eines einfaches Datenanalyseskripts
 # ----------------------------------------------
-# Dieses Skript lädt den Datensatz "Beispieldaten_1.csv", und berechnet
+# Dieses Skript lädt den Datensatz "Beispieldaten.csv", und berechnet
 # Mittelwerte und Korrelation.
 # -----------------------------------------------
 # Seminar "Progammierung und Deskriptive Statistik" WiSe 2024/2025
