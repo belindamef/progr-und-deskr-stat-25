@@ -505,7 +505,8 @@ Für eine optimierte Anzeige von Grafiken innerhalb der VS Code-Umgebung ist es 
 \setstretch{1.2}
 \footnotesize
 
-Das R-Paket \textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Plot-viewer}{httpgd}} vereinfacht die Arbeit mit Grafiken in VS Code.
+Das R-Paket \textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Plot-viewer}{httpgd}} vereinfacht die Arbeit mit Grafiken über den VS Code 
+\textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Plot-viewer}{Plot viewer}}.
 
 ![](../Abbildungen/pds_7_plot_viewer.png){width="70%" fig-align="center"}
 
@@ -513,18 +514,16 @@ Das R-Paket \textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-
 
 
 \begin{itemize}
-\item Nach der Installation des Pakets kann der Plot Viewer in den VS Code-Einstellungen über die Option \textbf{r.plot.useHttpgd} aktiviert werden.
+\item Nach der Installation des Pakets kann dieser Plot Viewer in den VS Code-Einstellungen über die Option \textbf{r.plot.useHttpgd} aktiviert werden.
 \item Nach dem Ausführen eines Plot-Befehls öffnen sich die Grafiken automatisch im Plot Viewer.
 \item Nacheinander erstellte Grafiken werden nicht überschrieben, sondern als separate Ansichten hintereinander angezeigt und können durchgescrollt werden.
 \end{itemize}
 
-
-
-
 \tiny
+\setstretch{0.8}
+
 \begin{flushright}
 \textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Interactive-viewers}{VS Code Wiki - Interactive viewers}}
-\textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Plot-viewer}{Plot viewer}}
 \end{flushright}
 
 
@@ -576,16 +575,20 @@ abgebildet sind, wobei $b_0 := \min A$ und $b_k := \max A$ angenommen werden sol
 Bemerkungen
 
 * Das Aussehen eines Histogramms ist stark von der Anzahl $k$ der Klassen abhängig.
-* Mit der Aufrundungsfunktion $\lceil \cdot \rceil$ sind konventionelle Werte für $k$
+* Im Folgenden sind einige konventionelle Methoden zur Bestimmung von $k$ aufgeführt ($\lceil \cdot \rceil$ ist die Aufrundungsfunktion).
 
-\center
-\begin{tabular}{ll}
-$k := \lceil (b_k - b_0)h \rceil$  	& $h$ ist die gewünschte Klassenbreite                        \\
-$k := \lceil \sqrt{n} \rceil$  		& Excelstandard                                               \\
-$k := \lceil \log_2 n + 1\rceil$  	& Implizite Normalverteilungsannahme (Sturges, 1926)          \\
-$h := 3.49 S_n/\sqrt[3]{n}$ 		& Min. MSE Dichteschätzung bei Normalverteilung (Scott, 1979)
+\footnotesize
+
+\setstretch{1.6}
+
+\begin{center}
+\begin{tabular}{ll} 
+$k := \lceil \frac{b_k - b_0}{h} \rceil$ & Bestimmung der Anzahl der Klassen aus gewünschter Klassenbreite $h$ \\
+$k := \lceil \sqrt{n} \rceil$ & Klassenanzahl in Excel \\
+$k := \lceil \log_2 n + 1 \rceil$ & Implizite Normalverteilungsannahme (Sturges, 1926) \\
+$h := 3.49 \cdot \frac{S_n}{\sqrt[3]{n}}$ & Berechnung $h$ nach Scott (1979): Min. MSE Dichteschätzung bei Normalverteilung
 \end{tabular}
-
+\end{center}
 
 # Berechnung und Visualisierung von Histogrammen
 Berechnung und Visualisierung von Histogrammen mit `hist()`
@@ -752,8 +755,8 @@ Berechnung von Klassenanzahlen und `breaks` Argument
 h 	<- 1                            # gewuenschte Klassenbreite
 b_0 <- min(x)                       # b_0
 b_k <- max(x)                       # b_k
-k   <- ceiling((b_k - b_0)/h)       # Anzahl der Klassen
-b   <- seq(b_0, b_k, by = h)        # Klassen [b_{j-1}, b_j[
+k   <- ceiling((b_k - b_0) / h)     # Anzahl der Klassen
+b   <- seq(b_0, b_k, len = k + 1)   # Klassen [b_{j-1}, b_j[
 
 # Excelstandard
 n   <- length(x)                    # Anzahl Datenwerte
@@ -869,7 +872,7 @@ Histogramme
 \justifying
 \item Visualisiere die absoluten und relativen Häufigkeitsverteilungen der Post-BDI-Daten des Beispieldatensatzes \textit{psychotherapie\_datensatz.csv}. Speichere die erstellten Diagramme als PDF-Dateien im gleichen Verzeichnis, in dem das Skript für diese Aufgabe liegt. Stelle sicher, dass sowohl die Achsentitel als auch die Legenden klar und beschreibend sind.
 \item Visualisiere die Häufigkeitsverteilungen der Differenzen zwischen Post- und Pre-BDI-Daten. Speichere die Diagramme in einem Abbildungsverzeichnis und achte darauf, dass die Darstellung für spätere Vergleiche konsistent ist.
-\item Visualisiere die Häufigkeitsverteilungen der Differenzen zwischen Post- und Pre-BDI-Daten getrennt nach den experimentellen Bedingungen (\textquote{Klassisch} und \textquote{Online}). Nutze dein Wissen zu Indizierung in R, um die Daten korrekt zu filtern, und beschrifte die Diagramme entsprechend.
+\item Visualisiere die Häufigkeitsverteilungen der Differenzen zwischen Post- und Pre-BDI-Daten getrennt nach den experimentellen Bedingungen (\textquote{Klassisch} und \textquote{Online}). Nutze dein Wissen zu Indizierung in R, um die Daten korrekt zu filtern, und beschrifte die Diagramme und PDF-Dateien entsprechend.
 \item Beschreibe die in den vorherigen Aufgaben erstellten Häufigkeitsverteilungen. Gehe dabei auf Unterschiede in Form, Lage und Streuung ein.
 \end{enumerate}
 
