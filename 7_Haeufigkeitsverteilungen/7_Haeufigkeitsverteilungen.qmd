@@ -658,15 +658,15 @@ h       <- 1.5                                                                  
 b_0     <- min(x)                                                                 # b_0
 b_k     <- max(x)                                                                 # b_k
 k       <- ceiling((b_k - b_0)/h)                                                 # Anzahl der Klassen
-b       <- seq(b_0, b_k, by = h)                                                  # Klassen [b_{j-1}, b_j[
+b       <- seq(b_0, b_k, len = k + 1)                                                  # Klassen [b_{j-1}, b_j[
 hist(                                                                             # Histogramm
 x,                                                                                # Datensatz
-breaks  <- b,                                                                     # breaks
-xlim    <- c(x_min, x_max),                                                       # x Achsen Limits
-ylim    <- c(y_min, y_max),                                                       # y Achsen Limits
-ylab    <- "Häufigkeit",                                                          # y-Achsenbezeichnung
-xlab    <- "",                                                                    # x-Achsenbezeichnung
-main    <- sprintf("Pre-BDI, k = %.0f, h = %.2f", k, h))                          # Titel
+breaks  = b,                                                                     # breaks
+xlim    = c(x_min, x_max),                                                       # x Achsen Limits
+ylim    = c(y_min, y_max),                                                       # y Achsen Limits
+ylab    = "Häufigkeit",                                                          # y-Achsenbezeichnung
+xlab    = "",                                                                    # x-Achsenbezeichnung
+main    = sprintf("Pre-BDI, k = %.0f, h = %.2f", k, h))                          # Titel
 dev.copy2pdf(file  = file.path(abb_dir, "pds_7_hg_2.pdf"), width = 8, height = 5) # PDF Speicherung
 
 # Histogramm mit Excel Standard

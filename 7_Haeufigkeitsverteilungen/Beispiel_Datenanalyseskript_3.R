@@ -27,6 +27,8 @@ script_dir_path <- dirname(sys.frame(1)$ofile)                   # Pfad zum pare
 fig_dir_path    <- file.path(script_dir_path,                    # Pfad zum Output-Ordner für Abbildungen
                              "Abbildungen")
 
+fig_dir_path    <- file.path(work_dir_path)
+
 # Daten von Festplatte einlesen
 psy_data         <- read.table(psy_data_path,                    # Psychotherapiedatensatz einlesen
                                header = TRUE,                    # Kopfzeile verwenden
@@ -76,10 +78,10 @@ names(r)   <- H$a                                                # Häufigkeiten
 #graphics.off()                                                   # Alle Grafikfenster schließen (optional)
 barplot(                                                         # Balkendiagramm
   r,                                                             # absolute Haeufigkeiten
-  col  = "gray90",                                             # Balkenfarbe
+  col  = "#2da4b9",                                             # Balkenfarbe
   xlab = "a",                                                    # x Achsenbeschriftung
-  ylab = "r(a)",                                                 # y Achsenbeschriftung
-  ylim = c(0, 0.25),                                             # y Achsengrenzen
+  ylab = "Relative Häufigkeiten",                                                 # y Achsenbeschriftung
+  ylim = c(0, 1),                                             # y Achsengrenzen
   las  = 1,                                                      # x Tick Orientierung (1: horizontal)
   main = "Relative Häufigkeiten der Pre BDI Werte"               # Titel
 )
