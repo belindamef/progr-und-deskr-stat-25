@@ -1,6 +1,6 @@
 # Titelfolie {.plain}
 \center
-![](../Abbildungen/otto.png){width="20%"}
+![](../VL_Abbildungen/otto.png){width="20%"}
 
 \vspace{2mm}
 
@@ -106,7 +106,7 @@ Programmierübungen und Selbstkontrollfragen
 
 \vfill
 
-![](../Abbildungen/pds_2_VSCode_R_Umgebung.png){width="80%" fig-align="center"}
+![](../VL_Abbildungen/pds_2_VSCode_R_Umgebung.png){width="80%" fig-align="center"}
 
 
 # Getting started
@@ -129,7 +129,7 @@ Programmierübungen und Selbstkontrollfragen
 
 \vfill
 
-![](../Abbildungen/pds_2_R_Console_oeffnen.png){width="80%" fig-align="center"}
+![](../VL_Abbildungen/pds_2_R_Console_oeffnen.png){width="80%" fig-align="center"}
 
 
 
@@ -224,7 +224,7 @@ help(mean)         # Öffne die Help page der Funktion "mean"
 
 \vfill
 
-![](../Abbildungen/pds_2_R_helpviewer.png){width="70%" fig-align="center"}
+![](../VL_Abbildungen/pds_2_R_helpviewer.png){width="70%" fig-align="center"}
 
 
 \setstretch{1.2}
@@ -596,7 +596,7 @@ log(x)				& Logarithmus Funktion						\\
 ```
 \vfill
 
-![](../Abbildungen/pds_2_precedence.pdf){width="68%"}
+![](../VL_Abbildungen/pds_2_precedence.pdf){width="68%"}
 
 
 # Präzedenz und Ausführungsreihenfolge arithmetischer Operatoren
@@ -788,7 +788,7 @@ rm(quarto_bin_path)
 
 In VSCode kann der Workspace in the R Extension pane angezeigt werden
 \vfill
-![](../Abbildungen/pds_2_vscode_workspace.pdf){width="60%"}
+![](../VL_Abbildungen/pds_2_vscode_workspace.pdf){width="60%"}
 
 
 # Variablennamen
@@ -843,7 +843,7 @@ x <- 1
 \end{enumerate}
 \end{itemize}
 
-![](../Abbildungen/pds_2_binding_1.pdf){width="22%"}
+![](../VL_Abbildungen/pds_2_binding_1.pdf){width="22%"}
 
 \vspace{2mm}
 
@@ -868,7 +868,7 @@ y <- 1
 \item De-facto wird ein neuer Name y erzeugt, der ein anderes Objekt referenziert wie x.
 \end{itemize}
 
-![](../Abbildungen/pds_2_binding_2_WiSe23.pdf){width="44%"}
+![](../VL_Abbildungen/pds_2_binding_2_WiSe23.pdf){width="44%"}
 
 \vspace{1mm}
 
@@ -932,7 +932,7 @@ y <- 1                      # Auch wenn der Wert der Zuweisung gleich ist...
 obj_addr(y) == obj_addr(x)  # ...referenzieren y und x nicht die selbe Adresse
 ```
 
-![](../Abbildungen/pds_2_copy_on_modify.pdf){width="70%"}
+![](../VL_Abbildungen/pds_2_copy_on_modify.pdf){width="70%"}
 
 
 * R Objekte sind \textit{immutable}, können also nicht verändert werden.
@@ -977,7 +977,7 @@ x <- 3                     # Ein neues Objekt mit Wert 3 wird in Speicherzelle (
 obj_addr(y) == obj_addr(x) # zeigt, dass y und x nicht mehr dieselbe Speicherzelle addressieren.
 ```
 
-![](../Abbildungen/pds_2_copy_on_modify_2.pdf){width="70%"}
+![](../VL_Abbildungen/pds_2_copy_on_modify_2.pdf){width="70%"}
 
 
 # Variablenrepräsentation $\vert$ Unbinding und Garbage Collection
@@ -991,7 +991,7 @@ x <- 1      #  x referenziert Objekt (0x74b)
 x <- "a"    #  x referenziert Objekt (0x2a08), Objekt (0x74b) jetzt ohne Referenz
 ```
 
-![](../Abbildungen/pds_2_unbinding.pdf){width="70%"}
+![](../VL_Abbildungen/pds_2_unbinding.pdf){width="70%"}
 
 \vspace{2mm}
 \normalsize
@@ -1108,7 +1108,7 @@ Jedem Objekt kann eindeutig zugeordnet werden:
 Alles, was in R vorkommt, ist ein **Objekt**.
 \vspace{5mm}
 
-![](../Abbildungen/pds_2_r_objektstruktur.pdf){width="80$%}
+![](../VL_Abbildungen/pds_2_r_objektstruktur.pdf){width="80$%}
 
 \vfill
 

@@ -24,10 +24,16 @@ psy_data_path   <- file.path(data_dir_path,                      # Pfad zur Date
 bsp_data_path   <- file.path(data_dir_path,                      # Pfad zur Datendatei "Beispieldaten"
                              "Beispieldaten.csv")                # Dateibezeichnung der Datendatei
 script_dir_path <- dirname(sys.frame(1)$ofile)                   # Pfad zum parent dir dieses Skriptes
-fig_dir_path    <- file.path(script_dir_path,                    # Pfad zum Output-Ordner für Abbildungen
-                             "Abbildungen")
+# fig_dir_path    <- file.path(                                    # Pfad zum Output-Ordner für Abbildungen
+#                      dirname(script_dir_path),                   # Auf gleicher Ebene wie der Skriptordner
+#                      "Abbildungen"
+#                     )
+fig_dir_path    <- file.path(                                    # Pfad zum Output-Ordner für Abbildungen
+                     script_dir_path,                            # Auf gleicher Ebene wie der Skript
+                     "Abbildungen"
+                    )
 
-fig_dir_path    <- file.path(work_dir_path)
+
 
 # Daten von Festplatte einlesen
 psy_data         <- read.table(psy_data_path,                    # Psychotherapiedatensatz einlesen

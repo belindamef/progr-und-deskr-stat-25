@@ -1,6 +1,6 @@
 # Titelfolie {.plain}
 \center
-![](../Abbildungen/otto.png){width="20%"}
+![](../VL_Abbildungen/otto.png){width="20%"}
 
 \vspace{2mm}
 
@@ -114,7 +114,7 @@ Programmierübungen und Selbstkontrollfragen
 :::
 
 ::: {.column width="40%"}
-![](../Abbildungen/pds_6_data.pdf){width="70%"}
+![](../VL_Abbildungen/pds_6_data.pdf){width="70%"}
 :::
 
 ::::
@@ -186,7 +186,7 @@ Programmierübungen und Selbstkontrollfragen
 
 \vspace{1cm}
 
-![](../Abbildungen/pds_6_fair_datenideal.pdf){width="69%" fig-align="center"}
+![](../VL_Abbildungen/pds_6_fair_datenideal.pdf){width="69%" fig-align="center"}
 
 \begin{center}
 für Menschen und Maschinen
@@ -333,13 +333,13 @@ Programmierübungen und Selbstkontrollfragen
 \textcolor{darkblue}{Binäres Dateiformat}
 \vspace{1mm}
 
-![](../Abbildungen/pds_6_binaeres_dateiformat.pdf){width="60%" fig-align="center"}
+![](../VL_Abbildungen/pds_6_binaeres_dateiformat.pdf){width="60%" fig-align="center"}
 
 \vspace{2mm}
 \textcolor{darkblue}{Textuelles Dateiformat}
 \vspace{1mm}
 
-![](../Abbildungen/pds_6_textuelles_dateiformat.pdf){width="60%" fig-align="center"}
+![](../VL_Abbildungen/pds_6_textuelles_dateiformat.pdf){width="60%" fig-align="center"}
 
 
 # Textuelle Dateiformate $\vert$ \textcolor{darkblue}{CSV}
@@ -826,8 +826,9 @@ Programmierübungen und Selbstkontrollfragen
 \tiny
 \setstretch{1.2}
 ```{r, eval = T}
+#| label: Load data
 work_dir_path <- getwd()                                     # Pfad zum Working directory
-data_dir_path <- file.path(work_dir_path, "Daten")           # Datenverzeichnispfad
+data_dir_path <- file.path(dirname(work_dir_path), "Daten")  # Datenverzeichnispfad
 file_name     <- "cushny.csv"                                # (base) filename
 file_path     <- file.path(data_dir_path, file_name)         # filepath 
 D             <- read.table(file_path)                       # Einlesen der Datei
@@ -878,7 +879,7 @@ install.packages("psychTools")	# Installation des Pakets psychTools
 data(package = "psychTools") 	# Anzeige der psychTools Datensaetze
 ```
 
-![](../Abbildungen/pds_6_r_datasets.pdf)
+![](../VL_Abbildungen/pds_6_r_datasets.pdf)
 
 
 Alle Datensätze werden mit `data(package = .packages(TRUE))` angezeigt.
@@ -959,7 +960,7 @@ write.table(                                                # .csv Schreibfunkti
 \normalsize
 Ergebnisdatei student.csv
 
-![](../Abbildungen/pds_6_writetable.pdf){width="30%"}
+![](../VL_Abbildungen/pds_6_writetable.pdf){width="30%"}
 
 
 \AtBeginSection{}

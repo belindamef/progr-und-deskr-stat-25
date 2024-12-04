@@ -1,6 +1,6 @@
 # Titelfolie {.plain}
 \center
-![](../Abbildungen/otto.png){width="20%"}
+![](../VL_Abbildungen/otto.png){width="20%"}
 
 \vspace{2mm}
 
@@ -108,7 +108,7 @@ Programmierübungen und Selbstkontrollfragen
 \end{itemize}
 
 \vspace{1mm}
-![](../Abbildungen/pds_3_atomic_vectors.pdf){width="90%" fig-align="right"}
+![](../VL_Abbildungen/pds_3_atomic_vectors.pdf){width="90%" fig-align="right"}
 
 * Mit dem Begriff **Vektor** ist hier immer ein **atomarer Vektor** gemeint.
 

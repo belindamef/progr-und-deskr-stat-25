@@ -1,14 +1,14 @@
 
 ```{r eval = T, echo = F}
 # | label: define directories
-abb_dir = file.path(dirname(getwd()), "Abbildungen")
+abb_dir = file.path(dirname(getwd()), "VL_Abbildungen")
 data_dir = file.path(dirname(getwd()), "Data")
 ```
 
 
 # Titelfolie {.plain}
 \center
-![](../Abbildungen/otto.png){width="20%"}
+![](../VL_Abbildungen/otto.png){width="20%"}
 
 \vspace{2mm}
 
@@ -164,7 +164,7 @@ Programmierübungen und Selbstkontrollfragen
 \normalsize
 Welche Therapieform ist bei Depression wirksamer?
 
-![](../Abbildungen/pds_11_klinische_forschung.pdf){width="110%"}
+![](../VL_Abbildungen/pds_11_klinische_forschung.pdf){width="110%"}
 
 
 # Beispieldatensatz
@@ -173,14 +173,14 @@ Welche Therapieform ist bei Depression wirksamer?
 \normalsize
 Becks Depressions-Inventar (BDI) zur Depressionsdiagnostik
 
-![](../Abbildungen/pds_7_bdi.pdf)
+![](../VL_Abbildungen/pds_7_bdi.pdf)
 
 
 # Beispieldatensatz
 \textcolor{darkblue}{Beispiel: Evaluation von Psychotherapieformen bei Depression}
 \vspace{2mm}
 
-![](../Abbildungen/pds_7_messplan.pdf){width="90%"}
+![](../VL_Abbildungen/pds_7_messplan.pdf){width="90%"}
 
 
 # Beispieldatensatz
@@ -243,13 +243,13 @@ knitr::kable(D[c(1:8, 51:58),],
 
 \vfill
 
-![](../Abbildungen/pds_7_table_viewer_beispiel.png){width="80%" fig-align="center"}
+![](../VL_Abbildungen/pds_7_table_viewer_beispiel.png){width="80%" fig-align="center"}
 
 
 \setstretch{1.2}
 \footnotesize
 
-Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt
+Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../VL_Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt
 
 \tiny
 \begin{flushright}
@@ -261,7 +261,7 @@ Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global En
 Datensatzübersicht mit `View()`
 \vspace{2mm}
 
-![](../Abbildungen/pds_7_view.png){width="50%" fig-align="center"}
+![](../VL_Abbildungen/pds_7_view.png){width="50%" fig-align="center"}
 
 
 \AtBeginSection{}
@@ -393,7 +393,7 @@ Anmerkungen
 \normalsize
 \setstretch{1.5}
 
-Speichern von Abbildungen mit `dev.copy2pdf()`
+Speichern von VL_Abbildungen mit `dev.copy2pdf()`
 
 \setstretch{1.1}
 
@@ -453,7 +453,7 @@ dev.copy2pdf(                                            # PDF Kopiefunktion
 ```
 
 
-![](../Abbildungen/pds_7_ha_prebdi.pdf){width="90%"}
+![](../VL_Abbildungen/pds_7_ha_prebdi.pdf){width="90%"}
 
 
 
@@ -480,7 +480,7 @@ dev.copy2pdf(              # PDF Kopiefunktion
 )
 ```
 
-![](../Abbildungen/pds_7_ra_prebdi.pdf){width="90%"}
+![](../VL_Abbildungen/pds_7_ra_prebdi.pdf){width="90%"}
 
 
 # Grafikfenster und Plot Viewer in VS Code
@@ -492,7 +492,7 @@ dev.copy2pdf(              # PDF Kopiefunktion
 
 Wenn Visualisierungen in R erstellt werden, öffnet sich standardmäßig ein Grafikfenster (graphical device). Dieses Fenster wird verwendet, um die Plots anzuzeigen.
 
-![](../Abbildungen/pds_7_plot_viewer_base.png){width="70%" fig-align="center"}
+![](../VL_Abbildungen/pds_7_plot_viewer_base.png){width="70%" fig-align="center"}
 
 In Theorie können Grafikfenster mit \texttt{dev.new()} neu geöffnet und mit \texttt{dev.off()} geschlossen werden. Allerdings ist dieses Verhalten in VS Code nicht immer konsistent. Mit \texttt{graphics.off()} können jedoch alle noch offenen Grafikfenster geschlossen werden, bevor eine neue erstellt werden soll.
 
@@ -508,7 +508,7 @@ Für eine optimierte Anzeige von Grafiken innerhalb der VS Code-Umgebung ist es 
 Das R-Paket \textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Plot-viewer}{httpgd}} vereinfacht die Arbeit mit Grafiken über den VS Code 
 \textcolor{linkblue}{\href{https://github.com/REditorSupport/vscode-R/wiki/Plot-viewer}{Plot viewer}}.
 
-![](../Abbildungen/pds_7_plot_viewer.png){width="70%" fig-align="center"}
+![](../VL_Abbildungen/pds_7_plot_viewer.png){width="70%" fig-align="center"}
 
 \setstretch{1.2}
 
@@ -722,7 +722,7 @@ dev.copy2pdf(file  = file.path(abb_dir, "pds_7_hg_5.pdf"), width = 8, height = 5
 \textcolor{darkblue}{Visualisierung}
 \vspace{2mm}
 
-![](../Abbildungen/pds_7_hg_0){width="100%"}
+![](../VL_Abbildungen/pds_7_hg_0){width="100%"}
 
 
 # Histogramm mit `hist()` und default `breaks` - \textcolor{darkcyan}{Beispiel}
@@ -811,35 +811,35 @@ hist(                                                    # Histogramm
 Gewünschte Klassenbreite $h := 1$
 \vspace{2mm} 
 
-![](../Abbildungen/pds_7_hg_1.pdf){width="100%"}
+![](../VL_Abbildungen/pds_7_hg_1.pdf){width="100%"}
 
 
 # Histogramme - \textcolor{darkcyan}{Beispiel}
 Gewünschte Klassenbreite $h := 1.5$
 \vspace{2mm}
 
-![](../Abbildungen/pds_7_hg_2.pdf){width="100%"}
+![](../VL_Abbildungen/pds_7_hg_2.pdf){width="100%"}
 
 
 # Histogramme - \textcolor{darkcyan}{Beispiel}
 Excelstandard $k := \lceil \sqrt{n} \rceil$
 \vspace{1mm}
 
-![](../Abbildungen/pds_7_hg_3.pdf){width="100%"}
+![](../VL_Abbildungen/pds_7_hg_3.pdf){width="100%"}
 
 
 # Histogramme - \textcolor{darkcyan}{Beispiel}
 nach @sturges_1926 $, k := \lceil \log_2 n + 1\rceil$
 \vspace{1mm}
 
-![](../Abbildungen/pds_7_hg_4.pdf){width="100%"}
+![](../VL_Abbildungen/pds_7_hg_4.pdf){width="100%"}
 
 
 # Histogramme - \textcolor{darkcyan}{Beispiel}
 nach @scott_1979 $, h := 3.49S_n/\sqrt[3]{n}$
 \vspace{1mm}
 
-![](../Abbildungen/pds_7_hg_5.pdf){width="100%"}
+![](../VL_Abbildungen/pds_7_hg_5.pdf){width="100%"}
 
 
 

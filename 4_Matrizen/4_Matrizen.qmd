@@ -1,6 +1,6 @@
 # Titelfolie {.plain}
 \center
-![](../Abbildungen/otto.png){width="20%"}
+![](../VL_Abbildungen/otto.png){width="20%"}
 
 \vspace{2mm}
 
@@ -147,13 +147,13 @@ matrix(c(1:12), nrow = 3, byrow = TRUE) # 3 x 4 Matrix der Zahlen 1,...,12, byro
 \vfill
 
 
-![](../Abbildungen/pds_4_table_viewer_matrix_beispiel.png){width="75%" fig-align="center"}
+![](../VL_Abbildungen/pds_4_table_viewer_matrix_beispiel.png){width="75%" fig-align="center"}
 
 
 \setstretch{1.2}
 \footnotesize
 
-Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt öffnen.
+Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../VL_Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt öffnen.
 
 \tiny
 \begin{flushright}

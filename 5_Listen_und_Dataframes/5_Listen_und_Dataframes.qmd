@@ -1,6 +1,6 @@
 # Titelfolie {.plain}
 \center
-![](../Abbildungen/otto.png){width="20%"}
+![](../VL_Abbildungen/otto.png){width="20%"}
 
 \vspace{2mm}
 
@@ -98,7 +98,7 @@ Programmierübungen und Selbstkontrollfragen
 * Listen sind rekursiv, können also Objekte verschiedenen Datentyps enthalten.
 * De facto enthalten Listen keine Objekte, sondern Referenzen zu Objekten.
 
-![](../Abbildungen/pds_5_list_representation.pdf){width="30%" fig-align="center"}
+![](../VL_Abbildungen/pds_5_list_representation.pdf){width="30%" fig-align="center"}
 
 * Listen sind ein wesentlicher Baustein von Dataframes.
 
@@ -150,13 +150,13 @@ print(L)
 
 \vfill
 
-![](../Abbildungen/pds_5_list_viewer_demo.png){width="85%" fig-align="center"}
+![](../VL_Abbildungen/pds_5_list_viewer_demo.png){width="85%" fig-align="center"}
 
 
 \setstretch{1.2}
 \footnotesize
 
-Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt
+Mit dem Befehl `View()` oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../VL_Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt
 
 \tiny
 \begin{flushright}
@@ -466,7 +466,7 @@ Wie bei Vektoren gilt bei Listen das Copy-on-Modify Prinzip.
 
 `lobstr::ref()` erlaubt es, dieses Verhalten zu studieren.
 
-![](../Abbildungen/pds_5_list_shallow_copy.pdf){width="55%"}
+![](../VL_Abbildungen/pds_5_list_shallow_copy.pdf){width="55%"}
 
 \vspace{1mm}
 \tiny
@@ -488,7 +488,7 @@ lobstr::ref(L1, L2)        # Ausgabe der Referenzen beider Listen
 
 Änderung nur eines Listenelements
 
-![](../Abbildungen/pds_5_list_copy_on_modify.pdf){width="55%"}
+![](../VL_Abbildungen/pds_5_list_copy_on_modify.pdf){width="55%"}
 
 
 \vspace{1mm}
@@ -538,7 +538,7 @@ Programmierübungen und Selbstkontrollfragen
 
 \vspace{2mm}
 
-![](../Abbildungen/pds_5_df_screenshot_vscode.png){width="75%" fig-align="center"}
+![](../VL_Abbildungen/pds_5_df_screenshot_vscode.png){width="75%" fig-align="center"}
 
 \tiny
 Anmerkung:
@@ -556,7 +556,7 @@ Der in diesem Beispiel verwendete Datensatz `cushny` ist im R Paket `psychTools`
 * Die Listenelemente entsprechen den Spalten einer Tabelle.
 * Die Vektorelement gleicher Position entsprechen den Zeilen einer Tabelle.
 
-![](../Abbildungen/pds_5_dataframe_representation.pdf){width="40%" fig-align="center"}
+![](../VL_Abbildungen/pds_5_dataframe_representation.pdf){width="40%" fig-align="center"}
 
 
 # Erzeugung
@@ -597,13 +597,13 @@ D <- data.frame(x = letters[1:4],    # 1. Spalte mit Länge 4
 
 \vfill
 
-![](../Abbildungen/pds_5_table_viewer_demo.png){width="75%" fig-align="center"}
+![](../VL_Abbildungen/pds_5_table_viewer_demo.png){width="75%" fig-align="center"}
 
 
 \setstretch{1.2}
 \footnotesize
 
-Mit dem Befehl \texttt{View()} oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt
+Mit dem Befehl \texttt{View()} oder im R \fbox{WORKSPACE} $\rightarrow$ \fbox{Global Environment} über das View Symbol ![](../VL_Abbildungen/pds_4_view_symbol.png){width="4%" fig-align="center"} neben entsprechendem Objekt
 
 \tiny
 \begin{flushright}
@@ -649,7 +649,7 @@ length(D)                                        # Länge ist die Spaltenanzahl
 View(D)
 ```
 
-![](../Abbildungen/pds_5_view.png){width="40%"}
+![](../VL_Abbildungen/pds_5_view.png){width="40%"}
 
 `str()` zeigt in kompakter Form wesentliche Aspekte eines Dataframes an.
 
@@ -767,7 +767,7 @@ D[,c("x", "z")]                     # Alle Zeilen und nur Spalten "x" und "z"
 * Modifikation einer Zeile führt zur Kopie des gesamten Dataframes
 
 
-![](../Abbildungen/pds_5_dataframe_copy_on_modify.pdf){width="90%"}
+![](../VL_Abbildungen/pds_5_dataframe_copy_on_modify.pdf){width="90%"}
 
 \vfill
 

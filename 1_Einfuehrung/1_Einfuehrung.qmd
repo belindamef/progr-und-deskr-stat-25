@@ -1,6 +1,6 @@
 # Titelfolie {.plain}
 \center
-![](../Abbildungen/otto.png){width="20%"}
+![](../VL_Abbildungen/otto.png){width="20%"}
 
 \vspace{2mm}
 
@@ -31,7 +31,7 @@ Herzlich Willkommen!
 
 \vspace{3mm}
 \center
-![](../Abbildungen/pds_1_mikro.png){width="8%"}
+![](../VL_Abbildungen/pds_1_mikro.png){width="8%"}
 
 Aufnahme läuft.
 
@@ -82,7 +82,7 @@ Aufgaben und Selbstkontrollfragen
 
 [\textcolor{linkblue}{Homepage der Abteilung für Methodenlehre I}](https://www.ipsy.ovgu.de/methodenlehre_I-path-980,1404.html)
 
-![](../Abbildungen/magl_0_homepage.png){width="80%"}
+![](../VL_Abbildungen/magl_0_homepage.png){width="80%"}
 
 
 # Modul C: Einführung in empirisch-wissenschaftliches Arbeiten
@@ -199,7 +199,7 @@ Datum          & Einheit                  & Thema                               
 
 [\textcolor{linkblue}{Webseite des Kurses (Folien, Videos)}](https://www.ipsy.ovgu.de/Institut/Abteilungen+des+Institutes/Methodenlehre+I+_+Experimentelle+und+Neurowissenschaftliche+Psychologie/Lehre/Wintersemester+2025/Programmierung+und+Deskriptive+Statistik.html)
 
-![](../Abbildungen/pds_1_kurswebsite_2024.png){width="80%"}
+![](../VL_Abbildungen/pds_1_kurswebsite_2024.png){width="80%"}
 
 
 # GitHub
@@ -210,7 +210,7 @@ Datum          & Einheit                  & Thema                               
 
 \vfill 
 
-![](../Abbildungen/pds_1_gitrepo_25.png){width="80%"}
+![](../VL_Abbildungen/pds_1_gitrepo_25.png){width="80%"}
 
 
 
@@ -218,7 +218,7 @@ Datum          & Einheit                  & Thema                               
 \vspace{5mm}
 
 
-![](../Abbildungen/pds_1_mattermost_24_25.png){width="80%"}
+![](../VL_Abbildungen/pds_1_mattermost_24_25.png){width="80%"}
 
 \small
 
@@ -254,7 +254,7 @@ Nutzt [\textcolor{linkblue}{Markdown in Mattermost}](https://docs.mattermost.com
 
 \vfill
 
-![](../Abbildungen/pds_1_markdown.png){width="85%" fig-align="center"}
+![](../VL_Abbildungen/pds_1_markdown.png){width="85%" fig-align="center"}
 
 # Q&A {.plain}
 \vfill
@@ -286,7 +286,7 @@ Aufgaben und Selbstkontrollfragen
 \large
 \textcolor{darkblue}{Zentrale Komponenten der Datenwissenschaft}
 
-![](../Abbildungen/migl_7_datenwissenschaft.pdf){width="85%" fig-align="center"}
+![](../VL_Abbildungen/migl_7_datenwissenschaft.pdf){width="85%" fig-align="center"}
 
 
 # Grundbegriffe der Informatik (AGENDA) ------ {.plain}
@@ -381,7 +381,7 @@ Altmodisch
 
 [\textcolor{linkblue}{PYPL Index}](https://pypl.github.io/PYPL.html) (Stand: August 2024)
 
-![](../Abbildungen/pds_1_PYPL_index_2024.png){width="60%" fig-align="left"}
+![](../VL_Abbildungen/pds_1_PYPL_index_2024.png){width="60%" fig-align="left"}
 
 * PopularitY of Programming Language
 * Basierend auf Googlesuchanfragen zu Programmiersprachentutorials
@@ -428,10 +428,16 @@ variable2 <- round(variable2, 2)
 data <- data.frame(Variable1 = variable1, Variable2 = variable2)
 
 # Save the dataset to a CSV file
-write.csv(data, file = "progr-und-deskr-stat-25/1_Einfuehrung/Beispieldaten.csv", row.names = FALSE)
+data_dir <- file.path("..", "Daten")
+# Output-Ordner für Abbildungen erstellen, falls nicht existent
+if (!file.exists(data_dir)) {                                # Prüfen, ob das Abbildungsverzeichnis existiert
+  dir.create(data_dir)                                       # Verzeichnis erstellen, falls es nicht existiert
+}
+
+write.csv(data, file = file.path(data_dir, "Beispieldaten.csv"), row.names = FALSE)
 ```
 
-![](../Abbildungen/pds_1_Datenanalyseskript_Beispiel.png){width="70%" fig-align="center"}
+![](../VL_Abbildungen/pds_1_Datenanalyseskript_Beispiel.png){width="70%" fig-align="center"}
 
 
 # Datenanalyseskripte
@@ -440,7 +446,7 @@ write.csv(data, file = "progr-und-deskr-stat-25/1_Einfuehrung/Beispieldaten.csv"
 
 \vspace{-2mm}
 
-![](../Abbildungen/pds_1_Datenanalyse_skript_Schaubild.pdf){width="105%" fig-align="left"}
+![](../VL_Abbildungen/pds_1_Datenanalyse_skript_Schaubild.pdf){width="105%" fig-align="left"}
 
 
 
@@ -526,7 +532,7 @@ Algorithmen und Programme
 # Teilgebiete der Informatik
 \vfill
 
-![](../Abbildungen/migl_7_informatik.pdf){width="85%" fig-align="center"}
+![](../VL_Abbildungen/migl_7_informatik.pdf){width="85%" fig-align="center"}
 
 \footnotesize
 \flushright{\textit{Hattenhauer (2020) Informatik}}
@@ -619,7 +625,7 @@ Aufgaben und Selbstkontrollfragen
 
 \vfill
 
-![](../Abbildungen/migl_7_hardware.pdf){width="60%" fig-align="center"}
+![](../VL_Abbildungen/migl_7_hardware.pdf){width="60%" fig-align="center"}
 
 \footnotesize
 \flushright{\textit{Hattenhauer (2020) Informatik}}
@@ -630,7 +636,7 @@ Aufgaben und Selbstkontrollfragen
 Auch Hauptplatine, Motherboard oder Mainboard genannt
 \vfill
 
-![*Hattenhauer (2020) Informatik*](../Abbildungen/migl_7_zentraleinheit.pdf){width="50%" fig-align="center"}
+![*Hattenhauer (2020) Informatik*](../VL_Abbildungen/migl_7_zentraleinheit.pdf){width="50%" fig-align="center"}
 
 \footnotesize
 \flushright{\textit{Hattenhauer (2020) Informatik}}
@@ -782,7 +788,7 @@ Eine Programmiersprache
 
 \vfill
 
-![](../Abbildungen/migl_7_programmiersprache.pdf){width="50%" fig-align="center"}
+![](../VL_Abbildungen/migl_7_programmiersprache.pdf){width="50%" fig-align="center"}
 
 
 # Programmiersprachen
@@ -850,7 +856,7 @@ Höhere Programmiersprache
 
 # 4GL Programmierung
 
-![](../Abbildungen/migl_7_algorithmen_und_programme.pdf){width="80%" fig-align="center"}
+![](../VL_Abbildungen/migl_7_algorithmen_und_programme.pdf){width="80%" fig-align="center"}
 
 
 # Arten der Programmierung
@@ -931,7 +937,7 @@ Aufgaben und Selbstkontrollfragen
 Über [\textcolor{linkblue}{cran.r-project.org}](https://cran.r-project.org/) die geeignete Version herunterladen und installieren.
 \vspace{2mm}
 
-![](../Abbildungen/pds_2_r_download.png){width="80%"}
+![](../VL_Abbildungen/pds_2_r_download.png){width="80%"}
 
 
 # Was können wir mit R machen?
@@ -1002,7 +1008,7 @@ Bücher [\textcolor{linkblue}{RBookdown}](https://bookdown.org/yihui/bookdown/) 
 
 \vfill
 
-![](../Abbildungen/pds_1_VSCode.png){width="80%" fig-pos="center"}
+![](../VL_Abbildungen/pds_1_VSCode.png){width="80%" fig-pos="center"}
 
 
 # Wie benutze ich VSCode?
@@ -1012,7 +1018,7 @@ Online Dokumentation: [\textcolor{linkblue}{https://code.visualstudio.com/docs}]
 
 \vfill
 
-![](../Abbildungen/pds_1_VSCode_docs.png){width="80%" fig-pos="center"}
+![](../VL_Abbildungen/pds_1_VSCode_docs.png){width="80%" fig-pos="center"}
 
 
 
