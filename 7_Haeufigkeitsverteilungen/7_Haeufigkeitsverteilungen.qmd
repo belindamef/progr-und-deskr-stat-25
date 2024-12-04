@@ -411,7 +411,7 @@ abb_fname       <- file.path(          # Absoluter Pfad zur Zieldatei im Skriptv
 # Variante 2: Dateinamen in einem Unterverzeichnis "Abbildungen" erstellen
 abb_dir_path    <- file.path(          # Absoluter Pfad zum Unterverzeichnis "Abbildungen"
   getwd(),                             # Im Beispiel hier: im aktuellen working directory
-  "Abbildungen"
+  "VL_Abbildungen"
 )       
 abb_fname       <- file.path(          # Absoluter Pfad zur Zieldatei im Abbildungsverzeichnis
   abb_verzeichnis,
