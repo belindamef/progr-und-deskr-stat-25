@@ -1,14 +1,14 @@
 
 ```{r eval = T, echo = F}
 # | label: define directories
-abb_path = file.path(dirname(getwd()), "Abbildungen")
-data_path = file.path(dirname(getwd()), "Daten")
+abb_path = file.path(dirname(getwd()), "VL_Abbildungen")
+data_dir_path <- file.path(dirname(getwd()), "Daten")
 ```
 
 
 # Titelfolie {.plain}
 \center
-![](../Abbildungen/otto.png){width="20%"}
+![](../VL_Abbildungen/otto.png){width="20%"}
 
 \vspace{2mm}
 
@@ -143,20 +143,20 @@ In R können kumulative Summen mit `cumsum()` berechnet werden.
 ```{r, eval = T}
 #| label: cumsum()
 # Einlesen des Beispieldatensatzes und Abbildungsverzeichnisdefinition
-fpath    <- file.path(data_path, "psychotherapie_datensatz.csv")
-D        <- read.table(fpath, sep = ",", header = T)
+psy_data_path <- file.path(data_dir_path, "psychotherapie_datensatz.csv")
+D             <- read.table(psy_data_path, sep = ",", header = T)
 
 # Evaluation der absoluten und relativen Häufigkeitsverteilugen von Pre.BDI
-x        <- D$Pre.BDI                 # Kopie der Pre.BDI Werte in einen double Vektor
-n        <- length(x)                 # Anzahl der Datenwerte
-H        <- as.data.frame(table(x))   # absolute Häufigkeitsverteilung als Dataframe
-names(H) <- c("a", "h")               # Benennen der Spalten im Dataframe
-H$r      <- H$h / n                   # Neue Spalte mit relativen Häufigkeiten
+x             <- D$Pre.BDI                 # Kopie der Pre.BDI Werte in einen double Vektor
+n             <- length(x)                 # Anzahl der Datenwerte
+H             <- as.data.frame(table(x))   # absolute Häufigkeitsverteilung als Dataframe
+names(H)      <- c("a", "h")               # Benennen der Spalten im Dataframe
+H$r           <- H$h / n                   # Neue Spalte mit relativen Häufigkeiten
 
 # Evaluation der kumulativen absoluten und relativen Häufigkeitsverteilungen
-H$H      <- cumsum(H$h)               # Neue Spalte mit kumulativen absoluten Häufigkeiten
-H$R      <- cumsum(H$r)               # Neue Spalte mit kumulativen relativen Häufigkeiten
-print(H)                              # Ausgabe des Dataframes
+H$H           <- cumsum(H$h)               # Neue Spalte mit kumulativen absoluten Häufigkeiten
+H$R           <- cumsum(H$r)               # Neue Spalte mit kumulativen relativen Häufigkeiten
+print(H)                                   # Ausgabe des Dataframes
 ```
 
 
@@ -180,14 +180,18 @@ barplot(                   # Balkendiagramm
   col  = "gray90",         # Balkenfarbe
   xlab = "a",              # x Achsenbeschriftung
   ylab = "H(a)",           # y Achsenbeschriftung
-  ylim = c(0,110),         # y Achsenlimits
+  ylim = c(0, 110),        # y Achsenlimits
   las  = 1,                # Achsenticklabelorientierung (1: horizontal)
   main = "Pre.BDI"         # Titel
 )
 
 # PDF Speicherung
+fig_dir_path <- file.path( # Pfad zum Output-Ordner für Abbildungen
+  dirname(getwd()),        # Auf gleicher Ebene wie der Skriptordner
+  "VL_Abbildungen"
+)
 dev.copy2pdf(
-  file   = file.path(fdir, "pds_8_kh.pdf"),
+  file   = file.path(fig_dir_path, "pds_8_kh.pdf"),
   width  = 8, 
   height = 5
 )
@@ -200,7 +204,7 @@ dev.copy2pdf(
 \textcolor{darkcyan}{Kumulative absolute Häufigkeitsverteilung der Pre.BDI Werte}
 \vspace{4mm}
 
-![](../Abbildungen/pds_8_kh.pdf){width="85%"}
+![](../VL_Abbildungen/pds_8_kh.pdf){width="85%"}
 
 
 # Visualisierung kumulativer Häufigkeiten
@@ -222,14 +226,14 @@ barplot(                    # Balkendiagramm
   col  = "gray90",          # Balkenfarbe
   xlab = "a",               # x Achsenbeschriftung
   ylab = "R(a)",            # y Achsenbeschriftung
-  ylim = c(0,1),            # y Achsenlimits
+  ylim = c(0, 1),           # y Achsenlimits
   las  = 1,                 # Achsenticklabelorientierung 
   main = "Pre.BDI"          # Titel
 )
 
 # PDF Speicherung
 dev.copy2pdf(
-  file   = file.path(fdir, "pds_8_kr.pdf"),
+  file   = file.path(fig_dir_path, "pds_8_kr.pdf"),
   width  = 8, 
   height = 5
 )
@@ -241,7 +245,7 @@ dev.copy2pdf(
 \textcolor{darkcyan}{Kumulative relative Häufigkeitsverteilung der Pre.BDI Werte}
 \vspace{4mm}
 
-![](../Abbildungen/pds_8_kr.pdf)
+![](../VL_Abbildungen/pds_8_kr.pdf)
 
 
 
@@ -281,15 +285,40 @@ Mit der Funktion `plot()` lässt sich die EVF, die von `ecdf()` erzeugt wurde, d
 \vspace{3mm}
 
 \footnotesize
-\setstretch{1.1}
-```{r}
+\setstretch{1.0}
+```{r, eval = T}
 #| label: ecdf()
-library(latex2exp)                                # LaTeX Formatierungstool, TeX()
 
-# Daten vorbereiten
+# Evaluation der EVF
 x    <- D$Pre.BDI                                 # double vector der Pre.BDI Werte
 evf  <- ecdf(x)                                   # Evaluation der EVF
 
+# Evaluation der Funktionswerte der EVF
+p_bis_17 <- evf(17)                               # Anteil der Werte <= 18
+p_bis_19 <- evf(19)                               # Anteil der Werte <= 20
+
+# Ausgabe der Ergebnisse
+cat("Anteil der Werte kleiner oder gleich:\n",
+    sprintf("17: %.2f\n", p_bis_17),
+    sprintf("19: %.2f\n", p_bis_19))
+```
+
+# Evaluation und Visualisierung der EVF mit `ecdf()`
+\small
+\vfill
+
+Mit der Funktion `plot()` lässt sich die EVF, die von `ecdf()` erzeugt wurde, direkt visualisieren.
+\vfill
+
+\textcolor{darkcyan}{Empirische Verteilungsfunktion am Beispiel der Pre.BDI Werte}
+
+\vspace{3mm}
+
+\footnotesize
+\setstretch{1.1}
+```{r}
+#| label: ecdf() visualisierung
+library(latex2exp)                                # LaTeX Formatierungstool, TeX()
 # Visualisierung der kumulativen relativen Häufigkeitsverteilung
 plot(
   evf,                                            # ecdf Objekt
@@ -300,11 +329,14 @@ plot(
 
 # PDF Speicherung
 dev.copy2pdf(
-  file   = file.path(fdir, "pds_8_ecdf.pdf"), 
+  file   = file.path(fig_dir_path, "pds_8_ecdf.pdf"),
   width  = 8, 
   height = 5
 )
 ```
+
+\vfill
+\vfill
 
 # Empirische Verteilungsfunktionen
 
@@ -312,7 +344,7 @@ dev.copy2pdf(
 \textcolor{darkcyan}{Empirische Verteilungsfunktion der Pre.BDI Werte}
 \vspace{4mm}
 
-![](../Abbildungen/pds_8_ecdf.pdf){width="85%"}
+![](../VL_Abbildungen/pds_8_ecdf.pdf){width="85%"}
 
 
 
@@ -524,7 +556,7 @@ abline(                                                     # horizontale Linie
 
 # PDF Speicherung
 dev.copy2pdf(
-  file   = file.path(fdir, "pds_8_ecdf_abline_x.pdf"),
+  file   = file.path(fig_dir_path, "pds_8_ecdf_abline_x.pdf"),
   width  = 8,
   height = 5
 )
@@ -540,7 +572,7 @@ dev.copy2pdf(
 
 \textcolor{darkcyan}{EVF und 80\%-Quantil der Beispieldaten aus Henze, 2018}
 
-![](../Abbildungen/pds_8_ecdf_abline_x.pdf){width="75%"}
+![](../VL_Abbildungen/pds_8_ecdf_abline_x.pdf){width="75%"}
 \vfill
 
 \tiny
@@ -588,7 +620,7 @@ abline(                                    # horizontale Linie
 
 # PDF Speicherung
 dev.copy2pdf(
-  file   = file.path(fdir, "pds_8_ecdf_abline_prebdi.pdf"), 
+  file   = file.path(fig_dir_path, "pds_8_ecdf_abline_prebdi.pdf"), 
   width  = 8, 
   height = 5
 )
@@ -600,7 +632,7 @@ dev.copy2pdf(
 \textcolor{darkcyan}{EVF und 80\%-Quantil der Pre.BDI-Werte aus dem Psychotherpiedatensatz}
 \vspace{2mm}
 
-![](../Abbildungen/pds_8_ecdf_abline_prebdi.pdf){width="75%"}
+![](../VL_Abbildungen/pds_8_ecdf_abline_prebdi.pdf){width="75%"}
 
 
 \tiny
@@ -662,7 +694,7 @@ boxplot(                            # Boxplot
 
 # PDF Speicherung
 dev.copy2pdf(
-  file        = file.path(fdir, "pds_8_boxplot_prebdi.pdf"), 
+  file        = file.path(fig_dir_path, "pds_8_boxplot_prebdi.pdf"), 
   width       = 8, 
   height      = 5
 )
@@ -672,7 +704,7 @@ dev.copy2pdf(
 
 \textcolor{darkcyan}{Boxplot der Pre.BDI-Werte}
 
-![](../Abbildungen/pds_8_boxplot_prebdi.pdf){width="80%"}
+![](../VL_Abbildungen/pds_8_boxplot_prebdi.pdf){width="80%"}
 
 
 \footnotesize
