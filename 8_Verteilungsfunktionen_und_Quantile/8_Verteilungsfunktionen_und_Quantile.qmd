@@ -144,7 +144,7 @@ In R können kumulative Summen mit `cumsum()` berechnet werden.
 #| label: cumsum()
 # Einlesen des Beispieldatensatzes und Abbildungsverzeichnisdefinition
 psy_data_path <- file.path(data_dir_path, "psychotherapie_datensatz.csv")
-D             <- read.table(psy_data_path, sep = ",", header = T)
+D             <- read.table(psy_data_path, sep = ",", header = TRUE)
 
 # Evaluation der absoluten und relativen Häufigkeitsverteilugen von Pre.BDI
 x             <- D$Pre.BDI                 # Kopie der Pre.BDI Werte in einen double Vektor
@@ -733,6 +733,8 @@ Quantile und Boxplots
 \justifying
 \item Erzeuge die kumulativen absoluten und relativen Häufigkeitsverteilungen der Post.BDI-Daten des Beispieldatensatzes \textit{psychotherapie\_datensatz.csv} und visualisiere diese.
 \item Erzeuge und visualisiere die empirische Verteilungsfunktion der Post.BDI Daten.
+\item Wende die erzeugte empirische Verteilungsfunktion auf die Werte 1, 18, 63 und 120 an.
+Welche Aussage machen dieser Funktionswerte über die Verteilung der Werte?
 \item Berechne das obere Quartil des Beispieldatensatzes auf Folie 17.
 \item Berechne das untere Quartil, den Median und das obere Quartil der Post.BDI Daten und vergleiche deine Ergebnisse mit denen der \texttt{summary()}-Funktion.
 \item Erstelle einen Boxplot der Post.BDI-Daten und kommentiere die Ergebnisse.

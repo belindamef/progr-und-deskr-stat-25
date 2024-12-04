@@ -222,7 +222,7 @@ file_path <- file.path(data_dir_path, "psychotherapie_datensatz.csv")
 # file_path könnte beispielsweise so aussehen:
 # "/home/username/uni/progr-und-deskr-stat-24/Daten/psychotherapie_datensatz.csv"
 
-D <- read.table(file_path, sep = ",", header = T)
+D <- read.table(file_path, sep = ",", header = TRUE)
 ```
 
 \small

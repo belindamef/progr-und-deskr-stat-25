@@ -12,4 +12,4 @@ fname <- file.path(data_dir_path, "psychotherapie_datensatz.csv")
 file_path <- file.path(data_dir_path, "psychotherapie_datensatz.csv")
 
 # Daten einlesen
-D <- read.table(file_path, sep = ",", header = T)
+D <- read.table(file_path, sep = ",", header = TRUE)
