@@ -86,7 +86,7 @@ barplot(                                                         # Balkendiagram
   col  = "#2da4b9",                                             # Balkenfarbe
   xlab = "a",                                                    # x Achsenbeschriftung
   ylab = "Relative Häufigkeiten",                                                 # y Achsenbeschriftung
-  ylim = c(0, 1),                                             # y Achsengrenzen
+  ylim = c(0, 0.25),                                             # y Achsengrenzen
   las  = 1,                                                      # x Tick Orientierung (1: horizontal)
   main = "Relative Häufigkeiten der Pre BDI Werte"               # Titel
 )

@@ -414,7 +414,7 @@ abb_dir_path    <- file.path(          # Absoluter Pfad zum Unterverzeichnis "Ab
   "VL_Abbildungen"
 )       
 abb_fname       <- file.path(          # Absoluter Pfad zur Zieldatei im Abbildungsverzeichnis
-  abb_verzeichnis,
+  abb_dir_path,
   "pds_7_ha_prebdi.pdf"
 )
 
