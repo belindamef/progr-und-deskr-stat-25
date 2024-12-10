@@ -294,8 +294,8 @@ x    <- D$Pre.BDI                                 # double vector der Pre.BDI We
 evf  <- ecdf(x)                                   # Evaluation der EVF
 
 # Evaluation der Funktionswerte der EVF
-p_bis_17 <- evf(17)                               # Anteil der Werte <= 18
-p_bis_19 <- evf(19)                               # Anteil der Werte <= 20
+p_bis_17 <- evf(17)                               # Anteil der Werte <= 17
+p_bis_19 <- evf(19)                               # Anteil der Werte <= 19
 
 # Ausgabe der Ergebnisse
 cat("Anteil der Werte kleiner oder gleich:\n",
@@ -319,6 +319,7 @@ Mit der Funktion `plot()` lässt sich die EVF, die von `ecdf()` erzeugt wurde, d
 ```{r}
 #| label: ecdf() visualisierung
 library(latex2exp)                                # LaTeX Formatierungstool, TeX()
+
 # Visualisierung der kumulativen relativen Häufigkeitsverteilung
 plot(
   evf,                                            # ecdf Objekt
@@ -731,7 +732,7 @@ Quantile und Boxplots
 \small
 \begin{enumerate}
 \justifying
-\item Erzeuge die kumulativen absoluten und relativen Häufigkeitsverteilungen der Post.BDI-Daten des Beispieldatensatzes \textit{psychotherapie\_datensatz.csv} und visualisiere diese.
+\item Bestimme die kumulativen absoluten und relativen Häufigkeitsverteilungen der Post.BDI-Daten des Beispieldatensatzes \textit{psychotherapie\_datensatz.csv} und visualisiere diese.
 \item Erzeuge und visualisiere die empirische Verteilungsfunktion der Post.BDI Daten.
 \item Wende die erzeugte empirische Verteilungsfunktion auf die Werte 1, 18, 63 und 120 an.
 Welche Aussage machen dieser Funktionswerte über die Verteilung der Werte?
