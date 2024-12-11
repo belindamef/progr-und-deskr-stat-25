@@ -393,7 +393,7 @@ Anmerkungen
 \normalsize
 \setstretch{1.5}
 
-Speichern von VL_Abbildungen mit `dev.copy2pdf()`
+Speichern von Abbildungen mit `dev.copy2pdf()`
 
 \setstretch{1.1}
 
