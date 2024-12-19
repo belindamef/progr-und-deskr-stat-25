@@ -408,7 +408,7 @@ y       <- x                                # neuer Datensatz...
 y[1]    <- 10000                            # ... mit einem Extremwert
 y_bar   <- mean(y)                          # Mittelwert des neuen Datensatzes
 print(y_bar)                                # Ausgabe
-y_tilde <- median(y)                        # Mittelwert des neuen Datensatzes
+y_tilde <- median(y)                        # Median des neuen Datensatzes
 print(y_tilde)                              # Ausgabe
 ```
 
