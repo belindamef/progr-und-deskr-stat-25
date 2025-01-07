@@ -173,7 +173,7 @@ if (x > 0) {
 y <- -3
 if (y > 0) {
   print("y ist größer als 0")
-} else{
+} else {
   print("y ist nicht größer als 0")
 }
 ```
@@ -221,9 +221,9 @@ x <- 3
 y <- 2
 
 # Logisches UND/ODER
-if (x > 0 | y > 0) {
+if (x > 0 || y > 0) {
   print("Es sind beide, oder eine der beiden Variablen größer 0.")
-} else{
+} else {
   print("Keine der Variablen ist größer 0.")
 }
 ```
@@ -231,9 +231,9 @@ if (x > 0 | y > 0) {
 
 ```{r, echo = T, eval = T}
 # Logisches UND
-if (x > 0 & y > 0) {
+if (x > 0 && y > 0) {
   print("x und y sind beide größer 0.")
-} else{
+} else {
   print("Es sind nicht beide Variablen x und y größer 0, aber vielleicht eine der beiden.")
 }
 ```
@@ -242,9 +242,9 @@ if (x > 0 & y > 0) {
 
 ```{r, echo = T, eval = T}
 # Exklusives ODER
-if (xor(x > 0, y > 0)){
+if (xor(x > 0, y > 0)) {
   print("Genau eine der 2 Variablen x und y ist größer 0, aber nicht beide.")
-} else{
+} else {
   print("Es sind entweder keine der Variablen x und y oder beide größer 0.")
 }
 ```
@@ -263,13 +263,13 @@ Wenn wir mehrere ähnliche Bedingungen überprüfen möchten, von denen immer nu
 \footnotesize
 ```{r, echo = T, eval = T}
 x <- 2
-if (x == 1){
+if (x == 1) {
   print("Aktion 1")
-} else if(x == 2){
+} else if(x == 2) {
   print("Aktion 2")
-} else if(x == 3){
+} else if(x == 3) {
   print("Aktion 3")
-} else if(x == 4){
+} else if(x == 4) {
   print("Aktion 4")
 }
 ```
@@ -359,7 +359,7 @@ Wiederholt einen Codeblock für jedes Element in einer Sequenz oder Sammlung.
 
 ```{r, echo = T, eval = F}
 # Pseudocode
-for (item in sequenz){
+for (item in sequenz) {
   Aktion                           # Aktion, die wiederholt werden soll
 }
 ```
