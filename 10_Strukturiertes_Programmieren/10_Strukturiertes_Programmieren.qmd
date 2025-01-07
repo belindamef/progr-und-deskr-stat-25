@@ -559,7 +559,7 @@ Die `R base` Funktion `browser()` pausiert die Ausführung des Programms und erl
 # Beispiel 1
 var_1    <- 1
 var_2    <- 3
-summe    <- c()
+ergebnis <- c()
 browser()                                  # Pausiert Skript
 print("Das Ergebnis ist: ", ergebnis)
 ergebnis <- var_1 + var_2
