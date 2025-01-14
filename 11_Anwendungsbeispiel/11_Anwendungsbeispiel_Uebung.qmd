@@ -351,11 +351,6 @@ Berechne die deskriptiven Statistiken für die Variable Delta.BDI, getrennt nach
 
 \vfill
 
-Der resultierende Dataframe sollte in etwa so aussehen:
-\vfill
-
-\footnotesize
-\setstretch{1}
 ```{r, eval = T, echo = F}
 #| label: Berechnung bedingungsabhg. deskr. Stat.
 # Initialisierung eines Dataframes
@@ -382,8 +377,14 @@ for (i in 1:n_th_bed){
   deskr_stat$Var[i]    <- var(data)                              # Varianzen
   deskr_stat$Std[i]    <- sd(data)                               # Standardabweichungen
 }
+
 ```
 
+Der resultierende Dataframe sollte in etwa so aussehen:
+\vfill
+
+\footnotesize
+\setstretch{1}
 
 ```{r, eval = T, echo = F}
 #| label: Ausgabe der Deskriptiven Statistiken
@@ -630,7 +631,7 @@ Erstelle ein Balkendiagramm mit Fehlerbalken, das die Mittelwerte und Standardab
 
 \small
 
-1. Extrahiere die Mittelwerte und Standardabweichungen aus dem Dataframe `deskr_stat`.
+1. Extrahiere die Mittelwerte und Standardabweichungen aus dem Dataframe `deskr_stat` und speichere sie in den variablen `mw` bzw. `sd`.
 2. Verwende die Funktion `barplot()`, um die Mittelwerte als Balken darzustellen.
 3. Füge Fehlerbalken hinzu, die die Standardabweichungen anzeigen, indem du die Funktion `arrows()` verwendest.
 4. Wähle passende Achsenbeschriftungen und einen Titel für das Diagramm.
@@ -722,7 +723,7 @@ arrows(
 
 **Aufgabe 3 b)**: Boxplots
 
-Erstelle Boxplots, die die Verteilung der Delta.BDI-Werte für die beiden Therapiebedingungen Klassisch und Online visualisieren. Verwende dazu die Funktion `boxplot()` und das Funktionsargument 
+Erstelle Boxplots, die Verteilung der Delta.BDI-Werte für die beiden Therapiebedingungen Klassisch und Online visualisieren. Verwende dazu die Funktion `boxplot()` und das Funktionsargument 
 `formula`, um mit einem einzigen Plot-Befehl beide Boxplots in einem Diagramm nebeneinander darzustellen.
 
 Nutze den Befehl `?boxplot`, um die Argumente der Funktion genauer zu verstehen. Schau auch in die **Examples** hinein, um ein besseres Verständnis für die Anwendung der Funktion unter Hinzunahme des Arguments `formula` zu bekommen.
@@ -772,7 +773,37 @@ Der resultierenden Diagramme sollten in etwa so aussehen:
 ![](../VL_Abbildungen/pds_11_deskriptiv.pdf){width="90%"}
 
 
+# Lösung zu Programmierübung 3)
 
+\tiny
+
+```{r, eval = T, echo = T}
+# Initialisierung eines Dataframes
+th_bed        <- c("Klassisch", "Online")                        # Therapiebedingungen
+n_th_bed      <- length(th_bed)                                  # Anzahl Therapiebedingungen
+deskr_stat    <- data.frame(                                     # Dataframeerzeugung
+                   n         = rep(NaN, n_th_bed),               # Stichprobengrößen
+                   Max       = rep(NaN, n_th_bed),               # Maxima
+                   Min       = rep(NaN, n_th_bed),               # Minima
+                   Median    = rep(NaN, n_th_bed),               # Mediane
+                   Mean      = rep(NaN, n_th_bed),               # Mittelwerte
+                   Var       = rep(NaN, n_th_bed),               # Varianzen
+                   Std       = rep(NaN, n_th_bed),               # Standardabweichungen
+                   row.names = th_bed                            # Zeilenbenennung
+                 )
+
+# Iterationen über Therapiebedingungen
+for (i in seq_along(th_bed)){
+  data                 <- D$Delta.BDI[D$Bedingung == th_bed[i]]  # Daten filtern
+  deskr_stat$n[i]      <- length(data)                           # Stichprobengröße
+  deskr_stat$Max[i]    <- max(data)                              # Maxima
+  deskr_stat$Min[i]    <- min(data)                              # Minima
+  deskr_stat$Median[i] <- median(data)                           # Mediane
+  deskr_stat$Mean[i]   <- mean(data)                             # Mittelwerte
+  deskr_stat$Var[i]    <- var(data)                              # Varianzen
+  deskr_stat$Std[i]    <- sd(data)                               # Standardabweichungen
+}
+```
 
 
 # Literatur
