@@ -303,7 +303,7 @@ Visualisierung
 \vfill
 
 
-# Programmierübung 2) Bedingungsunabhängige Deskriptive Statistiken
+# Programmierübung 2a) Bedingungsunabhängige Deskriptive Statistiken
 
 **Aufgabe 2a)**: Berechnung bedingungsunabhängiger deskriptiver Statistiken
 
@@ -336,7 +336,7 @@ print(deskr_stat)                                                # Ausgabe
 \vfill
 
 
-# Programmierübung 2) Bedingungsabhängige Deskriptive Statistiken
+# Programmierübung 2b) Bedingungsabhängige Deskriptive Statistiken
 
 **Aufgabe b)**: Berechnung bedingungsabhängiger deskriptiver Statistiken
 
@@ -622,7 +622,7 @@ Histogramme
 \vfill
 
 
-# Programmierübung 3) Bedingungsabhängige Visualisierung
+# Programmierübung 3a) Bedingungsabhängige Visualisierung
 
 **Aufgabe 3a)**: Balkendiagramme
 
@@ -635,7 +635,7 @@ Erstelle ein Balkendiagramm mit Fehlerbalken, das die Mittelwerte und Standardab
 3. Füge Fehlerbalken hinzu, die die Standardabweichungen anzeigen, indem du die Funktion `arrows()` verwendest.
 4. Wähle passende Achsenbeschriftungen und einen Titel für das Diagramm.
 
-# Programmierübung 3) Bedingungsabhängige Visualisierung
+# Programmierübung 3a) Bedingungsabhängige Visualisierung
 
 \small
 
@@ -718,7 +718,7 @@ arrows(
 ```
 
 
-# Programmierübung 3) Bedingungsabhängige Visualisierung
+# Programmierübung 3b) Bedingungsabhängige Visualisierung
 
 **Aufgabe 3 b)**: Boxplots
 
