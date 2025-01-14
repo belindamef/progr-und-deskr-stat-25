@@ -1,0 +1,780 @@
+```{r eval = T, echo = F}
+# | label: define directories
+abb_path <- file.path(dirname(getwd()), "VL_Abbildungen")
+data_path <- file.path(dirname(getwd()), "Daten")
+```
+
+
+# Titelfolie {.plain}
+\center
+![](../VL_Abbildungen/otto.png){width="20%"}
+
+\vspace{2mm}
+
+\Large
+Programmierung und Deskriptive Statistik
+\vspace{4mm}
+
+\normalsize
+BSc Psychologie WiSe 2024/25
+
+\vspace{15mm}
+\normalsize
+Belinda Fleischmann
+
+
+# Termine {.plain}
+
+\setstretch{1.4}
+\vfill
+\center
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{llll}
+Datum          & Einheit                  & Thema                                  & Form              \\\hline
+15.10.24       & R Grundlagen             & (1) Einführung                         & Seminar           \\
+22.10.24       & R Grundlagen             & (2) R und Visual Studio Code           & Seminar           \\
+29.10.24       & R Grundlagen             & (2) R und Visual Studio Code           & Übung             \\
+05.11.24       & R Grundlagen             & (3) Vektoren, (4) Matrizen             & Seminar           \\
+12.11.24       & R Grundlagen             & (5) Listen und Dataframes              & Seminar           \\
+               & \textit{Leistungsnachweis 1}                                                          \\
+19.11.24       & R Grundlagen             & (6) Datenmanagement                    & Seminar           \\
+26.11.24       & R Grundlagen             & (2)-(6) R Grundlagen                   & Übung             \\
+03.12.24       & Deskriptive Statistik    & (7) Häufigkeitsverteilungen            & Seminar           \\
+10.12.24       & Deskriptive Statistik    & (8) Verteilungsfunktionen und Quantile & Seminar           \\
+               & \textit{Leistungsnachweis 2}                                                          \\
+17.12.24       & Deskriptive Statistik    & (9) Maße der zentralen Tendenz und Datenvariabilität & Seminar  \\
+               & \textcolor{gray}{Weihnachtspause}                                                     \\
+07.01.25       & R Grundlagen             & (10) Strukturiertes Programmieren: Kontrollfluss, Debugging & Seminar      \\
+\textbf{14.01.25}       & \textbf{Deskriptive Statistik}    & \textbf{(11) Anwendungsbeispiel}      & \textbf{Übung}             \\
+               & \textit{Leistungsnachweis 3}                                                          \\
+21.01.25       & Deskriptive Statistik    & (11) Anwendungsbeispiel                & Seminar           \\
+28.01.25       & Deskriptive Statistik    & (11) Anwendungsbeispiel, Q\&A           & Seminar          \\
+\end{tabular}
+
+
+# Anwendungsbeispiel - Titelfolie {.plain}
+
+\vfill
+\huge
+\begin{center}
+(11) Anwendungsbeispiel
+
+\normalsize
+(Foliensatz mit Programmierübungen)
+
+\end{center}
+\vfill
+
+
+# AGENDA {.plain}
+\large
+\setstretch{2.5}
+\vfill
+
+Beispieldatensatz
+
+Datenvorverarbeitung
+
+Deskriptive Statistiken
+
+Visualisierung
+
+\vfill
+
+
+
+\AtBeginSection{}
+\section{Beispieldatensatz}
+# Beispieldatensatz ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+**Beispieldatensatz**
+
+Datenvorverarbeitung
+
+Deskriptive Statistiken
+
+Visualisierung
+
+
+\vfill
+
+
+# Forschungsfrage
+\textcolor{darkblue}{Evidenzbasierte Evaluation von Psychotherapieformen bei Depression}
+
+\vspace{2mm}
+\normalsize
+Welche Therapieform ist bei Depression wirksamer?
+
+\vfill
+
+![](../VL_Abbildungen/pds_11_klinische_forschung.pdf){width="100%"}
+
+
+# Studiendesign
+\textcolor{darkblue}{Beispiel: Evaluation von Psychotherapieformen bei Depression}
+
+\vspace{2mm}
+
+![](../VL_Abbildungen/pds_7_messplan.pdf){width="90%"}
+
+
+# Mittel der Datenerhebung
+
+\vspace{2mm}
+
+\normalsize
+Becks Depressions-Inventar (BDI) zur Depressionsdiagnostik
+
+![](../VL_Abbildungen/pds_11_bdi.pdf){width="100%"}
+
+
+# Beispieldatensatz
+Einlesen des Datensatzes mit `read.table()`
+\vspace{1mm}
+
+```{r echo=FALSE, eval = T}
+data_dir_path <- file.path(getwd(), "progr-und-deskr-stat-25", "Daten")
+data_dir_path <- file.path(dirname(getwd()), "Daten")
+```
+\footnotesize
+```{r, eval = T}
+file_path <- file.path(data_dir_path, "psychotherapie_datensatz.csv")
+
+# file_path könnte beispielsweise so aussehen:
+# "/home/username/uni/progr-und-deskr-stat-24/Daten/psychotherapie_datensatz.csv"
+
+D <- read.table(file_path, sep = ",", header = TRUE)
+```
+
+\small
+Daten der ersten acht Proband:innen jeder Gruppe
+
+\tiny
+\setstretch{1}
+```{r, eval = T, echo = F}
+#| label: Daten als Tabelle zeigen
+# table visualization
+knitr::kable(D[c(1:8, 51:58),],
+             align = "ccc",
+             "pipe")
+```
+
+
+# Bonus: Datensimulation
+
+\vfill
+
+\footnotesize
+\setstretch{1.15}
+```{r, echo = T, eval = F}
+#| label: Datensimulation
+
+# Seed setzen
+set.seed(5)                                       # Startwert für den Zufallsgenerator setzen
+
+# Simulationsparameter
+n      <- 50                                      # Proband:innnen pro Gruppe
+mu     <- c(                                      # Erwartungswertparameter
+  18, 12,                                         # Pre und Post der Gruppe Klassisch
+  19, 14)                                         # Pre und Post der Gruppe Online
+sigsqr <- 3                                       # Varianzparameter (gleich für alle Gruppen)
+
+# Datensimulation
+D  <- data.frame(
+        "Bedingung" = c(
+          rep("Klassisch", n), rep("Online", n)), # n-mal "Klassisch", n-mal "Online"
+        "Pre BDI" = c(
+          round(rnorm(n, mu[1], sqrt(sigsqr))),   # n Zufallswerte aus Normalveritung mit mu[1]
+          round(rnorm(n, mu[3], sqrt(sigsqr)))),  # n Zufallswerte aus Normalveritung mit mu[3]
+        "Post BDI" = c(
+          round(rnorm(n, mu[2], sqrt(sigsqr))),   # n Zufallswerte aus Normalveritung mit mu[2]
+          round(rnorm(n, mu[4], sqrt(sigsqr))))   # n Zufallswerte aus Normalveritung mit mu[4]
+        )
+
+# Datenspeicherung
+fname  <- file.path(data_path, "psychotherapie_datensatz.csv")
+write.csv(D, file = fname)
+```
+
+
+\AtBeginSection{}
+\section{Datenvorverarbeitung}
+# Datenvorverarbeitung ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Beispieldatensatz
+
+**Datenvorverarbeitung**
+
+Deskriptive Statistiken
+
+Visualisierung
+
+
+\vfill
+
+
+# Datenvorverarbeitung
+
+\textcolor{darkblue}{Überlegungen für die Datenvorverarbeitung}
+
+\small
+* Studienfokus ist die **Veränderung** der Depressionsymptomatik durch Therapieformen.
+
+* Für jede Proband:in ergibt sich diese Veränderung als **Differenz** zwischen Post.BDI und Pre.BDI.
+
+* Eine Reduktion der Depressionssymptomatik ergibt dabei einen **negativen Wert**.
+
+* Es ist intuitiver, Verbesserungen mit **positiven Zahlen** zu repräsentieren.
+
+* Als Quantifizierung des Therapieeffekts bei Proband:in $i$ bietet sich also folgendes Maß an
+
+\begin{equation}
+\Delta \mbox{BDI[i]} := - (\mbox{Post.BDI[i]} - \mbox{Pre.BDI[i]})
+\end{equation}
+
+* Wir betrachten in der Folge also das $\Delta \mbox{BDI}$ Maß mit folgenden Interpretationen
+
+\center
+\begin{tabular}{lll}
+$\Delta \mbox{BDI} > 0$ & Verminderung der Depressionsymptomatik       & Wirksame Therapie      \\
+$\Delta \mbox{BDI} = 0$ & Keine Veränderung der Depressionsymptomatik  & Wirkungslose Therapie  \\
+$\Delta \mbox{BDI} < 0$ & Verstärkung der Depressionsymptomatik        & Schädigende Therapie   \\
+\end{tabular}
+
+
+# Programmierübung 1) Datenvorverarbeitung
+\vspace{1mm}
+
+\small
+**Aufgabe**: Berechnung einer neuen Variablen im Datensatz
+
+Füge dem Datensatz eine neue Spalte Delta.BDI hinzu, die den Unterschied $\Delta$ zwischen dem Prä- und Post-Wert darstellt. Nutze dafür die entsprechenden Spalten Pre.BDI und Post.BDI. Achte darauf, dass das Delta so berechnet wird, dass ein positiver Wert eine Verbesserung (Reduktion der Depressionswerte) widerspiegelt.
+\small
+
+
+```{r, eval = T, echo = F}
+#| label: Das Delta BDI Maß
+fname       <- file.path(data_path, "psychotherapie_datensatz.csv")       # Einlesen
+D           <- read.table(fname, sep = ",", header = TRUE)                # Rohdaten
+D$Delta.BDI <- -(D$Post.BDI - D$Pre.BDI)                                  # \Delta BDI Maß
+```
+
+Nachfolgend wird am Beispiel der Daten der ersten acht Proband:innen gezeigt, wie das Ergebnis in etwa aussehen sollte.
+\vspace{1mm}
+
+\tiny
+\setstretch{1}
+```{r, echo = F, eval = T}
+#| label: table visualization
+knitr::kable(D[c(1:8, 51:58),],
+             align      = "cccc",
+             "pipe")
+```
+
+
+\AtBeginSection{}
+\section{Deskriptive Statistiken}
+# Deskriptive Statistiken* ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Beispieldatensatz
+
+Datenvorverarbeitung
+
+**Deskriptive Statistiken**
+
+Visualisierung
+
+
+
+\vfill
+
+
+# Programmierübung 2) Bedingungsunabhängige Deskriptive Statistiken
+
+**Aufgabe 2a)**: Berechnung bedingungsunabhängiger deskriptiver Statistiken
+
+Berechne die deskriptiven Statistiken für die Variable Delta.BDI. Erstelle hierfür einen neuen Dataframe, der die folgenden statistischen Kennzahlen enthält: die Stichprobengröße, das Maximum, das Minimum, den Median, den Mittelwert, die Varianz und die Standardabweichung. Der resultierende Dataframe sollte in etwa so aussehen:
+
+\vspace{3mm}
+
+\footnotesize
+
+\setstretch{1.1}
+```{r, eval = T, echo = F}
+#| label: Berechnung bedingungsunabhg. deskr. Stat.
+
+# Initialisierung eines Dataframes
+data          <- D$Delta.BDI                                     # Datenvektor aus Dataframe kopieren
+deskr_stat    <- data.frame(                                     # Dataframeerzeugung
+                   n         = length(data),                     # Stichprobengröße
+                   Max       = max(data),                        # Maximum
+                   Min       = min(data),                        # Minimum
+                   Median    = median(data),                     # Mediane
+                   Mean      = mean(data),                       # Mittelwert
+                   Var       = var(data),                        # Varianz
+                   Std       = sd(data)                          # Standardabweichung
+                   )
+
+print(deskr_stat)                                                # Ausgabe
+```
+
+\vfill
+\vfill
+
+
+# Programmierübung 2) Bedingungsabhängige Deskriptive Statistiken
+
+**Aufgabe b)**: Berechnung bedingungsabhängiger deskriptiver Statistiken
+
+Berechne die deskriptiven Statistiken für die Variable Delta.BDI, getrennt nach den zwei Therapiebedingungen Klassisch und Online. Erstelle dazu einen Dataframe `deskr_stat` mit zwei Zeilen (jeweils eine pro Bedingung) und den statistischen Kennzahlen als Spalten. Gehe wie folgt vor.
+
+\small
+
+1. Lege eine Variable `th_bed` an, die die Namen der beiden Therapiebedingungen enthält.
+2. Initialisiere einen leeren Dataframe mit den genannten Kennzahlen als Spalten und den Therapiebedingungen als Zeilen.
+3. Verwende eine `for`-Schleife, um über `th_bed` zu iterieren.
+4. Filter in jeder Iteration die Daten für die entsprechende Bedingung und berechne die Statistiken für Delta.BDI und trage die berechneten Werte in den entsprechenden Zeilen des Dataframes ein.
+
+\vfill
+
+Der resultierende Dataframe sollte in etwa so aussehen:
+\vfill
+
+\footnotesize
+\setstretch{1}
+```{r, eval = T, echo = F}
+#| label: Berechnung bedingungsabhg. deskr. Stat.
+# Initialisierung eines Dataframes
+th_bed        <- c("Klassisch", "Online")                        # Therapiebedingungen
+n_th_bed      <- length(th_bed)                                  # Anzahl Therapiebedingungen
+deskr_stat    <- data.frame(                                     # Dataframeerzeugung
+                   n         = rep(NaN, n_th_bed),               # Stichprobengrößen
+                   Max       = rep(NaN, n_th_bed),               # Maxima
+                   Min       = rep(NaN, n_th_bed),               # Minima
+                   Median    = rep(NaN, n_th_bed),               # Mediane
+                   Mean      = rep(NaN, n_th_bed),               # Mittelwerte
+                   Var       = rep(NaN, n_th_bed),               # Varianzen
+                   Std       = rep(NaN, n_th_bed),               # Standardabweichungen
+                   row.names = th_bed)                           # Therapiebedingungen
+
+# Iterationen über Therapiebedingungen
+for (i in 1:n_th_bed){
+  data                 <- D$Delta.BDI[D$Bedingung == th_bed[i]]  # Daten
+  deskr_stat$n[i]      <- length(data)                           # Stichprobengröße
+  deskr_stat$Max[i]    <- max(data)                              # Maxima
+  deskr_stat$Min[i]    <- min(data)                              # Minima
+  deskr_stat$Median[i] <- median(data)                           # Mediane
+  deskr_stat$Mean[i]   <- mean(data)                             # Mittelwerte
+  deskr_stat$Var[i]    <- var(data)                              # Varianzen
+  deskr_stat$Std[i]    <- sd(data)                               # Standardabweichungen
+}
+```
+
+
+```{r, eval = T, echo = F}
+#| label: Ausgabe der Deskriptiven Statistiken
+# Ausgabe
+print(deskr_stat)
+```
+
+
+
+\AtBeginSection{}
+\section{Visualisierung}
+# Visualisierung ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Beispieldatensatz
+
+Datenvorverarbeitung
+
+Deskriptive Statistiken
+
+**Visualisierung**
+
+
+
+\vfill
+
+
+# Literaturempfehlungen
+\vspace{1cm}
+
+![](../VL_Abbildungen/pds_11_graphics_1.pdf){width="35%"}
+\hfill
+![](../VL_Abbildungen/pds_11_graphics_cookbook.jpg){width="43%"}
+
+@murrell_2019 \hfill \textcolor{linkblue}{\href{https://r-graphics.org/}{Online-Buch}}, 
+@chang_graphics_2013
+
+\vfill
+
+
+# Visualisierung
+\setstretch{1.8}
+\textcolor{darkblue}{R Funktionalitäten für Abbildungen}
+
+Base Graphics
+
+* Erstellung und bedarfsgerechte Anpassung von Abbildungen
+* Eher low-level, fine tuning orientiert
+
+Lattice und ggplot2 
+
+* Erstellung und bedarfsgerechte Anpassung von Abbildungen
+* Eher high level, an der eigenen Philosophie orientiert
+
+Base Graphics, lattice und ggplot2 können ähnliche Abbildungen generieren
+
+LaTeX Typesetting ist in allen Paketen unterentwickelt
+
+# Visualisierung
+\setstretch{1.8}
+\textcolor{darkblue}{R Funktionalitäten für Abbildungen}
+
+**Base Graphics**
+
+* **Erstellung und bedarfsgerechte Anpassung von Abbildungen**
+* **Eher low-level, fine tuning orientiert**
+
+Lattice und ggplot2 
+
+* Erstellung und bedarfsgerechte Anpassung von Abbildungen
+* Eher high level, an der eigenen Philosophie orientiert
+
+Base Graphics, lattice und ggplot2 können ähnliche Abbildungen generieren
+
+LaTeX Typesetting ist in allen Paketen unterentwickelt
+
+# Visualisierung
+\vspace{2mm}
+
+![](../VL_Abbildungen/pds_11_graphics_2.pdf){width="55%"}
+
+\flushright
+\footnotesize
+@murrell_2019
+
+
+# Visualisierung
+\vspace{2mm}
+
+![](../VL_Abbildungen/pds_11_graphics_3.pdf){width="45%"}
+
+\flushright
+\footnotesize
+@murrell_2019
+
+
+# Visualisierung
+\vspace{2mm}
+
+![](../VL_Abbildungen/pds_11_graphics_4.pdf){width="55%"}
+
+\flushright
+\footnotesize
+@murrell_2019
+
+
+# Visualisierung
+\vspace{2mm}
+
+![](../VL_Abbildungen/pds_11_graphics_5.pdf){width="60%"}
+
+\flushright
+\footnotesize
+@murrell_2019
+
+
+# Visualisierung
+\vspace{2mm}
+
+![](../VL_Abbildungen/pds_11_graphics_6.pdf){width="55%"}
+
+\flushright
+\footnotesize
+@murrell_2019
+
+
+# Visualisierung
+\vspace{5mm}
+![](../VL_Abbildungen/pds_11_graphics_7.pdf){width="60%"}
+
+\flushright
+\footnotesize
+@murrell_2019
+
+
+# Visualisierung
+
+\textcolor{darkblue}{Code Outline}
+\footnotesize
+\vspace{1mm}
+\setstretch{1.2}
+```{r, echo = T}
+#| label: Code Outline für Abbildungen
+
+# Initialisierung einer neuen Abbildung
+dev.new()
+
+# Abbildungsparameter
+par( 
+  z.B. Arrangement von Panels, Begrenzungsstile, Schriftfonts, etc
+)  
+
+# Higher-level Abbildungsfunktion wie plot(), hist(), barplot(), ...
+plot(
+  z.B. x- und y-Daten, Achsenlimits, Achsenbeschriftungen, Titel, Farben, etc.
+  Jeder Aufruf einer higher-level Graphikfunktion belegt ein neues Subpanel!
+)
+
+# Hinzufügen weiterer Daten mit lower-level Abbildungsfunktionen zum aktuellen Panel
+z.B. points(), lines(), abline()
+
+# Weitere Graphikannotation zu aktuellem Panel
+z.B. legend(), text()
+
+# Speichern der Abbildung (Größenverhältnisse erst hier final festgelegt)
+z.B. dev.copy2pdf() 
+```
+
+
+# Visualisierung
+\vspace{2mm}
+Histogramme
+\vspace{1mm}
+\tiny
+\setstretch{.8}
+
+```{r, eval = F}
+#| label: Histogramme
+#| 
+# Histogrammparameter
+h        <- 1                                                   # gewünschte Klassenbreite
+b_0      <- min(D$Delta.BDI)                                    # b_0
+b_k      <- max(D$Delta.BDI)                                    # b_0
+k        <- ceiling((b_k - b_0) / h)                            # Anzahl der Klassen
+b        <- seq(b_0, b_k, by = h)                               # Klassen [b_{j-1}, b_j[
+ylimits  <- c(0, .25)                                           # y-Achsenlimits
+xlimits  <- c(-2, 14)                                           # x-Achsenlimits
+therapie <- c("Klassisch" , "Online")                           # Therapiebedingungen
+labs     <- c("Klassische Therapie", "Online Therapie")         # Abbildungslabel
+
+# Abbildungsparameter
+par(                                                            # für Details siehe ?par
+  mfcol     = c(1, 2),                                          # 1 x 2 Panelstruktur
+  family    = "sans",                                           # Serif-freier Fonttyp
+  pty       = "m",                                              # Maximale Abbildungsregion
+  bty       = "l",                                              # L förmige Box
+  las       = 1,                                                # Horizontale Achsenbeschriftung
+  xaxs      = "i",                                              # x-Achse bei y = 0
+  yaxs      = "i",                                              # y-Achse bei x = 0
+  font.main = 1,                                                # Non-Bold Titel
+  cex       = 1,                                                # Textvergrößerungsfaktor
+  cex.main  = 1                                                 # Titeltextvergrößerungsfaktor
+)
+
+# Iteration über Therapiebedingungen
+for(i in 1:2){
+  hist(
+    D$Delta.BDI[D$Bedingung == therapie[i]],                    # Delta.BDI Werte von Therapiebedingung i
+    breaks = b,                                                 # Histogrammklassen
+    freq   = F,                                                 # normierte relative Häufigkeit
+    xlim   = xlimits,                                           # x-Achsenlimits
+    ylim   = ylimits,                                           # y-Achsenlimits
+    xlab   = TeX("$\\Delta$ BDI"),                              # x-Achsenbeschriftung
+    ylab   = "",                                                # y-Achsenbeschriftung
+    main   = labs[i])                                           # Titelbeschriftung
+  )
+}
+
+# PDF Speicherung
+dev.copy2pdf(
+  file        = file.path(abb_dir, "pds_11_histogramm.pdf"),
+  width       = 8,
+  height      = 4
+)
+```
+
+# Visualisierung
+Histogramme
+\vspace{.5cm}
+
+![](../VL_Abbildungen/pds_11_histogramm.pdf){width="100%"}
+
+\vfill
+
+
+# Programmierübung 3) Bedingungsabhängige Visualisierung
+
+**Aufgabe 3a)**: Balkendiagramme
+
+Erstelle ein Balkendiagramm mit Fehlerbalken, das die Mittelwerte und Standardabweichungen für die beiden Therapiebedingungen (Klassisch und Online) der Variable Delta.BDI zeigt. Gehe wie folgt vor.
+
+\small
+
+1. Extrahiere die Mittelwerte und Standardabweichungen aus dem Dataframe `deskr_stat`.
+2. Verwende die Funktion `barplot()`, um die Mittelwerte als Balken darzustellen.
+3. Füge Fehlerbalken hinzu, die die Standardabweichungen anzeigen, indem du die Funktion `arrows()` verwendest.
+4. Wähle passende Achsenbeschriftungen und einen Titel für das Diagramm.
+
+# Programmierübung 3) Bedingungsabhängige Visualisierung
+
+\small
+
+Als Bearbeitungshilfe seien folgende Befehle gegeben. Beachte, dass eine oder mehrere hierin verwendeten Variablen zuerst noch erstellt werden müssen, und dem `barplot()`-Befehl noch Funktionsargumente fehlen, um die Aufgabe vollständig zu erfüllen (z.B. Achsenlimits und -beschriftung).
+
+\vspace{3mm}
+
+\tiny
+\setstretch{1.1}
+```{r}
+x <- barplot(                                       # Speichern der der x-Ordinaten (?barplot für Details)
+  height = mw,                                      # Mittelwerte als Balkenhöhe
+)
+
+arrows(
+  x0     = x,                                       # arrow start x-ordinate
+  y0     = mw - sd,                                 # arrow start y-ordinate
+  x1     = x,                                       # arrow end   x-ordinate
+  y1     = mw + sd,                                 # arrow end   y-ordinate
+  code   = 3,                                       # Pfeilspitzen beiderseits
+  angle  = 90,                                      # Pfeilspitzenwinkel -> Linie
+  length = 0.05                                     # Linielänge
+)
+```
+
+\vfill
+
+
+```{r, eval = F, echo = F}
+#| label: Visualiserung Abbildungsparameter
+# Abbildungsparameter
+par(                                                # für Details siehe ?par
+  mfcol       = c(1,2),                             # 1 x 2 Panelstruktur
+  family      = "sans",                             # Serif-freier Fonttyp
+  pty         = "m",                                # Maximale Abbildungsregion
+  bty         = "l",                                # L-förmige Box
+  las         = 1,                                  # Horizontale Achsenbeschriftung
+  xaxs        = "i",                                # x-Achse bei y = 0
+  yaxs        = "i",                                # y-Achse bei x = 0
+  font.main   = 1,                                  # Non-Bold Titel
+  cex         = 1,                                  # Textvergrößerungsfaktor
+  cex.main    = 1.5                                 # Titeltextvergrößerungsfaktor
+)                    
+```
+
+
+```{r, eval = F, echo = F}
+#| label: Linkes Panel - Balkendiagramm
+
+# Linkes Panel: Balkendiagramm mit Fehlerbalken
+# ---------------------------------------------------------------------
+
+# Stichprobenmittelwert und Standardabweichung extrahieren
+mw        <- deskr_stat$Mean                        # Gruppenmittelwert
+sd        <- deskr_stat$Std                         # Gruppenstandardabweichung
+names(mw) <- th_bed                                 # barplot braucht x-Werte als names
+
+# Mit der Funktion barplot() ein Balkendiagramm plotten
+x <- barplot(                                       # Speichern der der x-Ordinaten (?barplot für Details)
+  height = mw,                                      # Mittelwerte als Balkenhöhe
+  col    = "gray90",                                # Balkenfarbe
+  ylim   = c(0,12),                                 # y-Achsenbegrenzung
+  xlim   = c(0,3),                                  # x-Achsenbegrenzung
+  xlab   = "Bedingung",                             # x-Achsenbeschriftung
+  main   = TeX("$\\Delta BDI$")                     # Titel
+)
+
+# Mit der Funktion arrows() Fehlerbalken zeichnen
+arrows(
+  x0     = x,                                       # arrow start x-ordinate
+  y0     = mw - sd,                                 # arrow start y-ordinate
+  x1     = x,                                       # arrow end   x-ordinate
+  y1     = mw + sd,                                 # arrow end   y-ordinate
+  code   = 3,                                       # Pfeilspitzen beiderseits
+  angle  = 90,                                      # Pfeilspitzenwinkel -> Linie
+  length = 0.05                                     # Linielänge
+)
+
+
+```
+
+
+# Programmierübung 3) Bedingungsabhängige Visualisierung
+
+**Aufgabe 3 b)**: Boxplots
+
+Erstelle Boxplots, die die Verteilung der Delta.BDI-Werte für die beiden Therapiebedingungen Klassisch und Online visualisieren. Verwende dazu die Funktion `boxplot()` und das Funktionsargument 
+`formula`, um mit einem einzigen Plot-Befehl beide Boxplots in einem Diagramm nebeneinander darzustellen.
+
+Nutze den Befehl `?boxplot`, um die Argumente der Funktion genauer zu verstehen. Schau auch in die **Examples** hinein, um ein besseres Verständnis für die Anwendung der Funktion unter Hinzunahme des Arguments `formula` zu bekommen.
+
+
+\tiny
+\setstretch{1}
+```{r, eval = F, echo = F}
+#| label: Rechtes Panel - Boxplots
+
+# Rechtes Panel: Boxplot
+# ---------------------------------------------------------------------
+
+# Mit der Funktion boxplot() boxplots zeichnen
+boxplot(
+  D$Delta.BDI ~ D$Bedingung,                        # Gruppierung der Delta.BDI Daten nach D$Bedingung mit "~"
+  ylim = c(0, 12),                                  # y-Achsenbegrenzung
+  col  = "gray90",                                  # Boxfarbe
+  ylab = "",                                        # y-Achsenbeschriftung
+  xlab = "Bedingung",                               # x-Achsenbeschriftung
+  main = TeX("$\\Delta BDI$")                       # Titel
+)
+```
+
+```{r, echo = F, eval = F}
+#| label: PDF-Speicherung
+# PDF Speicherung
+dev.copy2pdf(
+  file        = file.path(abb_dir, "pds_11_deskriptiv.pdf"),
+  width       = 8,
+  height      = 5)
+```
+
+\vfill
+
+
+# Programmierübung 3) Bedingungsabhängige Visualisierung
+
+Der resultierenden Diagramme sollten in etwa so aussehen:
+
+\vspace{1mm}
+
+\textcolor{darkblue}{Bedingungsabhängige Visualisierung deskriptiver Statistiken}
+
+\vspace{1mm}
+
+![](../VL_Abbildungen/pds_11_deskriptiv.pdf){width="90%"}
+
+
+
+
+
+# Literatur
+
+\footnotesize
