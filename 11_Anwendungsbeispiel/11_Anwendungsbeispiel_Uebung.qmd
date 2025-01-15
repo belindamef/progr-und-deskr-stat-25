@@ -338,7 +338,7 @@ print(deskr_stat)                                                # Ausgabe
 
 # Programmierübung 2b) Bedingungsabhängige Deskriptive Statistiken
 
-**Aufgabe b)**: Berechnung bedingungsabhängiger deskriptiver Statistiken
+**Aufgabe 2b)**: Berechnung bedingungsabhängiger deskriptiver Statistiken
 
 Berechne die deskriptiven Statistiken für die Variable Delta.BDI, getrennt nach den zwei Therapiebedingungen Klassisch und Online. Erstelle dazu einen Dataframe `deskr_stat` mit zwei Zeilen (jeweils eine pro Bedingung) und den statistischen Kennzahlen als Spalten. Gehe wie folgt vor.
 
@@ -773,7 +773,7 @@ Der resultierenden Diagramme sollten in etwa so aussehen:
 ![](../VL_Abbildungen/pds_11_deskriptiv.pdf){width="90%"}
 
 
-# Lösung zu Programmierübung 3)
+# Lösung zu Programmierübung 2b)
 
 \tiny
 
