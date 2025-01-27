@@ -48,8 +48,8 @@ Datum          & Einheit                  & Thema                               
 07.01.25       & R Grundlagen             & (10) Strukturiertes Programmieren: Kontrollfluss, Debugging & Seminar      \\
 14.01.25       & Deskriptive Statistik    & (11) Anwendungsbeispiel                & Übung             \\
                & \textit{Leistungsnachweis 3}                                                          \\
-\textbf{21.01.25}       & \textbf{Deskriptive Statistik}    & (11) \textbf{Anwendungsbeispiel}                & \textbf{Seminar}           \\
-28.01.25       & Deskriptive Statistik    & (11) Anwendungsbeispiel, Q\&A           & Seminar          \\
+21.01.25       & Deskriptive Statistik    & (11) Anwendungsbeispiel                & Seminar           \\
+28.01.25       & \textbf{Deskriptive Statistik}    & \textbf{(11) Anwendungsbeispiel, Q\&A}          & \textbf{Seminar}          \\
 \end{tabular}
 
 
@@ -407,7 +407,7 @@ print(deskr_stat)
 * Median und Mittelwert nehmen für die klassische Therapieform leicht höhere Werte an.
 * Ein $\Delta \mbox{BDI}$ Mittelwertsunterschied von 1 ist klinisch wohl eher vernachlässigbar.
 * Median und Mittelwert sind in beiden Therapieformen ähnlich (unimodale Verteilung).
-* Die Variabilitätsmaße zeigen eine etwas erhöhte Varabilität in der klassischen Therapieform.
+* Die Variabilitätsmaße zeigen eine etwas erhöhte Variabilität in der klassischen Therapieform.
 
 
 
@@ -971,6 +971,404 @@ for(i in 1:n_th_bed){
 # Ausgabe
 print(kappa)
 ```
+
+
+\AtBeginSection{}
+\section{Hypothesentests}
+# Hypothesentests ====================================== {.plain}
+
+\large
+\setstretch{2.5}
+\vfill
+
+Beispieldatensatz
+
+Datenvorverarbeitung
+
+Deskriptive Statistiken
+
+Visualisierung
+
+Parameterschätzung
+
+Konfidenzintervalle
+
+**Hypothesentests**
+
+\vfill
+
+
+
+# Hypothesentest
+
+\small
+\textcolor{darkblue}{(1) Anwendungsszenario und (2) Frequentistisches Inferenzmodell}
+
+\footnotesize
+\setstretch{1.3}
+
+\textcolor{darkcyan}{Was ist das zugrundeliegende Statistische Modell?}
+
+Wir nehmen an, dass die $\Delta$ BDI Werte, also der uns vorliegende Datensatz Realisierungen von unabhängig
+verteilten Zufallsvariablen
+\begin{equation}
+y_{ij} \sim N\left(\mu_{i},\sigma^2\right), i = 1,2, j = 1,...,50
+\end{equation}
+sind, wobei $i$ die Therapiebedingung (1 = Klassisch, 2 = Online) und $j$
+den Proband:innen Index in der $i$ten experimentellen Bedingung bezeichnen.
+Innerhalb einer Bedingung sind diese Zufallsvariablen also unabhängig und identisch
+verteilt.
+\vspace{1mm}
+
+\textcolor{darkcyan}{Motivation für Hypothesentests}
+
+Die Parameter $\mu_1,\mu_2$ und $\sigma^2$ sind
+unbekannt. Basierend auf unserem Datensatz schätzen wir Werte für die Parameter. Da wir davon ausgehen, dass eine Realisierung von Zufallsvariablen *Zufälligkeit* enthält, können wir uns nicht *sicher* sein, dass diese Schätzungen die wahren Parameterwerte widerspiegeln. Deshalb möchten wir die mit unserer Schätzung verbundenen Unsicherheit beim
+inferentiellen Vergleich von $\mu_1$ mit $\mu_2$ quantifizieren.
+\vspace{1mm}
+
+\textcolor{darkcyan}{Geeigneter Hypothesentest für vorliegende Forschungsfrage}
+
+Dafür können wir einen Zweistichproben-T-Test bei unabhängigen Stichproben unter
+Annahme identischer Varianz durchführen. 
+
+Wir wollen die Hypothesen $H_0:\mu_1 = \mu_2$
+und $H_1:\mu_1 \neq \mu_2$ mit einem Signifikanzniveau von $\alpha_0 = 0.05$ testen und verwenden dafür einen 
+**zweiseitigen Zweistichproben-T-Test**. 
+
+
+
+# Hypothesentest
+
+\textcolor{darkblue}{(3) Testhypothesen}
+\vspace{2mm}
+
+\footnotesize
+\textcolor{darkcyan}{Was sind geeignete Null- und Alternativhypothesen?}
+\textcolor{darkcyan}{Was soll der Typ-I Fehler sein?}
+
+Wir betrachten die einfache Nullhpothese und die zusammengesetzte Alternativhypothese
+\begin{align}
+&H_0:\mu_1 - \mu_2 = \mu_0  \\ 
+&H_1:\mu_1 - \mu_2 \neq \mu_0.
+\end{align}
+
+Mit $\mu_0 = 0$ ist das äquivalent zu
+\begin{align}
+&H_0:\mu_1 = \mu_2 \\ 
+&H_1:\mu_1 \neq \mu_2
+\end{align}
+
+
+
+\vspace{2mm}
+
+
+# Hypothesentest
+
+\textcolor{darkblue}{(4) Definition und (5) Verteilung der Teststatistik}
+\vspace{2mm}
+
+\footnotesize
+\textcolor{darkcyan}{Was ist der \textquote{Testgegenstand}?}
+\textcolor{darkcyan}{Was ist die Kenngröße, die getestet wird?}
+
+
+Die T-Teststatistik für den Zweistichproben-T-Test ist gegeben durch 
+
+\begin{equation}
+T = \sqrt{\frac{n_1n_2}{n_1+n_2}}\left(\frac{\bar{y}_1-\bar{y}_2 - \mu_0}{s_{12}}\right)
+\end{equation}
+und dessen Verteilung durch
+\begin{equation}
+T \sim t(d, n_1 + n_2 - 2)
+\end{equation}
+mit Nichtzentralitätsparameter
+\begin{equation}
+d = \sqrt{\frac{n_1n_2}{n_1+n_2}}\left(\frac{\mu_1-\mu_2-\mu_0}{\sigma}\right).
+\end{equation}
+wobei $\bar{y}_1$ und $\bar{y}_2$ die Stichprobenmittel der Gruppen Klassische und Online-Therapie, respektive sind, $n_1$ und $n_2$ die jeweiligen Stichprobengrößen und $s_{12} = \sqrt{s^2_{12}}$ die *gepoolte Stichprobenstandardabweichung*. Die *gepoolte Stichprobenvarianz* ist gegeben durch 
+\begin{equation}
+s^2_{12} := \frac{\sum_{j=1}^{n_1} (y_{1j} - \bar{y}_1)^2 + \sum_{j=1}^{n_2} (y_{2j} - \bar{y}_2)^2}{n_1+n_2-2}
+\end{equation}
+
+
+# Hypothesentest
+
+
+\textcolor{darkblue}{(6) Testdefinition }
+
+\vspace{2mm}
+\footnotesize
+\textcolor{darkcyan}{Wie funktioniert der Test?}
+
+\begin{equation}
+\phi(y) := 1_{\{|T| \ge k\}} =
+{\begin{cases}
+1 & |T| \ge k \\
+0 & |T|  <  k
+\end{cases}}.
+\end{equation}
+
+
+# Hypothesentest
+
+\textcolor{darkblue}{(7) Testgütefunktion}
+\vspace{2mm}
+
+\footnotesize
+\textcolor{darkcyan}{Wie hoch ist die Wahrscheinlichkeit, dass der Test den Wert 1 ergibt unter verschiedenen möglichen wahren, aber unbekannten Parameterwerten?}
+
+\tiny
+\begin{theorem}[Testgütefunktion des Zweistichproben-T-Tests]
+\justifying
+\normalfont
+Es sei $\phi$ der im obigen Modell formulierte Zweistichproben-T-Test. Dann ist
+die Testgütefunktion von $\phi$ gegeben durch
+\begin{equation}
+q_{\phi} : \mathbb{R}^2 \to [0,1],
+(\mu_1, \mu_2) \mapsto q_{\phi}(\mu_1, \mu_2) := 1 - \psi(k;d_{\mu},n_1+n_2-2) + \psi(-k;d_{\mu},n_1+n_2-2)
+\end{equation}
+wobei $\psi(\cdot; d_{\mu}, n_1+n_2-2)$  die KVF der nichtzentralen
+$t$-Verteilung mit Nichtzentralitätsparameter
+\begin{equation}
+d_{\mu} := \sqrt{\frac{n_1n_2}{n_1+n_2}}\frac{\mu_1-\mu_2}{\sigma}
+\end{equation}
+und Freiheitsgradparameter $n_1+n_2-2$ bezeichnet.
+\end{theorem}
+
+```{r, echo = F, eval = F}
+library(latex2exp)
+graphics.off()
+dev.new()
+par(
+  family      = "sans",
+  mfcol       = c(1,3),
+  pty         = "m",
+  bty         = "l",
+  lwd         = 1,
+  las         = 1,
+  xaxs        = "i",
+  yaxs        = "i",
+  font.main   = 1,
+  cex         = .4,
+  cex.main    = 2
+)
+
+# Visualisierung
+k_all        = c(1,2,3)                                                          # kritische Werte
+n_1         = 50                                                                 # Stichprobengröße n_1
+n_2         = 50                                                                 # Stichprobengröße n_2
+sigsqr      = 3                                                                  # Varianzparameter
+mu_min      = 2                                                                 # Minimum   \mu_1,\mu_2
+mu_max      = 8                                                                  # Minimum   \mu_1,\mu_2
+mu_res      = 2e1                                                                # Auflösung \mu_1,\mu_2
+mu_1        = seq(mu_min, mu_max, len = mu_res)                                  # \mu_1
+mu_2        = seq(mu_min, mu_max, len = mu_res)                                  # \mu_2
+
+
+# kritischer Wert Iterationen
+for(k in k_all){
+  q_phi       = matrix(rep(NaN, mu_res*mu_res), nrow = mu_res)                   # q_\phi Array
+  for(i in seq_along(mu_1)){                                                     # \mu_1 Iterationen
+    for(j in seq_along(mu_2)){                                                   # \mu_2 Iterationen
+      d           = (mu_1[i] - mu_2[j])/sqrt(sigsqr)                             # Nichtzentralitätsparameter \delta
+      df          = n_1 + n_2 - 2                                                # Freiheitsgradparameter
+      q_phi[i,j]  = 1-pt(k,df,d)+pt(-k,df,d)                                     # q_\phi
+    }
+  }
+  persp(
+  mu_1,
+  mu_2,
+  q_phi,
+  d           = 1,
+  col         = "gray90",
+  theta       = 20,
+  phi         = 30,
+  lwd         = .5,
+  scale       = T,
+  ticktype    = "detailed",
+  r           = 1.5,
+  zlim        = c(0,1),
+  main        = paste("k =", k))
+}
+dev.copy2pdf(
+file        = file.path(abb_path, "pds_11_Testgütefunktion.pdf"),
+width       = 6,
+height      = 2)
+```
+
+
+# Hypothesentest
+
+\textcolor{darkblue}{(7) Testgütefunktion}
+
+$q_{\phi}(\mu_1, \mu_2) = \mathbb{P}_\mu(\phi(y)=1)$ für $\sigma^2= 3$, $\mu_0=0$, $n_1 = 50$, $n_2 = 50$ und $k=1, 2, 3$.
+
+![](../VL_Abbildungen/pds_11_Testg%C3%BCtefunktion.pdf)
+
+
+# Hypothesentest
+
+\textcolor{darkblue}{(8) Testumfangkontrolle}
+\vspace{2mm}
+
+\footnotesize
+\textcolor{darkcyan}{Wie kann ich die Wahrscheinlichkeit dafür, dass der Test den Wert 1 ergibt, obwohl der Nullhypothesenparameterwert \textquote{wahr} wäre (Typ-I Fehler) kontrollieren?}
+
+\begin{theorem}[Testumfangkontrolle]
+\justifying
+\normalfont
+$\phi$ sei der im obigen Testszenario definierte Test. Dann ist $\phi$ ein
+Level-$\alpha_0$-Test mit Testumfang $\alpha_0$, wenn der kritische Wert
+definiert ist durch
+\begin{equation}
+k_{\alpha_0} := \psi^{-1}\left(1 - \frac{\alpha_0}{2}; n_1 + n_2 - 2 \right),
+\end{equation}
+wobei $\psi^{-1}(\cdot; n_1+n_2-2)$ die inverse KVF der $t$-Verteilung mit
+$n_1+n_2-2$ Freiheitsgraden ist.
+\end{theorem}
+
+
+
+# Hypothesentest
+\textcolor{darkblue}{Zweistichproben-T-Test: Manuelle Berechnung basierend auf den zugrunde liegenden Formeln}
+\vspace{2mm}
+
+\setstretch{1.2}
+\tiny
+```{r, eval = T}
+#| label: Manueller Berechnung Zweistichproben-T-Test
+# Datenauswahl
+y_1       <- D$Delta.BDI[D$Bedingung == "Klassisch"]                      # \Delta.BDI Daten Klassische Therapie
+y_2       <- D$Delta.BDI[D$Bedingung == "Online"]                         # \Delta.BDI Daten Online Therapie
+n_1       <- length(y_1)                                                  # Stichprobengröße n_1
+n_2       <- length(y_2)                                                  # Stichprobengröße n_2
+alpha_0   <- 0.05                                                         # Signifikanzniveau
+mu_0 <- 0                                                                 # H_0 Hypothesenparameter, hier \mu_0 = 0
+k_alpha_0 <- qt(1 - (alpha_0 / 2), n_1 + n_2 - 2)                         # kritischer Wert
+y_bar_1   <- mean(y_1)                                                    # y_bar_1
+y_bar_2   <- mean(y_2)                                                    # y_bar_2
+s_12      <- sqrt(
+               (sum((y_1 -y_bar_1)^2) + sum((y_2 - y_bar_2)^2))/          # gepoolte Standardabweichung s_12
+                (n_1 + n_2 - 2)
+             )
+t         <- (sqrt(                                                       # Zweistichproben-T-Teststatistik
+              (n_1 * n_2) / (n_1 + n_2)) 
+              * ((y_bar_1 - y_bar_2 - mu_0) / s_12)
+  )
+if (abs(t) >= k_alpha_0) {                                                # Test 1_{|T >= k_alpha_0|}
+  phi <- 1                                                                # Ablehnen von H_0
+} else {
+  phi <- 0                                                                # Nicht-Ablehnen von H_0
+}
+pval  <- 2 * (1 - pt(abs(t), n_1 + n_2 - 2))                              # p-Wert (pt() hat default ncp=0)
+```
+
+
+
+# Hypothesentest
+\textcolor{darkblue}{Zweistichproben-T-Test: Manuelle Berechnung basierend auf den zugrunde liegenden Formeln}
+\vspace{2mm}
+
+\setstretch{1}
+\tiny
+
+
+```{r, eval = T}
+#| label: Ausgabe manueller Zweistichproben-T-Test
+#| 
+# Ausgabe
+cat("\ny_bar_1           = ", y_bar_1,
+    "\ny_bar_2           = ", y_bar_2,
+    "\nFreiheitsgrade    = ", n_1 + n_2 - 2,
+    "\nSignifikanzlevel  = ", alpha_0,
+    "\nKritischer Wert   = ", k_alpha_0,
+    "\nTeststatistik     = ", t,
+    "\nTestwert          = ", phi,
+    "\np-Wert            = ", pval)
+```
+
+\vfill
+\setstretch{1.1}
+\small
+Folgendes können wir aus dieser Zusammenfassung ablesen:
+\tiny
+
+* \tiny Die Stichprobenmittel der zwei Datensätze sind $6.16$ und $4.92$
+* Die Anzahl der Freiheitsgrade ist $98$
+* Das Signifikanzniveau dieses Tests $\alpha_0$ ist $0.05$
+* Der kritische Wert $k_{\alpha_0}$ ist $1.98$
+* Die T-Teststatistik $T$ hat den Wert $2.65$
+* Das Ergebnis des Tests $\phi$ ist $1$ (Wie zu erwarten, da hier $T > k_{\alpha_0})$
+* $\Rightarrow$ Wir lehnen die Nullhypothese $H_0: \mu_1 = \mu_2$ ab.
+* Der p-Wert beträgt 0.00951
+
+
+
+# Hypothesentest
+
+\textcolor{darkblue}{Zweistichproben-T-Tests: R Implementation}
+
+\vspace{2mm}
+\setstretch{0.8}
+\tiny
+```{r, eval = T}
+#| label: R Implementation des Zweistichproben-T-Test
+
+# R Implementation des Zweistichproben-T-Test
+varphi    = t.test(                           # ?t.test für Details
+            y_1,                              # Datensatz y_1
+            y_2,                              # Datensatz y_2
+            var.equal   = TRUE,               # \sigma_1^2 = \sigma_2^2
+            alternative = c("two.sided"),     # H_1: \mu_1 \neq \mu_2
+            conf.level  = 1 - alpha_0)        # \delta = 1 - \alpha_0 (sic!)
+
+# Ausgabe
+print(varphi)
+```
+
+\vfill
+\setstretch{1.1}
+\small
+Folgendes können wir aus dieser Zusammenfassung ablesen:
+\tiny
+
+* \tiny Es wurden die Daten verwendet, die in den Variablen `y_1` und `_2` gespeichert sind. 
+* Der T-Teststatistik $T$ hat den Wert $2.65$
+* Die Anzahl der Freiheitsgrade, engl.: degrees of freedom (df) ist $98$
+* Die Alternativhypothese ist, dass die "wahre" Differenz zwischen $\mu_1$ und $\mu_2$ nicht gleich $0$ ist. 
+* Das $95\%$-Konfidenzintervall der geschätzten Erwartungswertdifferenz ist $[0.31, 2.17]$.
+* Die Stichprobenmittel der zwei Datensätze sind $6.16$ und $4.92$
+* Der p-Wert beträgt (gerundet) 0.01. 
+* $\Rightarrow$ Da dieser Wert kleiner als das festgelegte Signifikanzniveau $0.05$ ist, kann die  die Nullhypothese $H_0: \mu_1 = \mu_2$ abgelehnt werden.
+
+
+
+
+# Hypothesentest
+
+\textcolor{darkblue}{Zweistichproben-T-Tests: R Implementation}
+
+\vspace{2mm}
+
+\footnotesize
+
+Die Werte, die in der automatischen Ausgabe angezeigt werden sind gerundet. Die exakten Werte sind jedoch im Objekt `varphi` gespeichert und wir können diese aufrufen. 
+
+\vspace{2mm}
+\setstretch{1.1}
+\tiny
+
+```{r, eval = T}
+#| label: Genaue Ausgabe aus automatischem T-Test
+# Genauere Ausgabe t
+paste(varphi[1])
+
+# Genauere Ausgabe p
+paste(varphi[3])
+```
+
 
 
 
