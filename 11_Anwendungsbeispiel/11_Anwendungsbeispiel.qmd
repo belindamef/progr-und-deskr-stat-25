@@ -1335,7 +1335,7 @@ Folgendes können wir aus dieser Zusammenfassung ablesen:
 \tiny
 
 * \tiny Es wurden die Daten verwendet, die in den Variablen `y_1` und `_2` gespeichert sind. 
-* Der T-Teststatistik $T$ hat den Wert $2.65$
+* Die T-Teststatistik $T$ hat den Wert $2.65$
 * Die Anzahl der Freiheitsgrade, engl.: degrees of freedom (df) ist $98$
 * Die Alternativhypothese ist, dass die "wahre" Differenz zwischen $\mu_1$ und $\mu_2$ nicht gleich $0$ ist. 
 * Das $95\%$-Konfidenzintervall der geschätzten Erwartungswertdifferenz ist $[0.31, 2.17]$.
